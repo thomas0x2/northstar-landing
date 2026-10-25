@@ -47,7 +47,6 @@ export function ThesisPage() {
         <div className="wrap">
           <NavBar />
           <div className="page-hero-copy">
-            <span className="label">{v.label}</span>
             <h1 className="display">{v.title}</h1>
             <p className="lead">{v.lead}</p>
           </div>
