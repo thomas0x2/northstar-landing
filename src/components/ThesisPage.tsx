@@ -100,6 +100,7 @@ export function ThesisPage() {
         <section className="section">
           <div className="wrap">
             <Head label={v.lockins.label} title={v.lockins.title} />
+            <p className="prose-lead lockins-intro">{v.lockins.intro}</p>
             <div className="cards cards-four">
               {v.lockins.items.map((l, i) => (
                 <article className="card" key={l.title}>
@@ -109,6 +110,12 @@ export function ThesisPage() {
                   <p><strong>What we explore.</strong> {l.explore}</p>
                 </article>
               ))}
+            </div>
+            <div className="lockins-learning">
+              <h3>{v.lockins.learning.title}</h3>
+              <div className="prose">
+                {v.lockins.learning.body.map((p) => <p key={p}>{p}</p>)}
+              </div>
             </div>
           </div>
         </section>

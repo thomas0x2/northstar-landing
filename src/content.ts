@@ -73,13 +73,21 @@ export const thesisPage = {
   },
   lockins: {
     label: "The lock-ins",
-    title: "Each lock-in becomes a research branch.",
+    title: "Four lock-ins, all tied to the physical infrastructure.",
+    intro: "A lock-in only counts if escaping it means writing off hardware, not just starting new training runs on the chips the incumbents already own. Each one becomes a research branch.",
     items: [
       { title: "Dense matrix multiplication", stuck: "GPUs and TPUs are built for it.", explore: "Sparse, event-driven and spiking computation." },
-      { title: "Backprop with global gradients", stuck: "The whole training stack assumes it.", explore: "Local and biologically plausible learning rules." },
-      { title: "Separate memory and compute", stuck: "Data centers, HBM and chip design.", explore: "In-memory, analog and neuromorphic compute." },
-      { title: "Synchronous digital computation", stuck: "All current hardware.", explore: "Asynchronous, analog and physical computing." },
+      { title: "Separate memory and compute", stuck: "Data centers, the HBM supply chain and chip design.", explore: "In-memory, analog and neuromorphic compute." },
+      { title: "Synchronous digital computation", stuck: "All current hardware, fabs and toolchains.", explore: "Asynchronous, analog and physical computing." },
+      { title: "Learning that fits the data center", stuck: "Backprop and frozen, copy-everywhere models grew up with GPU data centers.", explore: "Learning the current infrastructure can't run, like continual learning in place." },
     ],
+    learning: {
+      title: "Why the learning rule is on the list.",
+      body: [
+        "A different learning rule on its own isn't a lock-in. If it runs on GPUs, the incumbents can switch with new training runs. We are looking for the ones that can't run on today's physical AI infrastructure at all.",
+        "Continual learning is the clearest case. A model that keeps learning after it ships wants its weights updated where they are stored, and a different set of weights for every user. The data center does neither well: it earns its money by copying one frozen model onto millions of chips. Learning that happens in place, on in-memory, analog or neuromorphic hardware, is where the learning rule becomes an edge.",
+      ],
+    },
   },
   edge: {
     label: "Our edge",
