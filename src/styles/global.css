@@ -341,8 +341,10 @@ h1, h2 { text-wrap: balance; }
    with the warm colours at the bottom edge. */
 /* The exact spectrum field, scaled up and anchored to its top right so the blues fill most of the card. */
 .agency-card > .field:not(.shards) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
-/* Clouds are faceted shards of sanded glass trailing mist, drawn like the glass logo star. */
-.agency-card > .shards { object-position: right top; }
+/* Clouds are faceted sanded glass, drawn like the glass logo star, drifting slowly with the wind. */
+.agency-card > .shards { object-position: right top; animation: cloud-drift 20s ease-in-out infinite alternate; }
+@keyframes cloud-drift { from { transform: translateX(0); } to { transform: translateX(-28px); } }
+@media (prefers-reduced-motion: reduce) { .agency-card > .shards { animation: none; } }
 .agency { padding: clamp(28px, 6vw, 80px); }
 .agency .section-head { max-width: 760px; }
 .agency .prose p { color: var(--ink); }

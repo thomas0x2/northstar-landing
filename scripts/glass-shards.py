@@ -1,24 +1,34 @@
-# Generates public/assets/glass-shards.svg: faceted sanded-glass shards with misty trails,
+# Generates public/assets/glass-shards.svg: stretched cloud banks of faceted sanded glass with misty trails,
 # drawn with the same filters as the glass logo star (logo-glass-transparent.svg).
 import math, sys
 out = sys.argv[1]
+def bank(x0, x1, y, thick, seed):
+    """A stretched cloud bank: a long, flat sheet with a gently uneven top and tapered ends."""
+    jit = [((seed * 37 + k * 53) % 11 - 5) / 5 for k in range(40)]
+    n = max(3, round((x1 - x0) / 80))
+    top = [(x0 + (x1 - x0) * k / n, y - thick * (0.55 + 0.35 * jit[k]) * (1 if 0 < k < n else 0)) for k in range(n + 1)]
+    m = max(2, round((x1 - x0) / 120))
+    bottom = [(x1 - (x1 - x0) * k / m - 18, y + thick * (0.45 + 0.15 * jit[k + 20])) for k in range(1, m)]
+    return top + bottom
+
 shards = [
-    # (outline, trail vector): two crystalline clouds with many points and edges,
-    # kept in the top third of the card (y < ~260 here).
-    ([(1150, 64), (1240, 34), (1302, 52), (1390, 26), (1490, 60), (1452, 96),
-      (1508, 130), (1400, 148), (1344, 176), (1250, 152), (1166, 164), (1198, 118)], (-420, 220)),
-    ([(1366, 196), (1426, 172), (1476, 186), (1532, 168), (1570, 208), (1528, 238),
-      (1462, 254), (1414, 234)], (-300, 150)),
+    # (outline, trail vector, opacity): stretched cloud banks in the top third of the card
+    # (y < ~260 here), nearer banks larger and brighter, each trailing glass sideways.
+    (bank(1010, 1660, 66, 70, 1), (-300, 12), 1.0),
+    (bank(1190, 1660, 140, 52, 2), (-240, 10), 0.85),
+    (bank(900, 1420, 196, 38, 3), (-200, 8), 0.7),
+    (bank(1270, 1660, 240, 28, 4), (-160, 6), 0.55),
 ]
 # Facet shades, from the plane facing the light to the one turned away.
 SHADES = ["face1", "face2", "face3", "face4"]
 def pts(p): return " ".join(f"{x:.1f},{y:.1f}" for x, y in p)
 defs, trails, bodies = [], [], []
-for i, (v, (dx, dy)) in enumerate(shards):
+for i, (v, (dx, dy), alpha) in enumerate(shards):
+    bodies.append(f'<g opacity="{alpha}">'); trails.append(f'<g opacity="{alpha}">')
     cx = sum(x for x, _ in v) / len(v); cy = sum(y for _, y in v) / len(v)
     # Trails: several sheets of glass stream off every edge, fanning out across and away from the
     # cloud like the glass star's trails. Each sheet is a curved wedge from an edge to a far point.
-    fan = ((-16, 0.75), (0, 1.0), (14, 1.3), (28, 0.9))
+    fan = ((-3, 0.8), (0, 1.0), (2, 1.3), (5, 0.9))
     for j, (deg, length) in enumerate(fan):
         t = math.radians(deg)
         fx, fy = (dx * math.cos(t) - dy * math.sin(t)) * length, (dx * math.sin(t) + dy * math.cos(t)) * length
@@ -42,6 +52,7 @@ for i, (v, (dx, dy)) in enumerate(shards):
     for k, tri in enumerate(tris):
         f = SHADES[(k * 3 + i) % len(SHADES)]
         bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts(tri)}"/>')
+    bodies.append('</g>'); trails.append('</g>')
 def face(name, slope, seed):
     return f'''<filter id="{name}" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
