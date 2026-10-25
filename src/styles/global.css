@@ -341,18 +341,17 @@ h1, h2 { text-wrap: balance; }
    with the warm colours at the bottom edge. */
 /* The exact spectrum field, scaled up and anchored to its top right so the blues fill most of the card. */
 .agency-card > .field:not(.shards):not(.glass-links) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
-/* Clouds are stretched banks of faceted sanded glass across the top of the card, drawn like the glass
-   logo star. A small glass triangle drifts through them (GlassLinks), drawn in the same 1600x320 space. */
-.agency-card > .shards, .agency-card > .glass-links { bottom: auto; height: auto; aspect-ratio: 5 / 1; }
-/* The copy starts under the clouds: percentage padding follows the card's width, like the cloud band. */
-.agency { padding: clamp(28px, 6vw, 80px); padding-top: 17%; }
+/* Clouds are stretched banks of faceted sanded glass, drawn like the glass logo star, placed around the copy
+   rather than over it: a band along the top edge and more down the right side. They're drawn at a fixed scale
+   from the top left, like the text, so they keep clear of it at every width. A small glass logo star tumbles
+   through them (GlassLinks), drawn in the same 1600x600 space. */
+.agency-card > .shards, .agency-card > .glass-links { inset: 0 auto auto 0; width: 1216px; height: 456px; }
+.agency { padding: clamp(28px, 6vw, 80px); }
 .agency .section-head { max-width: 760px; }
 .agency .prose p { color: var(--ink); }
-/* On phones the cloud band keeps a readable height and shows its middle. */
-@media (max-width: 640px) {
-  .agency-card > .shards, .agency-card > .glass-links { aspect-ratio: auto; height: 150px; }
-  .agency { padding-top: 140px; }
-}
+/* Smaller cards have less padding above the heading, so the clouds shrink to stay in it. */
+@media (max-width: 900px) { .agency-card > .shards, .agency-card > .glass-links { width: 1100px; height: 412px; } }
+@media (max-width: 640px) { .agency-card > .shards, .agency-card > .glass-links { width: 560px; height: 210px; } }
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.
    Not on the spectrum field itself, where spectrum text would disappear into the background. */
