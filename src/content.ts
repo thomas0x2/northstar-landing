@@ -58,7 +58,7 @@ export const thesisPage = {
     label: "The thesis",
     title: "Three layers, from philosophy to business.",
     layers: [
-      { title: "Intelligence doesn't depend on its substrate", body: "Functionalism, or multiple realizability: what matters is the computation, not what it runs on. The brain does it on 20 watts of chemistry. This is contested, and we take the counterarguments seriously." },
+      { title: "Intelligence doesn't depend on its substrate", body: "Functionalism, or multiple realizability: what matters is the computation, not what it runs on. The brain does it on about 20 watts.", source: 12 },
       { title: "So there are many ways to build it", body: "If the substrate doesn't matter, transformers on GPUs are one point in a large space of possible architectures and learning rules, and the rest of that space is worth exploring." },
       { title: "The incumbents can't afford to look", body: "The frontier labs have hundreds of billions a year committed to the current stack. An approach that makes that stack obsolete is the research they would rather nobody did. That is our opening." },
     ],
@@ -159,6 +159,7 @@ export const thesisPage = {
     { id: 9, text: "Alphabet, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-&dateb=&owner=include&count=40" },
     { id: 10, text: "Amazon, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724&type=10-&dateb=&owner=include&count=40" },
     { id: 11, text: "Meta Platforms, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment (latest restated values)", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-&dateb=&owner=include&count=40" },
+    { id: 12, text: "Raichle & Gusnard, \"Appraising the brain's energy budget\", PNAS, 2002: the brain is about 2% of body weight and uses about 20% of the body's energy", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC124895" },
   ],
 };
 

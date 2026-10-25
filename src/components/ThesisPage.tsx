@@ -1,6 +1,6 @@
 import { thesisPage } from "../content";
 import { NavBar } from "./NavBar";
-import { GlassLinks } from "./GlassLinks";
+import { ThrownStar } from "./ThrownStar";
 import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
 import { Footer } from "./Footer";
@@ -81,7 +81,7 @@ export function ThesisPage() {
                 <article className="card" key={l.title}>
                   <div className="num">{num(i)}</div>
                   <h3>{l.title}</h3>
-                  <p>{l.body}</p>
+                  <p>{l.body}{"source" in l && l.source !== undefined && <Cite id={l.source} />}</p>
                 </article>
               ))}
             </div>
@@ -187,7 +187,7 @@ export function ThesisPage() {
           <div className="wrap">
             <SpectrumField as="div" className="test-card agency-card">
               <img className="field shards" src="/assets/glass-shards.svg" alt="" aria-hidden="true" />
-              <GlassLinks />
+              <ThrownStar />
               <div className="agency">
                 <Head label={v.agency.label} title={v.agency.title} />
                 <div className="prose">
