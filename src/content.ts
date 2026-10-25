@@ -73,13 +73,20 @@ export const thesisPage = {
   },
   lockins: {
     label: "The lock-ins",
-    title: "Each lock-in becomes a research branch.",
+    title: "Three lock-ins, all of them in hardware.",
+    intro: "A lock-in only counts if switching away from it would mean writing off hardware, not just starting new training runs on the chips they already own. Each one becomes a research branch.",
     items: [
       { title: "Dense matrix multiplication", stuck: "GPUs and TPUs are built for it.", explore: "Sparse, event-driven and spiking computation." },
-      { title: "Backprop with global gradients", stuck: "The whole training stack assumes it.", explore: "Local and biologically plausible learning rules." },
-      { title: "Separate memory and compute", stuck: "Data centers, HBM and chip design.", explore: "In-memory, analog and neuromorphic compute." },
-      { title: "Synchronous digital computation", stuck: "All current hardware.", explore: "Asynchronous, analog and physical computing." },
+      { title: "Separate memory and compute", stuck: "Data centers, the HBM supply chain and chip design.", explore: "In-memory, analog and neuromorphic compute." },
+      { title: "Synchronous digital computation", stuck: "All current hardware, fabs and toolchains.", explore: "Asynchronous, analog and physical computing." },
     ],
+    learning: {
+      title: "The learning rule came with the hardware.",
+      body: [
+        "Backprop isn't a lock-in on its own. Other learning rules run on GPUs, so swapping it costs new training runs, not new chips. What is locked in is the pairing: backprop and train-once, serve-frozen models won because they fit the data center, and the data center was built for them.",
+        "Continual learning shows where that breaks. A model that keeps learning after it ships wants its weights updated where they are stored, and a different set of weights for every user. The data center does neither well: it earns its money by copying one frozen model onto millions of chips. Learning rules that update in place, on in-memory, analog or neuromorphic hardware, are where the learning rule becomes an edge.",
+      ],
+    },
   },
   edge: {
     label: "Our edge",

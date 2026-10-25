@@ -296,6 +296,9 @@ h1, h2 { text-wrap: balance; }
 .nav-links a[aria-current="page"]::before { opacity: 1; transform: none; }
 .cards-four { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .cards-four h3 { font-size: 21px; }
+.lockins-intro { margin-bottom: var(--space-8); }
+.lockins-learning { display: flex; flex-direction: column; gap: var(--space-5); margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--line-faint); }
+.lockins-learning h3 { font-size: 26px; line-height: 1.25; font-weight: 800; max-width: 760px; }
 
 /* Numbers band: stats on sanded glass over the spectrum. */
 .numbers { padding: clamp(28px, 6vw, 80px); }
