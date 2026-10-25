@@ -9,28 +9,7 @@ export const nav = {
 export const hero = {
   title: "Beyond the transformer.",
   lead: "Northstar searches for new paradigms of intelligence: architectures and learning rules that today's hardware was never built to run.",
-  primary: { label: "Read the thesis", href: "#thesis" },
-};
-
-export const thesis = {
-  label: "The thesis",
-  title: "The biggest labs are locked into the hardware they already bought. That is our opening.",
-  points: [
-    { title: "Paradigms before scale", body: "We question the architecture and the learning rule itself, not only how big the model is." },
-    { title: "Algorithm first, then silicon", body: "Ideas that don't fit on GPUs are a feature. We start with the algorithm and grow into hardware co-design." },
-    { title: "Alignment from day one", body: "Safety is part of the thesis, not a layer added after the fact." },
-  ],
-};
-
-export const test = {
-  label: "The test",
-  title: "Every idea we pursue has to pass three questions.",
-  // Shared with the thesis page's fit test, so both pages always ask the same questions.
-  questions: [
-    { key: "A", text: "Can it scale to superintelligence?" },
-    { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
-    { key: "C", text: "If it works, can we understand and steer it?" },
-  ],
+  primary: { label: "Read the thesis", href: "/thesis/" },
 };
 
 // The thesis page, with the vision and mission as its opening section. Every number cites an entry in `sources` by its id.
@@ -122,7 +101,11 @@ export const thesisPage = {
   test: {
     label: "The fit test",
     title: "Every idea has to pass three questions.",
-    questions: test.questions,
+    questions: [
+      { key: "A", text: "Can it scale to superintelligence?" },
+      { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
+      { key: "C", text: "If it works, can we understand and steer it?" },
+    ],
   },
   loop: {
     label: "Why it hasn't been done",

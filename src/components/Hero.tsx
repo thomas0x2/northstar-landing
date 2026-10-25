@@ -5,7 +5,7 @@ import { SpectrumField } from "./SpectrumField";
 
 export function Hero() {
   return (
-    <SpectrumField as="header" className="hero">
+    <SpectrumField as="main" className="hero hero-full">
       <div className="wrap">
         <NavBar />
         <div className="hero-grid">

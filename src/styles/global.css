@@ -77,6 +77,10 @@ h1, h2 { text-wrap: balance; }
 .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-10); padding-block: 56px var(--space-section); }
 .hero-copy { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
 
+/* The home page is only the hero, so it fills the screen above the footer. */
+.hero-full { min-height: calc(100svh - 88px); display: flex; flex-direction: column; }
+.hero-full > .wrap { flex: 1; display: flex; flex-direction: column; }
+.hero-full .hero-grid { flex: 1; }
 .hero h1 { font-size: clamp(48px, 7vw, 96px); line-height: 0.95; }
 .hero .lead { max-width: 560px; font-size: 20px; line-height: 1.55; }
 .hero-visual { flex: 1 1 420px; min-width: 0; max-width: 620px; }
