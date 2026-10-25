@@ -17,8 +17,9 @@ npm run preview   # serve the production build locally
 
 - `index.html`: document head (title, meta, favicons, Google Fonts) and the React mount point.
 - `src/content.ts`: all page copy in one place.
-- `src/App.tsx`: page composition.
-- `src/components/`: `Hero`, `NavBar`, `Thesis`, `TestBand`, `Join`, `Footer`, plus the building blocks `SpectrumField` and `Button`.
+- `src/App.tsx`: home page composition.
+- `vision/index.html` + `src/vision.tsx`: the Vision & mission page (`VisionPage`), served at `/vision/`. Each page is its own Vite entry in `vite.config.ts`.
+- `src/components/`: `Hero`, `NavBar`, `Thesis`, `TestBand`, `Join`, `Footer`, `VisionPage`, plus the building blocks `SpectrumField` and `Button`.
 - `src/styles/tokens.css`: design tokens, mirroring `tokens.json` in the Northstar design system.
 - `src/styles/global.css`: layout and component styles.
 - `public/assets/`: images used by the page, favicons and the social image.
@@ -30,6 +31,7 @@ npm run preview   # serve the production build locally
 - White is only for text and the primary button. Spectrum colors never appear as UI accents.
 - The logo is the sanded glass star; the chrome star is the hero visual only.
 - Fonts: Oxanium Bold (display), Manrope (body).
+- No shadows (box, text or drop). For depth or emphasis, use the sanded glass from the logo (`--glass-face`, `--glass-sheet`, `--grain`) or the spectrum field.
 
 ## Before launch
 
