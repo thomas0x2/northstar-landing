@@ -17,8 +17,8 @@ npm run preview   # serve the production build locally
 
 - `index.html`: document head (title, meta, favicons, Google Fonts) and the React mount point.
 - `src/content.ts`: all page copy in one place.
-- `src/App.tsx`: home page composition (for now just the hero, linking to the thesis).
-- `thesis/index.html` + `src/thesis.tsx`: the Thesis page (`ThesisPage`), with vision and mission as its opening section, served at `/thesis/`. Its figures cite `thesisPage.sources` in `content.ts`. Each page is its own Vite entry in `vite.config.ts`.
+- `src/App.tsx`: the site is one page (`ThesisPage`): the star hero, then the thesis with vision and mission as its opening section, contact and sources. Its figures cite `thesisPage.sources` in `content.ts`.
+- `public/thesis/index.html`: redirects old `/thesis/` links to the home page.
 - `src/components/`: `Hero`, `NavBar`, `Join`, `Footer`, `ThesisPage`, `CapexChart`, `ThrownStar` (the glass star thrown across the sky card), plus the building blocks `SpectrumField` and `Button`.
 - `src/styles/tokens.css`: design tokens, mirroring `tokens.json` in the Northstar design system.
 - `src/styles/global.css`: layout and component styles.

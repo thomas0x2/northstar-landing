@@ -2,14 +2,12 @@
 
 export const hero = {
   title: "Beyond the transformer.",
-  lead: "Northstar searches for new paradigms of intelligence: architectures and learning rules that today's hardware was never built to run.",
-  primary: { label: "Read the thesis", href: "/thesis/" },
+  lead: "Today's AI runs on the hardware and methods we happened to start with. Northstar searches for the architectures and learning rules that hardware was never built to run, where the labs best placed to look are the least likely to.",
+  primary: { label: "Read the thesis", href: "#main" },
 };
 
-// The thesis page, with the vision and mission as its opening section. Every number cites an entry in `sources` by its id.
+// The thesis, below the hero, with the vision and mission as its opening section. Every number cites an entry in `sources` by its id.
 export const thesisPage = {
-  title: "Intelligence on the right foundations.",
-  lead: "Today's AI runs on the hardware and methods we happened to start with. We think better foundations exist, and that the labs best placed to find them are the least likely to look. This page walks through why.",
   statements: [
     { label: "Vision", text: "Better, safer intelligence: superintelligence built on the right foundations, not just the ones we happened to start with, and understood well enough to steer." },
     { label: "Mission", text: "Find the scalable paradigms of intelligence that frontier labs can't afford to look for, and build them safely." },
