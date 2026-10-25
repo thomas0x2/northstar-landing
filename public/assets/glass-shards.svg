@@ -1,10 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMin slice">
 <title>Sanded glass shards drifting in the sky</title>
 <defs>
-<linearGradient id="trail0" gradientUnits="userSpaceOnUse" x1="1365" y1="155" x2="945" y2="485"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail1" gradientUnits="userSpaceOnUse" x1="1146" y1="282" x2="846" y2="522"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail2" gradientUnits="userSpaceOnUse" x1="1448" y1="416" x2="1108" y2="686"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail3" gradientUnits="userSpaceOnUse" x1="1514" y1="546" x2="1314" y2="706"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail0" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="899" y2="564"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail1" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="1125" y2="741"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <filter id="grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="soft"/>
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"/>
@@ -12,17 +10,17 @@
 <feComposite in="soft" in2="mask" operator="in" result="grained"/>
 <feComposite in="soft" in2="grained" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="faceHi" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face1" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
-<feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.34"/></feComponentTransfer>
+<feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
 <feGaussianBlur in="body" stdDeviation="2.5" result="bs"/>
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" stitchTiles="stitch" result="n"/>
 <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="m"/>
 <feComposite in="bs" in2="m" operator="in" result="g"/>
 <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="faceLo" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face2" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
 <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
@@ -32,32 +30,71 @@
 <feComposite in="bs" in2="m" operator="in" result="g"/>
 <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
+<filter id="face3" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+<feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
+<feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+<feGaussianBlur in="body" stdDeviation="2.5" result="bs"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="17" stitchTiles="stitch" result="n"/>
+<feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="m"/>
+<feComposite in="bs" in2="m" operator="in" result="g"/>
+<feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
+</filter>
+<filter id="face4" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+<feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
+<feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
+<feGaussianBlur in="body" stdDeviation="2.5" result="bs"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="19" stitchTiles="stitch" result="n"/>
+<feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="m"/>
+<feComposite in="bs" in2="m" operator="in" result="g"/>
+<feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
+</filter>
 </defs>
 <g filter="url(#grain)" opacity="0.8">
-<polygon fill="url(#trail0)" points="1180.0,92.0 1418.0,58.0 998.0,388.0 760.0,422.0"/>
-<polygon fill="url(#trail0)" points="1418.0,58.0 1542.0,150.0 1122.0,480.0 998.0,388.0"/>
-<polygon fill="url(#trail0)" points="1542.0,150.0 1452.0,252.0 1032.0,582.0 1122.0,480.0"/>
-<polygon fill="url(#trail0)" points="1452.0,252.0 1232.0,222.0 812.0,552.0 1032.0,582.0"/>
-<polygon fill="url(#trail0)" points="1232.0,222.0 1180.0,92.0 760.0,422.0 812.0,552.0"/>
-<polygon fill="url(#trail1)" points="1058.0,262.0 1180.0,222.0 880.0,462.0 758.0,502.0"/>
-<polygon fill="url(#trail1)" points="1180.0,222.0 1236.0,304.0 936.0,544.0 880.0,462.0"/>
-<polygon fill="url(#trail1)" points="1236.0,304.0 1110.0,338.0 810.0,578.0 936.0,544.0"/>
-<polygon fill="url(#trail1)" points="1110.0,338.0 1058.0,262.0 758.0,502.0 810.0,578.0"/>
-<polygon fill="url(#trail2)" points="1328.0,386.0 1500.0,352.0 1160.0,622.0 988.0,656.0"/>
-<polygon fill="url(#trail2)" points="1500.0,352.0 1562.0,442.0 1222.0,712.0 1160.0,622.0"/>
-<polygon fill="url(#trail2)" points="1562.0,442.0 1402.0,484.0 1062.0,754.0 1222.0,712.0"/>
-<polygon fill="url(#trail2)" points="1402.0,484.0 1328.0,386.0 988.0,656.0 1062.0,754.0"/>
-<polygon fill="url(#trail3)" points="1468.0,528.0 1538.0,510.0 1338.0,670.0 1268.0,688.0"/>
-<polygon fill="url(#trail3)" points="1538.0,510.0 1562.0,566.0 1362.0,726.0 1338.0,670.0"/>
-<polygon fill="url(#trail3)" points="1562.0,566.0 1490.0,582.0 1290.0,742.0 1362.0,726.0"/>
-<polygon fill="url(#trail3)" points="1490.0,582.0 1468.0,528.0 1268.0,688.0 1290.0,742.0"/>
+<polygon fill="url(#trail0)" points="1150.0,118.0 1262.0,64.0 802.0,424.0 690.0,478.0"/>
+<polygon fill="url(#trail0)" points="1262.0,64.0 1338.0,104.0 878.0,464.0 802.0,424.0"/>
+<polygon fill="url(#trail0)" points="1338.0,104.0 1446.0,52.0 986.0,412.0 878.0,464.0"/>
+<polygon fill="url(#trail0)" points="1446.0,52.0 1556.0,128.0 1096.0,488.0 986.0,412.0"/>
+<polygon fill="url(#trail0)" points="1556.0,128.0 1512.0,196.0 1052.0,556.0 1096.0,488.0"/>
+<polygon fill="url(#trail0)" points="1512.0,196.0 1574.0,262.0 1114.0,622.0 1052.0,556.0"/>
+<polygon fill="url(#trail0)" points="1574.0,262.0 1446.0,300.0 986.0,660.0 1114.0,622.0"/>
+<polygon fill="url(#trail0)" points="1446.0,300.0 1380.0,352.0 920.0,712.0 986.0,660.0"/>
+<polygon fill="url(#trail0)" points="1380.0,352.0 1268.0,306.0 808.0,666.0 920.0,712.0"/>
+<polygon fill="url(#trail0)" points="1268.0,306.0 1168.0,330.0 708.0,690.0 808.0,666.0"/>
+<polygon fill="url(#trail0)" points="1168.0,330.0 1206.0,238.0 746.0,598.0 708.0,690.0"/>
+<polygon fill="url(#trail0)" points="1206.0,238.0 1150.0,118.0 690.0,478.0 746.0,598.0"/>
+<polygon fill="url(#trail1)" points="1302.0,470.0 1384.0,428.0 1064.0,678.0 982.0,720.0"/>
+<polygon fill="url(#trail1)" points="1384.0,428.0 1452.0,452.0 1132.0,702.0 1064.0,678.0"/>
+<polygon fill="url(#trail1)" points="1452.0,452.0 1528.0,420.0 1208.0,670.0 1132.0,702.0"/>
+<polygon fill="url(#trail1)" points="1528.0,420.0 1578.0,492.0 1258.0,742.0 1208.0,670.0"/>
+<polygon fill="url(#trail1)" points="1578.0,492.0 1520.0,548.0 1200.0,798.0 1258.0,742.0"/>
+<polygon fill="url(#trail1)" points="1520.0,548.0 1430.0,576.0 1110.0,826.0 1200.0,798.0"/>
+<polygon fill="url(#trail1)" points="1430.0,576.0 1364.0,540.0 1044.0,790.0 1110.0,826.0"/>
+<polygon fill="url(#trail1)" points="1364.0,540.0 1302.0,470.0 982.0,720.0 1044.0,790.0"/>
 </g>
-<polygon filter="url(#faceHi)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1180.0,92.0 1418.0,58.0 1542.0,150.0"/>
-<polygon filter="url(#faceLo)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1180.0,92.0 1542.0,150.0 1452.0,252.0 1232.0,222.0"/>
-<polygon filter="url(#faceHi)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1058.0,262.0 1180.0,222.0 1236.0,304.0"/>
-<polygon filter="url(#faceLo)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1058.0,262.0 1236.0,304.0 1110.0,338.0"/>
-<polygon filter="url(#faceHi)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1328.0,386.0 1500.0,352.0 1562.0,442.0"/>
-<polygon filter="url(#faceLo)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1328.0,386.0 1562.0,442.0 1402.0,484.0"/>
-<polygon filter="url(#faceHi)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1468.0,528.0 1538.0,510.0 1562.0,566.0"/>
-<polygon filter="url(#faceLo)" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="1468.0,528.0 1562.0,566.0 1490.0,582.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1150.0,118.0 1262.0,64.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1262.0,64.0 1338.0,104.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1338.0,104.0 1446.0,52.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1446.0,52.0 1556.0,128.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1556.0,128.0 1512.0,196.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1512.0,196.0 1574.0,262.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1574.0,262.0 1446.0,300.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1446.0,300.0 1380.0,352.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1380.0,352.0 1268.0,306.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1268.0,306.0 1168.0,330.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1168.0,330.0 1206.0,238.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1206.0,238.0 1150.0,118.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1251.4,136.7 1367.9,128.1 1503.1,142.9 1514.2,226.0 1394.0,281.8 1262.5,268.2"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1326.0,154.6 1386.2,150.1 1455.9,157.8 1461.7,200.7 1399.6,229.5 1331.8,222.4"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1302.0,470.0 1384.0,428.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1384.0,428.0 1452.0,452.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1452.0,452.0 1528.0,420.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1528.0,420.0 1578.0,492.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1578.0,492.0 1520.0,548.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1520.0,548.0 1430.0,576.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1430.0,576.0 1364.0,540.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1364.0,540.0 1302.0,470.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1378.2,463.9 1471.2,452.7 1549.4,477.5 1457.6,529.6"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1433.1,462.1 1481.1,456.4 1521.4,469.1 1474.0,496.0"/>
 </svg>
