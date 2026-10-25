@@ -81,8 +81,8 @@ h1, h2 { text-wrap: balance; }
 .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-10); padding-block: 56px var(--space-section); }
 .hero-copy { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
 
-/* The home page is only the hero, so it fills the screen above the footer. */
-.hero-full { min-height: calc(100svh - 88px); display: flex; flex-direction: column; }
+/* The hero fills the first screen. */
+.hero-full { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
 .hero-full > .wrap { flex: 1; display: flex; flex-direction: column; }
 .hero-full .hero-grid { flex: 1; }
 .hero h1 { font-size: clamp(48px, 7vw, 96px); line-height: 0.95; }
@@ -298,12 +298,6 @@ h1, h2 { text-wrap: balance; }
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
 
 /* Thesis page. Effects use sanded glass or the spectrum only, never shadows. */
-/* The Thesis hero fills the first screen; the copy sits centred in the space below the nav. */
-.page-hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
-.page-hero > .wrap { flex: 1; width: 100%; display: flex; flex-direction: column; }
-.page-hero-copy { flex: 1; justify-content: center; display: flex; flex-direction: column; gap: 24px; max-width: 860px; padding-block: 56px 96px; }
-.page-hero h1 { font-size: clamp(44px, 6vw, 84px); line-height: 0.98; }
-.page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
 
 .statements { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-5); }
 /* Vision and mission are cards: black at rest, sanded glass on hover. Only the size differs. */

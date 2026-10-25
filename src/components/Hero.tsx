@@ -7,7 +7,7 @@ import { SpectrumField } from "./SpectrumField";
     and the glass star rising on the right, its misty trail spilling down behind the copy. */
 export function Hero() {
   return (
-    <SpectrumField as="main" className="hero hero-full hero-mark">
+    <SpectrumField as="header" className="hero hero-full hero-mark">
       <div className="wrap">
         <NavBar />
         <div className="hero-grid">

@@ -1,12 +1,6 @@
-import { Hero } from "./components/Hero";
-import { Footer } from "./components/Footer";
+import { ThesisPage } from "./components/ThesisPage";
 
-// For now the home page is just the hero, pointing to the thesis.
+// The site is one page: the hero, then the thesis.
 export default function App() {
-  return (
-    <>
-      <Hero />
-      <Footer />
-    </>
-  );
+  return <ThesisPage />;
 }

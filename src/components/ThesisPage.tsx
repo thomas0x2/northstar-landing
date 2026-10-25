@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { thesisPage } from "../content";
-import { NavBar } from "./NavBar";
+import { Hero } from "./Hero";
 import { ThrownStar } from "./ThrownStar";
 import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
@@ -26,7 +26,8 @@ function Head({ label, title }: { label: string; title?: string }) {
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
-/** The thesis page: a spectrum header, vision and mission, a numbers band, the buildout chart, then the case on black. */
+/** The whole site on one page: the star hero, then the thesis (vision and mission, a numbers band, the buildout chart,
+    then the case on black), the contact section and sources. */
 export function ThesisPage() {
   const v = thesisPage;
   // Arriving with a link straight to a source (or following one later) opens the list first.
@@ -43,15 +44,7 @@ export function ThesisPage() {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <SpectrumField as="header" className="hero page-hero">
-        <div className="wrap">
-          <NavBar />
-          <div className="page-hero-copy">
-            <h1 className="display">{v.title}</h1>
-            <p className="lead">{v.lead}</p>
-          </div>
-        </div>
-      </SpectrumField>
+      <Hero />
       <main id="main">
         <section className="section" aria-label="Vision and mission">
           <div className="wrap statements">
