@@ -45,7 +45,7 @@ export function ThesisPage() {
       <a className="skip" href="#main">Skip to content</a>
       <SpectrumField as="header" className="hero page-hero">
         <div className="wrap">
-          <NavBar current="/thesis/" />
+          <NavBar />
           <div className="page-hero-copy">
             <span className="label">{v.label}</span>
             <h1 className="display">{v.title}</h1>
