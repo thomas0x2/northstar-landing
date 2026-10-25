@@ -337,25 +337,22 @@ h1, h2 { text-wrap: balance; }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
-/* "Why we're doing it": clear blue sky after a storm. The spectrum's own blues wash over ~80% of the card,
-   leaving the warm colours at the bottom edge; clouds are sanded glass capsules and birds are small darts. */
+/* "Why we're doing it": clear blue sky after a storm. The spectrum's blues fill most of the card,
+   with the warm colours at the bottom edge; clouds are sanded glass capsules and birds are small darts. */
 .agency-card > .sky { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.sky {
-  background:
-    radial-gradient(60% 55% at 78% 18%, rgba(0, 150, 214, 0.9), rgba(0, 150, 214, 0) 70%),
-    linear-gradient(180deg, rgba(31, 77, 255, 0.96) 0%, rgba(31, 77, 255, 0.88) 34%, rgba(0, 150, 214, 0.82) 64%, rgba(0, 150, 214, 0) 86%);
-}
+/* The exact spectrum field, scaled up and anchored to its top right so the blues fill ~80% of the card. */
+.agency-card > .field { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
+/* Clouds are faceted shards of sanded glass, like the logo star's trailing sheets. */
 .cloud {
-  position: absolute; border-radius: 999px;
-  background: var(--grain), var(--glass-face);
+  position: absolute;
+  background: var(--grain), linear-gradient(150deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.26) 50%, rgba(255, 255, 255, 0.1) 100%);
   background-size: 160px 160px, 100% 100%;
-  border: 1px solid var(--frost-line);
-  box-shadow: var(--glass-face-glow);
+  backdrop-filter: blur(var(--blur-frost)); -webkit-backdrop-filter: blur(var(--blur-frost));
 }
-.cloud-1 { top: 11%; right: 5%; width: 30%; height: 46px; }
-.cloud-2 { top: calc(11% + 58px); right: 17%; width: 17%; height: 28px; opacity: 0.8; }
-.cloud-3 { top: 44%; right: 3%; width: 20%; height: 34px; opacity: 0.9; }
-.cloud-4 { top: calc(44% + 46px); right: 11%; width: 9%; height: 20px; opacity: 0.7; }
+.cloud-1 { top: 7%; right: 4%; width: 34%; height: 130px; clip-path: polygon(6% 34%, 58% 0, 100% 30%, 86% 100%, 22% 80%); }
+.cloud-2 { top: calc(7% + 112px); right: 25%; width: 15%; height: 76px; clip-path: polygon(0 58%, 44% 0, 100% 34%, 72% 100%); opacity: 0.85; }
+.cloud-3 { top: 46%; right: 3%; width: 21%; height: 96px; clip-path: polygon(12% 18%, 88% 0, 100% 66%, 34% 100%); opacity: 0.9; }
+.cloud-4 { top: calc(46% + 104px); right: 4%; width: 9%; height: 50px; clip-path: polygon(0 40%, 62% 0, 100% 62%, 38% 100%); opacity: 0.75; }
 .flock { position: absolute; top: 27%; left: -12%; width: 150px; height: 70px; animation: flock-cross 46s linear infinite; }
 .bird {
   position: absolute; width: 18px; height: 12px; background: var(--ink);
@@ -379,8 +376,8 @@ h1, h2 { text-wrap: balance; }
 /* On phones the clouds and birds sit in a band above the copy. */
 @media (max-width: 640px) {
   .agency { padding-top: 170px; }
-  .cloud-1 { top: 34px; width: 52%; height: 34px; }
-  .cloud-2 { top: 80px; right: 30%; width: 30%; height: 22px; }
+  .cloud-1 { top: 18px; width: 58%; height: 90px; }
+  .cloud-2 { top: 70px; right: 52%; width: 30%; height: 56px; }
   .cloud-3, .cloud-4 { display: none; }
   .flock { top: 40px; transform: scale(0.8); }
 }
