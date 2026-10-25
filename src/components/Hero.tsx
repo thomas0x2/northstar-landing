@@ -1,5 +1,4 @@
 import { hero } from "../content";
-import { Button } from "./Button";
 import { NavBar } from "./NavBar";
 import { SpectrumField } from "./SpectrumField";
 
@@ -14,9 +13,6 @@ export function Hero() {
           <div className="hero-copy">
             <h1 className="display">{hero.title}</h1>
             <p className="lead">{hero.lead}</p>
-            <div className="btn-row">
-              <Button href={hero.primary.href} variant="text">{hero.primary.label}</Button>
-            </div>
           </div>
           <div className="hero-visual hero-star">
             <img
