@@ -4,22 +4,20 @@ import { CLOUD_POINTS } from "./cloudPoints";
 // In the cloud SVG's own space, so this layer lines up with glass-shards.svg.
 const W = 1600;
 const H = 600;
-const REACH = 130; // how far a sheet stretches from the star to a cloud corner
+const REACH = 125; // how far a sheet stretches from the star to a cloud corner
 const SIZE = 46;
-const SECONDS = 40; // one pass across the sky
+const SECONDS = 36; // one loop through the clouds
 
 type P = [number, number];
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const cross = (o: P, a: P, b: P) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
 const pts = (ps: P[]) => ps.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 
-/** Where the star is at time t (0 to 1): rising through the clouds beside the heading, then right
-    to left along the band of clouds above the copy, like the trails. */
+/** Where the star is at time t (0 to 1): a closed loop through the clouds beside the heading, right to
+    left along the top like the trails, then back along the row below, so the animation loops seamlessly. */
 function path(t: number): P {
-  const x = W + 140 - t * (W + 280);
-  const climb = smooth(Math.min(1, Math.max(0, (W + 140 - x) / 520)));
-  const y = 250 - climb * 210 + 10 * Math.sin(t * Math.PI * 8);
-  return [x, y];
+  const a = t * Math.PI * 2;
+  return [1150 + 280 * Math.cos(a), 120 - 80 * Math.sin(a) + 8 * Math.sin(a * 3)];
 }
 
 // The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
@@ -35,8 +33,10 @@ const STAR = LOGO.map(([x, y]): [number, number] => [((x - 423) * SIZE) / 365, (
 /** The star tumbling in 3D (so its angles change as it turns) and seen in perspective: its ten points,
     the curved outline through them, and how squarely it faces us (1 face-on, 0 edge-on). */
 function star(t: number, [x, y]: P) {
-  // It tilts up to about 55 degrees either way while it spins, so it never turns fully edge-on.
-  const ax = 0.95 * Math.sin(t * Math.PI * 2 * 3.1), ay = 0.95 * Math.sin(t * Math.PI * 2 * 2.3), az = t * Math.PI * 2 * 1.3;
+  // It sways only about 25 degrees out of the page, so it always reads as the logo star, while turning
+  // once around per loop. Whole-number frequencies, so every angle is back where it started each loop.
+  const a = t * Math.PI * 2;
+  const ax = 0.42 * Math.sin(a * 2), ay = 0.42 * Math.sin(a * 3 + 1), az = a;
   const [sx, cx, sy, cy, sz, cz] = [Math.sin(ax), Math.cos(ax), Math.sin(ay), Math.cos(ay), Math.sin(az), Math.cos(az)];
   const focal = SIZE * 4;
   const all = STAR.map(([px, py]): P => {
@@ -73,8 +73,8 @@ export function GlassLinks() {
       const centre = path(t);
       const { tips, d: outline, facing } = star(t, centre);
 
-      // At most one sheet per edge, to the nearest cloud corner it faces, and only over a short reach,
-      // so there are only a few at a time and the star itself stays visible.
+      // At most one sheet per point of the star (from whichever of its two edges is closer), to the
+      // nearest cloud corner it faces, and only over a short reach, so the star itself stays visible.
       const best = new Map<number, { k: number; p: P; w: number }>();
       for (const p of CLOUD_POINTS) {
         for (let k = 0; k < 10; k++) {
@@ -85,7 +85,8 @@ export function GlassLinks() {
           const d = Math.hypot((a[0] + b[0]) / 2 - p[0], (a[1] + b[1]) / 2 - p[1]);
           if (d >= REACH) continue;
           const w = smooth(1 - d / REACH);
-          if (w > (best.get(k)?.w ?? 0)) best.set(k, { k, p, w });
+          const tip = k % 2 === 1 ? k : (k + 9) % 10;
+          if (w > (best.get(tip)?.w ?? 0)) best.set(tip, { k, p, w });
         }
       }
       let out = "";
