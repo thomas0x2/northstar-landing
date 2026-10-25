@@ -1,6 +1,6 @@
 import { thesisPage } from "../content";
 import { NavBar } from "./NavBar";
-import { GlassLinks } from "./GlassLinks";
+import { ThrownStar } from "./ThrownStar";
 import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
 import { Footer } from "./Footer";
@@ -180,7 +180,7 @@ export function ThesisPage() {
           <div className="wrap">
             <SpectrumField as="div" className="test-card agency-card">
               <img className="field shards" src="/assets/glass-shards.svg" alt="" aria-hidden="true" />
-              <GlassLinks />
+              <ThrownStar />
               <div className="agency">
                 <Head label={v.agency.label} title={v.agency.title} />
                 <div className="prose">
