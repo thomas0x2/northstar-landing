@@ -3,6 +3,7 @@ import { NavBar } from "./NavBar";
 import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
 import { Footer } from "./Footer";
+import { CapexChart } from "./CapexChart";
 
 /** A superscript link to an entry in the sources list at the foot of the page. */
 function Cite({ id }: { id: number }) {
@@ -20,7 +21,7 @@ function Head({ label, title }: { label: string; title?: string }) {
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
-/** The thesis page: a spectrum header, vision and mission, a numbers band, then the case on black. */
+/** The thesis page: a spectrum header, vision and mission, a numbers band, the buildout chart, then the case on black. */
 export function ThesisPage() {
   const v = thesisPage;
   return (
@@ -69,7 +70,17 @@ export function ThesisPage() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" aria-labelledby="buildout-title">
+          <div className="wrap">
+            <div className="section-head">
+              <span className="label">{v.buildout.label}</span>
+              <h2 className="display" id="buildout-title">{v.buildout.title}</h2>
+            </div>
+            <CapexChart />
+          </div>
+        </section>
+
+        <section className="section section-flush">
           <div className="wrap">
             <Head label={v.thesis.label} title={v.thesis.title} />
             <div className="cards">
