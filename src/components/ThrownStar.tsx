@@ -46,9 +46,10 @@ const SPRITE = 160; // glass-star.svg's span, in the sky's units, at scale 1
 const MAX_SCALE = 0.85 / NEAR; // the sprite is laid out this big, so it's only ever scaled down and stays sharp
 // glass-star.svg is a regular star seen square-on, one tip pointing down. Its plane is tipped back TIP_DEG
 // (bottom edge toward us), seen from close up (a camera DISTANCE tip radii away), then turned TURN_DEG so the
-// near edge faces up and right, as the long arm does in the logo. The close camera is what makes the arm
-// swinging toward us look longest and the far ones short, as in the logo.
-const TIP_DEG = 30, DISTANCE = 2, TURN_DEG = -122;
+// near edge faces down and right. That is the logo's own view: its five tips lie on an ellipse 0.72 as tall as
+// it is wide (here 0.73), sitting off-centre toward the lower right, the side nearest us. The camera is close
+// enough that, at this slant, the arm swinging toward us is always the longest.
+const TIP_DEG = 50, DISTANCE = 1.6, TURN_DEG = -28;
 const TIP_R = 56 / SPRITE; // the tips' radius, as a share of the sprite's width
 
 /** The star's CSS transform at time t, with k CSS pixels to one sky unit and the sprite px wide. Read right
