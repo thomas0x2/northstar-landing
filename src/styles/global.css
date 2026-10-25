@@ -275,7 +275,6 @@ h1, h2 { text-wrap: balance; }
 .nav-links a[aria-current="page"]::before { opacity: 1; transform: none; }
 .cards-four { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .cards-four h3 { font-size: 21px; }
-.aside { margin-top: var(--space-6); color: var(--ink-subtle); font-size: 15px; }
 
 /* Numbers band: stats on sanded glass over the spectrum. */
 .numbers { padding: clamp(28px, 6vw, 80px); }

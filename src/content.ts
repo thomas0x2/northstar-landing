@@ -102,14 +102,12 @@ export const thesisPage = {
   },
   test: {
     label: "The fit test",
-    title: "Every idea has to pass four questions.",
+    title: "Every idea has to pass three questions.",
     questions: [
       { key: "A", text: "Can it scale to superintelligence?" },
       { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
       { key: "C", text: "If it works, can we understand and steer it?" },
-      { key: "D", text: "Can we test it cheaply now, without the hardware it's built for?" },
     ],
-    note: "If an idea fails the last question, it is parked on the roadmap, not thrown away.",
   },
   loop: {
     label: "Why it hasn't been done",
