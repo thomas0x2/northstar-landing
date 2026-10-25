@@ -38,5 +38,4 @@ npm run preview   # serve the production build locally
 
 ## Before launch
 
-- Replace `[CONTACT EMAIL]` in `src/content.ts` with the real address and link.
 - Set an absolute URL for `og:image` in `index.html` once the domain is known.
