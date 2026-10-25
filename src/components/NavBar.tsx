@@ -1,5 +1,4 @@
 import { nav } from "../content";
-import { Button } from "./Button";
 
 /** `current` is the href of the page being shown, marked for assistive tech. */
 export function NavBar({ current }: { current?: string }) {
@@ -13,7 +12,6 @@ export function NavBar({ current }: { current?: string }) {
         {nav.links.map((l) => (
           <a key={l.label} href={l.href} aria-current={l.href === current ? "page" : undefined}>{l.label}</a>
         ))}
-        <Button href={nav.cta.href} variant="frost">{nav.cta.label}</Button>
       </nav>
     </div>
   );

@@ -72,7 +72,6 @@ h1, h2 { text-wrap: balance; }
 .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: 0.02em; line-height: 1; }
 .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
 .nav-links a { padding: 12px 14px; text-decoration: none; font-weight: 600; font-size: 15px; }
-.nav-links .btn-frost { padding: 12px 20px; min-height: 44px; font-size: 15px; margin-left: var(--space-2); }
 
 /* Hero */
 .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-10); padding-block: 56px var(--space-section); }
@@ -220,7 +219,6 @@ h1, h2 { text-wrap: balance; }
 /* Sheet size per element: an even margin on every side, so it stays centred. */
 .btn { --sheet-inset: -7px -10px; }
 .nav-links a { --sheet-inset: 1px -4px; }
-.nav-links .btn { --sheet-inset: -6px -9px; }
 .brand { --sheet-inset: -6px -14px; }
 .card { --sheet-inset: -10px; --sheet-radius: 16px; }
 .frost-panel { --sheet-inset: -8px; --sheet-radius: 14px; }
@@ -231,6 +229,40 @@ h1, h2 { text-wrap: balance; }
     transform: none;
   }
 }
+
+/* White buttons on black: instead of the glass sheet, the face itself fills with the logo spectrum on hover.
+   (On the spectrum field the sheet stays, since a spectrum face would vanish into the background.) */
+.btn-primary:not(.spectrum *)::before {
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--grain), url("/assets/spectrum-field.svg") center / cover no-repeat;
+  background-size: 160px 160px, cover;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  transform: none;
+  transition: opacity 0.35s ease;
+}
+.btn-primary:not(.spectrum *)::after { z-index: -2; }
+.btn-primary:not(.spectrum *) { transition: color 0.35s ease; }
+.btn-primary:not(.spectrum *):hover,
+.btn-primary:not(.spectrum *):focus-visible { color: var(--ink); }
+
+/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass,
+   and its title fills with the spectrum together with the numeral. */
+.card::before {
+  inset: -1.5px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1.5px solid var(--frost-line);
+  background: var(--grain), var(--glass-face);
+  background-size: 160px 160px, 100% 100%;
+  box-shadow: var(--glass-face-glow);
+  transform: none;
+  transition: opacity 0.35s ease;
+}
+.card::after { z-index: -2; }
+.card:hover h3 { color: transparent; }
 
 /* Keep white labels legible on glass over the bright parts of the spectrum. */
 /* .btn-frost and .frost-panel */

@@ -3,17 +3,13 @@
 export const nav = {
   links: [
     { label: "Thesis", href: "/thesis/" },
-    { label: "Research", href: "/#test" },
-    { label: "Team", href: "/#join" },
   ],
-  cta: { label: "Work with us", href: "/#join" },
 };
 
 export const hero = {
   title: "Beyond the transformer.",
   lead: "Northstar searches for new paradigms of intelligence: architectures and learning rules that today's hardware was never built to run.",
   primary: { label: "Read the thesis", href: "#thesis" },
-  secondary: { label: "Work with us", href: "#join" },
 };
 
 export const thesis = {
@@ -28,10 +24,12 @@ export const thesis = {
 
 export const test = {
   label: "The test",
-  title: "Every idea we pursue has to pass two questions.",
+  title: "Every idea we pursue has to pass three questions.",
+  // Shared with the thesis page's fit test, so both pages always ask the same questions.
   questions: [
     { key: "A", text: "Can it scale to superintelligence?" },
-    { key: "B", text: "Would today's frontier labs avoid it because of their lock-in?" },
+    { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
+    { key: "C", text: "If it works, can we understand and steer it?" },
   ],
 };
 
@@ -103,11 +101,7 @@ export const thesisPage = {
   test: {
     label: "The fit test",
     title: "Every idea has to pass three questions.",
-    questions: [
-      { key: "A", text: "Can it scale to superintelligence?" },
-      { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
-      { key: "C", text: "If it works, can we understand and steer it?" },
-    ],
+    questions: test.questions,
   },
   loop: {
     label: "Why it hasn't been done",
