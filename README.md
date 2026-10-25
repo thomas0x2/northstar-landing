@@ -31,6 +31,7 @@ npm run preview   # serve the production build locally
 - White is only for text and the primary button. Spectrum colors never appear as UI accents.
 - The logo is the sanded glass star; the chrome star is the hero visual only.
 - Fonts: Oxanium Bold (display), Manrope (body).
+- Headings (`h1`–`h3`) on black fill with the spectrum on hover (`spectrum-field.svg` clipped to the text), the same effect as the card numerals. Not on the spectrum field itself.
 - No shadows (box, text or drop). For depth or emphasis, use the sanded glass from the logo (`--glass-face`, `--glass-sheet`, `--grain`) or the spectrum field.
 
 ## Before launch

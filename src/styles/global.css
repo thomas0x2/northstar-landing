@@ -316,3 +316,18 @@ h1, h2 { text-wrap: balance; }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
+
+/* Headings fill with the exact logo spectrum on hover, like the card numerals.
+   Not on the spectrum field itself, where spectrum text would disappear into the background. */
+:where(h1, h2, h3):not(.spectrum *) {
+  width: fit-content;
+  max-width: 100%;
+  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  color: var(--ink);
+  transition: color 0.35s ease;
+}
+:where(h1, h2, h3):not(.spectrum *):hover { color: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  :where(h1, h2, h3):not(.spectrum *) { transition: none; }
+}
