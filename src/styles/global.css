@@ -273,7 +273,6 @@ h1, h2 { text-wrap: balance; }
 .method p { color: var(--ink-muted); }
 
 .nav-links a[aria-current="page"]::before { opacity: 1; transform: none; }
-.cards-five { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 .cards-four { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .cards-four h3 { font-size: 21px; }
 .aside { margin-top: var(--space-6); color: var(--ink-subtle); font-size: 15px; }

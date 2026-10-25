@@ -96,7 +96,7 @@ export function ThesisPage() {
         <section className="section">
           <div className="wrap">
             <Head label={v.lockins.label} title={v.lockins.title} />
-            <div className="cards cards-five">
+            <div className="cards cards-four">
               {v.lockins.items.map((l, i) => (
                 <article className="card" key={l.title}>
                   <div className="num">{num(i)}</div>

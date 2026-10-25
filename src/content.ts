@@ -69,7 +69,7 @@ export const thesisPage = {
     label: "The bet",
     title: "Some paradigms that don't fit today's hardware will scale further than what exists.",
     body: [
-      "Data centers, chips, training stacks and products all assume the same things: dense matrix math on GPUs, trained with backpropagation, predicting the next token. That stack is now worth a combined $725 billion of capital spending in a single year.",
+      "Data centers, chips, training stacks and products all assume the same things: dense matrix math on GPUs, trained with backpropagation, with memory and compute kept apart. That stack is now worth a combined $725 billion of capital spending in a single year.",
       "If an architecture exists that is incompatible with that hardware and scales better, the frontier labs are structurally unlikely to pursue it: doing so would strand their own investment. That is how incumbents get beaten, where their own commitments stop them from following. We have nothing to protect.",
     ],
   },
@@ -81,7 +81,6 @@ export const thesisPage = {
       { title: "Backprop with global gradients", stuck: "The whole training stack assumes it.", explore: "Local and biologically plausible learning rules." },
       { title: "Separate memory and compute", stuck: "Data centers, HBM and chip design.", explore: "In-memory, analog and neuromorphic compute." },
       { title: "Synchronous digital computation", stuck: "All current hardware.", explore: "Asynchronous, analog and physical computing." },
-      { title: "Next-token prediction on text", stuck: "Products and data pipelines.", explore: "Learning from experience and world models." },
     ],
   },
   edge: {
