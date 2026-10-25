@@ -126,12 +126,6 @@ export function ThesisPage() {
                 </article>
               ))}
             </div>
-            <div className="lockins-learning">
-              <h3>{v.lockins.learning.title}</h3>
-              <div className="prose">
-                {v.lockins.learning.body.map((p) => <p key={p}>{p}</p>)}
-              </div>
-            </div>
           </div>
         </section>
 
