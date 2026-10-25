@@ -20,9 +20,6 @@ export const thesisPage = {
     title: "The incumbents are pouring concrete around one paradigm.",
     stats: [
       { value: "$725B", text: "Planned 2026 capital spending of Microsoft, Alphabet, Amazon and Meta, up from about $410B in 2025.", source: 1 },
-      { value: "$329B", text: "Data-center leases Microsoft has signed that haven't started yet. They begin between 2027 and 2033 and run for up to 20 years.", source: 13 },
-      { value: "3×", text: "Microsoft's capital spending in fiscal 2026 ($116B) against its yearly AI revenue ($37B).", source: [8, 14] },
-      { value: "$34.3B", text: "Microsoft's yearly depreciation in fiscal 2026, up from $15.2B two years earlier: the cost of hardware that has to keep earning for years.", source: 15 },
       { value: "$500B", text: "Committed to Stargate, a single US AI data-center buildout, over four years.", source: 2 },
       { value: "$193.7B", text: "Nvidia's data-center revenue in its 2026 fiscal year, up 68% in a year.", source: 3 },
       { value: "945 TWh", text: "Projected data-center electricity use in 2030, more than double the 415 TWh of 2024.", source: 4 },
@@ -150,9 +147,6 @@ export const thesisPage = {
     { id: 10, text: "Amazon, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724&type=10-&dateb=&owner=include&count=40" },
     { id: 11, text: "Meta Platforms, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment (latest restated values)", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-&dateb=&owner=include&count=40" },
     { id: 12, text: "Raichle & Gusnard, \"Appraising the brain's energy budget\", PNAS, 2002: the brain is about 2% of body weight and uses about 20% of the body's energy", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC124895" },
-    { id: 13, text: "Microsoft, Form 10-K for fiscal 2026, note on leases: $329.1B of leases, primarily for datacenters, not yet commenced at June 30, 2026", href: "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R23.htm" },
-    { id: 14, text: "Microsoft, results for the third quarter of fiscal 2026 (SEC Form 8-K): AI business annual revenue run rate above $37 billion, April 2026", href: "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526191457/msft-ex99_1.htm" },
-    { id: 15, text: "Microsoft, Form 10-K for fiscal 2026, property and equipment: depreciation expense of $34.3B (2026), $22.0B (2025) and $15.2B (2024)", href: "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R62.htm" },
   ],
 };
 
