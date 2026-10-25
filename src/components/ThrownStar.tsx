@@ -44,22 +44,21 @@ function path(t: number) {
 const TURNS = 8; // a slow, steady turn about its own centre over the whole flight
 const SPRITE = 160; // glass-star.svg's span, in the sky's units, at scale 1
 const MAX_SCALE = 0.85 / NEAR; // the sprite is laid out this big, so it's only ever scaled down and stays sharp
-// glass-star.svg is the star seen square-on, its tips all on one circle. This tilts it back to the slant it
-// has in the logo, where that circle is seen as the ellipse through the tips (see scripts/glass-star.py).
-const TILT = [0.8673, -0.4602, 0.3307, 0.6232]; // columns: where the sprite's x and y axes land
+// glass-star.svg is the star seen square-on, its tips all on one circle. In the logo that circle is seen at a
+// slant, as the ellipse through the tips (see scripts/glass-star.py): its plane is turned TURN_DEG in the
+// picture and tipped back TIP_DEG, and the star is SPAN of its square-on size.
+const TURN_DEG = -27.95, TIP_DEG = 44.06, SPAN = 0.982;
 
-/** The star's CSS transform at time t, with k CSS pixels to one sky unit: it spins about its centre in its
-    own plane, so all five tips run round the same circle, then that plane is tilted to the logo's slant and
-    the star is sized and put in place. The plane never changes, only the spin and the flight. */
-function transform(t: number, k: number) {
+/** The star's CSS transform at time t, with k CSS pixels to one sky unit, as a real 3D turn: the star spins
+    about its centre in its own plane (so all five tips run round the same circle), and that plane is tipped
+    back to the logo's slant and seen in perspective, so the angles between its edges keep changing as it
+    turns. The browser projects the one pre-rendered image on the GPU, so nothing repaints. */
+function transform(t: number, k: number, px: number) {
   const { pos: [x, y], scale } = path(t);
-  const spin = -Math.PI * 2 * TURNS * t;
-  const [ss, cs] = [Math.sin(spin), Math.cos(spin)];
-  const m = scale / MAX_SCALE;
-  const [t11, t21, t12, t22] = TILT;
-  // tilt · spin, scaled
-  const [a, b, c, d] = [m * (t11 * cs + t12 * ss), m * (t21 * cs + t22 * ss), m * (t12 * cs - t11 * ss), m * (t22 * cs - t21 * ss)];
-  return `matrix(${a.toFixed(4)},${b.toFixed(4)},${c.toFixed(4)},${d.toFixed(4)},${(x * k).toFixed(1)},${(y * k).toFixed(1)})`;
+  const spin = -360 * TURNS * t;
+  const m = (SPAN * scale) / MAX_SCALE;
+  return `translate(${(x * k).toFixed(1)}px,${(y * k).toFixed(1)}px) perspective(${(px * 2.2).toFixed(0)}px) ` +
+    `rotate(${TURN_DEG}deg) scale(${m.toFixed(4)}) rotateX(${TIP_DEG}deg) rotate(${spin.toFixed(2)}deg)`;
 }
 
 /** A small glass star, like the logo, swooping across the sky through the clouds. The star is one
@@ -74,15 +73,16 @@ export function ThrownStar() {
     let raf = 0;
     let visible = false;
     let k = 1;
+    let size = 0;
     const start = performance.now();
 
     const fit = () => {
       k = box.clientWidth / W;
-      const size = SPRITE * MAX_SCALE * k;
+      size = SPRITE * MAX_SCALE * k;
       Object.assign(img.style, { width: `${size}px`, height: `${size}px`, left: `${-size / 2}px`, top: `${-size / 2}px` });
     };
     const frame = (now: number) => {
-      img.style.transform = transform(((now - start) / 1000 / SECONDS) % 1, k);
+      img.style.transform = transform(((now - start) / 1000 / SECONDS) % 1, k, size);
       raf = visible ? requestAnimationFrame(frame) : 0;
     };
 
