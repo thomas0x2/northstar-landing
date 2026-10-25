@@ -248,8 +248,8 @@ h1, h2 { text-wrap: balance; }
 .btn-primary:not(.spectrum *):hover,
 .btn-primary:not(.spectrum *):focus-visible { color: var(--ink); }
 
-/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass,
-   and its title fills with the spectrum together with the numeral. */
+/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass and the numeral
+   fills with the spectrum; the title stays white, since spectrum text on grey glass is hard to read. */
 .card::before {
   inset: -1.5px;
   z-index: -1;
@@ -262,7 +262,7 @@ h1, h2 { text-wrap: balance; }
   transition: opacity 0.35s ease;
 }
 .card::after { z-index: -2; }
-.card:hover h3 { color: transparent; }
+.card h3, .card h3:hover { background: none; color: var(--ink); }
 
 /* Keep white labels legible on glass over the bright parts of the spectrum. */
 /* .btn-frost and .frost-panel */
