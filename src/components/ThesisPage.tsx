@@ -173,11 +173,11 @@ export function ThesisPage() {
 
         <section className="section">
           <div className="wrap">
-            <Head label={v.risks.label} />
-            <ul className="risks">
-              {v.risks.items.map((r) => <li key={r}>{r}</li>)}
-            </ul>
-            <p className="statement-line display">{v.risks.hedge}</p>
+            <Head label={v.agency.label} title={v.agency.title} />
+            <div className="prose">
+              {v.agency.body.map((p) => <p key={p}>{p}</p>)}
+            </div>
+            <p className="agency-close display">{v.agency.close}</p>
           </div>
         </section>
 

@@ -311,9 +311,8 @@ h1, h2 { text-wrap: balance; }
 .split .section-head h2 { font-size: clamp(28px, 3vw, 40px); }
 .body-muted { font-size: 18px; color: var(--ink-muted); }
 
-.risks { margin: 0 0 var(--space-10); padding-left: 1.2em; max-width: 760px; display: flex; flex-direction: column; gap: var(--space-3); font-size: 19px; color: var(--ink-muted); }
-.statement-line { max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
 
 .sources { margin: var(--space-5) 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: var(--space-2); font-size: 14px; color: var(--ink-subtle); }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
+.agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
