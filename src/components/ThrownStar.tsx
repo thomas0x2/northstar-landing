@@ -4,18 +4,50 @@ import { useEffect, useRef } from "react";
 const W = 1600;
 const H = 600;
 const SIZE = 56;
-const SECONDS = 36; // one throw across the sky
+const SECONDS = 30; // one flight across the sky
 
 type P = [number, number];
 
-/** Where the star is at time t (0 to 1), and how near: thrown slowly from beyond the right edge, it rises
-    through the clouds beside the heading and flattens out along the top as it leaves past the left edge,
-    drifting away from us as it goes. It's offscreen when one throw ends and the next begins, so it loops. */
+// The flight, as in the Paramount intro: the star swoops in close from below the right edge and sweeps
+// away from us along a long arc over the top, leaving small and far past the left edge. On screen that arc
+// is this curve; its depth sets the star's size, and since the star moves at a steady speed through space,
+// it races by while near and drifts once far away.
+const ARC: P[] = [[1760, 600], [1240, 120], [640, -10], [-90, 40]];
+const NEAR = 0.32, FAR = 2.3; // distance from us at the start and end of the arc
+
+function onArc(u: number): P {
+  const v = 1 - u;
+  const [a, b, c, d] = ARC;
+  const w = [v * v * v, 3 * v * v * u, 3 * v * u * u, u * u * u];
+  return [w[0] * a[0] + w[1] * b[0] + w[2] * c[0] + w[3] * d[0], w[0] * a[1] + w[1] * b[1] + w[2] * c[1] + w[3] * d[1]];
+}
+const depth = (u: number) => NEAR + (FAR - NEAR) * Math.pow(u, 1.25);
+
+// Time along the arc: each step on screen, scaled up by its depth, is the same distance through space.
+const STEPS = 400;
+const CLOCK = (() => {
+  const c = [0];
+  for (let i = 1; i <= STEPS; i++) {
+    const [p, q] = [onArc((i - 1) / STEPS), onArc(i / STEPS)];
+    c.push(c[i - 1] + Math.hypot(q[0] - p[0], q[1] - p[1]) * depth((i - 0.5) / STEPS));
+  }
+  return c.map((x) => x / c[STEPS]);
+})();
+
+/** Where the star is at time t (0 to 1): its place on screen, its size, which way it's heading, and how far
+    it is banked into the curve. It's offscreen when one flight ends and the next begins, so it loops. */
 function path(t: number) {
-  const x = W + 120 - t * (W + 240);
-  // Rising and slowing, like a throw near the top of its arc: steep at first, level as it leaves.
-  const y = 270 - 255 * (2 * t - t * t);
-  return { pos: [x, y] as P, scale: 1.15 - 0.35 * t };
+  let i = 1;
+  while (i < STEPS && CLOCK[i] < t) i++;
+  const u = (i - 1 + (t - CLOCK[i - 1]) / (CLOCK[i] - CLOCK[i - 1] || 1)) / STEPS;
+  const [p, q] = [onArc(Math.max(0, u - 0.002)), onArc(Math.min(1, u + 0.002))];
+  return {
+    pos: onArc(u),
+    scale: 0.85 / depth(u),
+    heading: Math.atan2(q[1] - p[1], q[0] - p[0]),
+    // Banked hard while it swings past us, settling nearly face-on as it recedes.
+    bank: 0.95 - 0.7 * u,
+  };
 }
 
 // The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
@@ -27,27 +59,24 @@ const LOGO: [number, number][] = [
   [402.8, 234.6], [438.8, 165.8],
 ];
 const STAR = LOGO.map(([x, y]): [number, number] => [((x - 437.7) * SIZE) / 365, ((y - 376.7) * SIZE) / 365]);
-const TURNS = 27; // spins per throw, a steady three quarters of a turn a second
+const TURNS = 8; // a slow, steady turn about its own centre over the whole flight
 
-// The plane the star flies in: tipped back, as a thrown star flies nearly flat, so we see its face at a
-// slant from just below, and turned a little toward the direction of the throw. It holds this plane.
-const TIP = 1.05, TURN = -0.25;
-
-/** The star in flight, seen in perspective: the curved outline through its points. It spins steadily
-    about its own centre on the axis square to its face, like a ninja star, while that face stays tipped. */
-function star(t: number, [x, y]: P, scale: number) {
+/** The star in flight, seen in perspective: the curved outline through its points. It turns slowly about
+    the axis square to its face, and that face is banked about the line it's travelling along. */
+function star(t: number, { pos: [x, y], scale, heading, bank }: ReturnType<typeof path>) {
   const spin = -Math.PI * 2 * TURNS * t;
-  const [ss, cs, sx, cx, sy, cy] = [Math.sin(spin), Math.cos(spin), Math.sin(TIP), Math.cos(TIP), Math.sin(TURN), Math.cos(TURN)];
+  const [ss, cs, sb, cb, sh, ch] = [Math.sin(spin), Math.cos(spin), Math.sin(bank), Math.cos(bank), Math.sin(heading), Math.cos(heading)];
   const focal = SIZE * 6;
   const all = STAR.map(([px, py]): P => {
     [px, py] = [px * scale, py * scale];
-    // Spin in the star's own plane, then tip that plane back and turn it.
+    // Spin in the star's own plane, bank it about its direction of travel (here the x axis), then turn
+    // the whole thing to face along its heading.
     [px, py] = [px * cs - py * ss, px * ss + py * cs];
-    let pz = 0;
-    [py, pz] = [py * cx - pz * sx, py * sx + pz * cx];
-    [px, pz] = [px * cy + pz * sy, -px * sy + pz * cy];
+    const pz = py * sb;
+    py = py * cb;
     const s = focal / (focal + pz);
-    return [x + px * s, y + py * s];
+    [px, py] = [px * s, py * s];
+    return [x + px * ch - py * sh, y + px * sh + py * ch];
   });
   const f = (q: P) => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`;
   let d = `M${f(all[19])}`;
@@ -55,7 +84,7 @@ function star(t: number, [x, y]: P, scale: number) {
   return d + " Z";
 }
 
-/** A small glass star, like the logo, thrown slowly across the sky through the clouds. */
+/** A small glass star, like the logo, swooping across the sky through the clouds. */
 export function ThrownStar() {
   const svg = useRef<SVGSVGElement>(null);
   const body = useRef<SVGPathElement>(null);
@@ -68,8 +97,7 @@ export function ThrownStar() {
 
     const frame = (now: number) => {
       const t = ((now - start) / 1000 / SECONDS) % 1;
-      const { pos, scale } = path(t);
-      body.current?.setAttribute("d", star(t, pos, scale));
+      body.current?.setAttribute("d", star(t, path(t)));
       raf = visible ? requestAnimationFrame(frame) : 0;
     };
 
