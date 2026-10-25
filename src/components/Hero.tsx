@@ -14,7 +14,6 @@ export function Hero() {
             <p className="lead on-spectrum">{hero.lead}</p>
             <div className="btn-row">
               <Button href={hero.primary.href}>{hero.primary.label}</Button>
-              <Button href={hero.secondary.href} variant="frost">{hero.secondary.label}</Button>
             </div>
           </div>
           <div className="hero-visual">

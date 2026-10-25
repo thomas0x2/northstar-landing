@@ -3,17 +3,13 @@
 export const nav = {
   links: [
     { label: "Thesis", href: "/thesis/" },
-    { label: "Research", href: "/#test" },
-    { label: "Team", href: "/#join" },
   ],
-  cta: { label: "Work with us", href: "/#join" },
 };
 
 export const hero = {
   title: "Beyond the transformer.",
   lead: "Northstar searches for new paradigms of intelligence: architectures and learning rules that today's hardware was never built to run.",
   primary: { label: "Read the thesis", href: "#thesis" },
-  secondary: { label: "Work with us", href: "#join" },
 };
 
 export const thesis = {

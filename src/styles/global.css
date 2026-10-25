@@ -72,7 +72,6 @@ h1, h2 { text-wrap: balance; }
 .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: 0.02em; line-height: 1; }
 .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
 .nav-links a { padding: 12px 14px; text-decoration: none; font-weight: 600; font-size: 15px; }
-.nav-links .btn-frost { padding: 12px 20px; min-height: 44px; font-size: 15px; margin-left: var(--space-2); }
 
 /* Hero */
 .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-10); padding-block: 56px var(--space-section); }
@@ -220,7 +219,6 @@ h1, h2 { text-wrap: balance; }
 /* Sheet size per element: an even margin on every side, so it stays centred. */
 .btn { --sheet-inset: -7px -10px; }
 .nav-links a { --sheet-inset: 1px -4px; }
-.nav-links .btn { --sheet-inset: -6px -9px; }
 .brand { --sheet-inset: -6px -14px; }
 .card { --sheet-inset: -10px; --sheet-radius: 16px; }
 .frost-panel { --sheet-inset: -8px; --sheet-radius: 14px; }
