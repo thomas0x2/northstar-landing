@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMin slice">
+  <title>Blue sky breaking through after a storm</title>
+  <!-- Layered over spectrum-field.svg: a clear patch of sky top right, soft clouds parting around it, a few birds. -->
+  <defs>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="haze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+    <radialGradient id="clear" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4fb8ff" stop-opacity="0.75"/>
+      <stop offset="0.6" stop-color="#2a7dff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1f4dff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- The clearing: a brighter, deeper blue opening in the sky. -->
+  <ellipse cx="1240" cy="230" rx="420" ry="260" fill="url(#clear)"/>
+  <ellipse cx="1260" cy="210" rx="200" ry="120" fill="#bfe6ff" opacity="0.22" filter="url(#haze)"/>
+  <!-- The storm clouds, pulling back to the edges. -->
+  <g fill="#ffffff" filter="url(#soft)">
+    <g opacity="0.5">
+      <ellipse cx="900" cy="80" rx="190" ry="60"/>
+      <ellipse cx="1030" cy="50" rx="150" ry="70"/>
+      <ellipse cx="790" cy="110" rx="120" ry="45"/>
+    </g>
+    <g opacity="0.55">
+      <ellipse cx="1560" cy="120" rx="160" ry="80"/>
+      <ellipse cx="1470" cy="70" rx="130" ry="60"/>
+      <ellipse cx="1620" cy="230" rx="120" ry="70"/>
+    </g>
+    <g opacity="0.42">
+      <ellipse cx="1180" cy="470" rx="230" ry="55"/>
+      <ellipse cx="1330" cy="445" rx="170" ry="60"/>
+      <ellipse cx="1470" cy="480" rx="150" ry="45"/>
+    </g>
+    <g opacity="0.3">
+      <ellipse cx="1060" cy="300" rx="110" ry="28"/>
+      <ellipse cx="1420" cy="330" rx="90" ry="22"/>
+    </g>
+  </g>
+  <!-- Birds: a loose flight heading into the clear sky. -->
+  <g transform="translate(1230 230) scale(1.45) translate(-1230 -230)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M1180 250 q9 -9 18 -1 q9 -8 18 1" stroke-width="2.6"/>
+    <path d="M1232 222 q7 -7 14 -1 q7 -6 14 1" stroke-width="2.2"/>
+    <path d="M1150 205 q6 -6 12 -1 q6 -5 12 1" stroke-width="2"/>
+    <path d="M1272 262 q5 -5 10 -1 q5 -4 10 1" stroke-width="1.8"/>
+    <path d="M1300 196 q4 -4 8 0 q4 -4 8 0" stroke-width="1.6"/>
+  </g>
+</svg>

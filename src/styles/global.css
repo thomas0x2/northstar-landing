@@ -348,6 +348,16 @@ h1, h2 { text-wrap: balance; }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
+/* "Why we're doing it" on the spectrum: the sky layer sits over the field, anchored top right. */
+.agency-card > .sky { object-position: right top; }
+.agency { padding: clamp(28px, 6vw, 80px); }
+.agency .section-head { max-width: 760px; }
+.agency .prose p { color: var(--ink); }
+/* On phones the sky becomes a band above the copy, so the birds and clouds stay clear of the text. */
+@media (max-width: 640px) {
+  .agency-card > .sky { height: 340px; }
+  .agency { padding-top: 170px; }
+}
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.
    Not on the spectrum field itself, where spectrum text would disappear into the background. */
