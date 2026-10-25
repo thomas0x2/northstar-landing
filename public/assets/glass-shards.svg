@@ -17,18 +17,14 @@
 <linearGradient id="trail31" gradientUnits="userSpaceOnUse" x1="1400" y1="159" x2="1320" y2="159"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <linearGradient id="trail32" gradientUnits="userSpaceOnUse" x1="1400" y1="159" x2="1296" y2="156"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <linearGradient id="trail33" gradientUnits="userSpaceOnUse" x1="1400" y1="159" x2="1328" y2="153"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail40" gradientUnits="userSpaceOnUse" x1="1444" y1="288" x2="1388" y2="291"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail41" gradientUnits="userSpaceOnUse" x1="1444" y1="288" x2="1374" y2="288"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail42" gradientUnits="userSpaceOnUse" x1="1444" y1="288" x2="1353" y2="285"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail43" gradientUnits="userSpaceOnUse" x1="1444" y1="288" x2="1381" y2="282"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail50" gradientUnits="userSpaceOnUse" x1="1405" y1="406" x2="1349" y2="409"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail51" gradientUnits="userSpaceOnUse" x1="1405" y1="406" x2="1335" y2="406"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail52" gradientUnits="userSpaceOnUse" x1="1405" y1="406" x2="1314" y2="403"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail53" gradientUnits="userSpaceOnUse" x1="1405" y1="406" x2="1342" y2="401"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail60" gradientUnits="userSpaceOnUse" x1="1475" y1="517" x2="1427" y2="519"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail61" gradientUnits="userSpaceOnUse" x1="1475" y1="517" x2="1415" y2="517"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail62" gradientUnits="userSpaceOnUse" x1="1475" y1="517" x2="1397" y2="514"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail63" gradientUnits="userSpaceOnUse" x1="1475" y1="517" x2="1421" y2="512"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail40" gradientUnits="userSpaceOnUse" x1="996" y1="142" x2="964" y2="143"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail41" gradientUnits="userSpaceOnUse" x1="996" y1="142" x2="956" y2="142"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail42" gradientUnits="userSpaceOnUse" x1="996" y1="142" x2="944" y2="140"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail43" gradientUnits="userSpaceOnUse" x1="996" y1="142" x2="961" y2="138"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail50" gradientUnits="userSpaceOnUse" x1="1031" y1="245" x2="999" y2="247"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail51" gradientUnits="userSpaceOnUse" x1="1031" y1="245" x2="991" y2="245"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail52" gradientUnits="userSpaceOnUse" x1="1031" y1="245" x2="979" y2="244"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail53" gradientUnits="userSpaceOnUse" x1="1031" y1="245" x2="996" y2="242"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <filter id="grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="600" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="soft"/>
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"/>
@@ -182,63 +178,29 @@
 <path fill="url(#trail33)" d="M1514.5 193.4 L1387.0 189.8 Q1347.6 187.0 1379.0 185.3 Q1482.2 189.9 1514.5 193.4 Z"/>
 <path fill="url(#trail33)" d="M1259.5 206.0 L1150.0 170.0 Q1110.6 167.2 1133.0 181.7 Q1227.2 202.5 1259.5 206.0 Z"/>
 </g>
-<g opacity="0.75">
-<path fill="url(#trail40)" d="M1240.0 290.0 L1324.0 266.0 Q1293.2 267.3 1226.1 280.9 Q1214.8 291.6 1240.0 290.0 Z"/>
-<path fill="url(#trail40)" d="M1408.0 273.0 L1492.0 280.0 Q1461.2 281.3 1394.1 279.4 Q1382.8 274.6 1408.0 273.0 Z"/>
-<path fill="url(#trail40)" d="M1576.0 248.5 L1660.0 290.0 Q1629.2 291.3 1562.1 272.2 Q1550.8 250.1 1576.0 248.5 Z"/>
-<path fill="url(#trail40)" d="M1537.0 317.0 L1432.0 314.0 Q1401.2 315.3 1428.6 318.4 Q1511.8 318.6 1537.0 317.0 Z"/>
-<path fill="url(#trail40)" d="M1327.0 311.0 L1240.0 290.0 Q1209.2 291.3 1227.6 303.4 Q1301.8 312.6 1327.0 311.0 Z"/>
-<path fill="url(#trail41)" d="M1324.0 266.0 L1408.0 273.0 Q1369.5 273.0 1296.0 269.5 Q1292.5 266.0 1324.0 266.0 Z"/>
-<path fill="url(#trail41)" d="M1492.0 280.0 L1576.0 248.5 Q1537.5 248.5 1464.0 264.2 Q1460.5 280.0 1492.0 280.0 Z"/>
-<path fill="url(#trail41)" d="M1660.0 290.0 L1537.0 317.0 Q1498.5 317.0 1528.5 303.5 Q1628.5 290.0 1660.0 290.0 Z"/>
-<path fill="url(#trail41)" d="M1432.0 314.0 L1327.0 311.0 Q1288.5 311.0 1309.5 312.5 Q1400.5 314.0 1432.0 314.0 Z"/>
-<path fill="url(#trail42)" d="M1240.0 290.0 L1324.0 266.0 Q1274.0 264.6 1191.1 274.8 Q1199.1 288.3 1240.0 290.0 Z"/>
-<path fill="url(#trail42)" d="M1408.0 273.0 L1492.0 280.0 Q1442.0 278.6 1359.1 273.3 Q1367.1 271.3 1408.0 273.0 Z"/>
-<path fill="url(#trail42)" d="M1576.0 248.5 L1660.0 290.0 Q1610.0 288.6 1527.1 266.1 Q1535.1 246.8 1576.0 248.5 Z"/>
-<path fill="url(#trail42)" d="M1537.0 317.0 L1432.0 314.0 Q1382.0 312.6 1393.6 312.3 Q1496.1 315.3 1537.0 317.0 Z"/>
-<path fill="url(#trail42)" d="M1327.0 311.0 L1240.0 290.0 Q1190.0 288.6 1192.6 297.3 Q1286.1 309.3 1327.0 311.0 Z"/>
-<path fill="url(#trail43)" d="M1324.0 266.0 L1408.0 273.0 Q1373.5 270.5 1303.2 264.0 Q1295.8 263.0 1324.0 266.0 Z"/>
-<path fill="url(#trail43)" d="M1492.0 280.0 L1576.0 248.5 Q1541.5 246.0 1471.2 258.8 Q1463.8 277.0 1492.0 280.0 Z"/>
-<path fill="url(#trail43)" d="M1660.0 290.0 L1537.0 317.0 Q1502.5 314.5 1535.7 298.0 Q1631.8 287.0 1660.0 290.0 Z"/>
-<path fill="url(#trail43)" d="M1432.0 314.0 L1327.0 311.0 Q1292.5 308.5 1316.7 307.0 Q1403.8 311.0 1432.0 314.0 Z"/>
-</g>
 <g opacity="0.65">
-<path fill="url(#trail50)" d="M1180.0 410.0 L1256.7 382.7 Q1225.9 384.0 1162.4 399.3 Q1154.8 411.6 1180.0 410.0 Z"/>
-<path fill="url(#trail50)" d="M1333.3 388.9 L1410.0 395.0 Q1379.2 396.4 1315.7 394.9 Q1308.2 390.5 1333.3 388.9 Z"/>
-<path fill="url(#trail50)" d="M1486.7 401.2 L1563.3 373.5 Q1532.6 374.8 1469.1 390.3 Q1461.5 402.8 1486.7 401.2 Z"/>
-<path fill="url(#trail50)" d="M1640.0 410.0 L1507.0 436.4 Q1476.2 437.7 1517.6 426.1 Q1614.8 411.6 1640.0 410.0 Z"/>
-<path fill="url(#trail50)" d="M1392.0 433.8 L1277.0 431.1 Q1246.2 432.4 1278.6 435.4 Q1366.8 435.4 1392.0 433.8 Z"/>
-<path fill="url(#trail51)" d="M1256.7 382.7 L1333.3 388.9 Q1294.8 388.9 1225.0 385.8 Q1225.2 382.7 1256.7 382.7 Z"/>
-<path fill="url(#trail51)" d="M1410.0 395.0 L1486.7 401.2 Q1448.2 401.2 1378.3 398.1 Q1378.5 395.0 1410.0 395.0 Z"/>
-<path fill="url(#trail51)" d="M1563.3 373.5 L1640.0 410.0 Q1601.5 410.0 1531.7 391.7 Q1531.8 373.5 1563.3 373.5 Z"/>
-<path fill="url(#trail51)" d="M1507.0 436.4 L1392.0 433.8 Q1353.5 433.8 1379.5 435.1 Q1475.5 436.4 1507.0 436.4 Z"/>
-<path fill="url(#trail51)" d="M1277.0 431.1 L1180.0 410.0 Q1141.5 410.0 1158.5 420.6 Q1245.5 431.1 1277.0 431.1 Z"/>
-<path fill="url(#trail52)" d="M1180.0 410.0 L1256.7 382.7 Q1206.6 381.3 1127.4 393.2 Q1139.1 408.3 1180.0 410.0 Z"/>
-<path fill="url(#trail52)" d="M1333.3 388.9 L1410.0 395.0 Q1360.0 393.6 1280.7 388.8 Q1292.4 387.1 1333.3 388.9 Z"/>
-<path fill="url(#trail52)" d="M1486.7 401.2 L1563.3 373.5 Q1513.3 372.1 1434.1 384.2 Q1445.7 399.5 1486.7 401.2 Z"/>
-<path fill="url(#trail52)" d="M1640.0 410.0 L1507.0 436.4 Q1457.0 435.0 1482.6 420.0 Q1599.1 408.3 1640.0 410.0 Z"/>
-<path fill="url(#trail52)" d="M1392.0 433.8 L1277.0 431.1 Q1227.0 429.7 1243.6 429.3 Q1351.1 432.0 1392.0 433.8 Z"/>
-<path fill="url(#trail53)" d="M1256.7 382.7 L1333.3 388.9 Q1298.8 386.4 1232.2 380.3 Q1228.4 379.7 1256.7 382.7 Z"/>
-<path fill="url(#trail53)" d="M1410.0 395.0 L1486.7 401.2 Q1452.1 398.7 1385.6 392.6 Q1381.8 392.0 1410.0 395.0 Z"/>
-<path fill="url(#trail53)" d="M1563.3 373.5 L1640.0 410.0 Q1605.5 407.5 1538.9 386.2 Q1535.1 370.5 1563.3 373.5 Z"/>
-<path fill="url(#trail53)" d="M1507.0 436.4 L1392.0 433.8 Q1357.5 431.3 1386.7 429.6 Q1478.8 433.4 1507.0 436.4 Z"/>
-<path fill="url(#trail53)" d="M1277.0 431.1 L1180.0 410.0 Q1145.5 407.5 1165.7 415.1 Q1248.8 428.1 1277.0 431.1 Z"/>
+<path fill="url(#trail40)" d="M870.0 150.0 L956.7 119.6 Q939.1 120.4 881.4 136.5 Q855.6 150.9 870.0 150.0 Z"/>
+<path fill="url(#trail40)" d="M1043.3 125.2 L1130.0 150.0 Q1112.4 150.8 1054.7 139.3 Q1029.0 126.1 1043.3 125.2 Z"/>
+<path fill="url(#trail40)" d="M982.0 163.2 L870.0 150.0 Q852.4 150.8 894.0 158.3 Q967.6 164.1 982.0 163.2 Z"/>
+<path fill="url(#trail41)" d="M956.7 119.6 L1043.3 125.2 Q1021.3 125.2 960.0 122.4 Q938.7 119.6 956.7 119.6 Z"/>
+<path fill="url(#trail41)" d="M1130.0 150.0 L982.0 163.2 Q960.0 163.2 1016.0 156.6 Q1112.0 150.0 1130.0 150.0 Z"/>
+<path fill="url(#trail42)" d="M870.0 150.0 L956.7 119.6 Q928.1 118.8 861.4 133.0 Q846.6 149.0 870.0 150.0 Z"/>
+<path fill="url(#trail42)" d="M1043.3 125.2 L1130.0 150.0 Q1101.4 149.2 1034.7 135.8 Q1019.9 124.2 1043.3 125.2 Z"/>
+<path fill="url(#trail42)" d="M982.0 163.2 L870.0 150.0 Q841.4 149.2 874.0 154.8 Q958.6 162.2 982.0 163.2 Z"/>
+<path fill="url(#trail43)" d="M956.7 119.6 L1043.3 125.2 Q1023.6 123.8 964.1 119.3 Q940.5 117.9 956.7 119.6 Z"/>
+<path fill="url(#trail43)" d="M1130.0 150.0 L982.0 163.2 Q962.3 161.8 1020.1 153.5 Q1113.9 148.3 1130.0 150.0 Z"/>
 </g>
 <g opacity="0.55">
-<path fill="url(#trail60)" d="M1300.0 520.0 L1390.0 505.2 Q1363.6 506.4 1297.1 515.1 Q1278.4 521.4 1300.0 520.0 Z"/>
-<path fill="url(#trail60)" d="M1480.0 510.3 L1570.0 487.6 Q1543.6 488.7 1477.1 501.5 Q1458.4 511.7 1480.0 510.3 Z"/>
-<path fill="url(#trail60)" d="M1660.0 520.0 L1522.0 538.4 Q1495.6 539.5 1543.1 531.7 Q1638.4 521.4 1660.0 520.0 Z"/>
-<path fill="url(#trail60)" d="M1402.0 536.2 L1300.0 520.0 Q1273.6 521.1 1303.1 530.6 Q1380.4 537.6 1402.0 536.2 Z"/>
-<path fill="url(#trail61)" d="M1390.0 505.2 L1480.0 510.3 Q1447.0 510.3 1375.0 507.8 Q1363.0 505.2 1390.0 505.2 Z"/>
-<path fill="url(#trail61)" d="M1570.0 487.6 L1660.0 520.0 Q1627.0 520.0 1555.0 503.8 Q1543.0 487.6 1570.0 487.6 Z"/>
-<path fill="url(#trail61)" d="M1522.0 538.4 L1402.0 536.2 Q1369.0 536.2 1402.0 537.3 Q1495.0 538.4 1522.0 538.4 Z"/>
-<path fill="url(#trail62)" d="M1300.0 520.0 L1390.0 505.2 Q1347.1 504.0 1267.0 509.9 Q1264.9 518.5 1300.0 520.0 Z"/>
-<path fill="url(#trail62)" d="M1480.0 510.3 L1570.0 487.6 Q1527.1 486.4 1447.0 496.2 Q1444.9 508.8 1480.0 510.3 Z"/>
-<path fill="url(#trail62)" d="M1660.0 520.0 L1522.0 538.4 Q1479.1 537.1 1513.0 526.5 Q1624.9 518.5 1660.0 520.0 Z"/>
-<path fill="url(#trail62)" d="M1402.0 536.2 L1300.0 520.0 Q1257.1 518.8 1273.0 525.4 Q1366.9 534.7 1402.0 536.2 Z"/>
-<path fill="url(#trail63)" d="M1390.0 505.2 L1480.0 510.3 Q1450.4 508.2 1381.2 503.1 Q1365.8 502.7 1390.0 505.2 Z"/>
-<path fill="url(#trail63)" d="M1570.0 487.6 L1660.0 520.0 Q1630.4 517.9 1561.2 499.1 Q1545.8 485.0 1570.0 487.6 Z"/>
-<path fill="url(#trail63)" d="M1522.0 538.4 L1402.0 536.2 Q1372.4 534.1 1408.2 532.6 Q1497.8 535.8 1522.0 538.4 Z"/>
+<path fill="url(#trail50)" d="M920.0 250.0 L996.7 241.4 Q979.1 242.1 926.4 247.4 Q905.6 250.9 920.0 250.0 Z"/>
+<path fill="url(#trail50)" d="M1073.3 221.2 L1150.0 250.0 Q1132.4 250.8 1079.7 237.3 Q1059.0 222.1 1073.3 221.2 Z"/>
+<path fill="url(#trail50)" d="M1017.0 264.4 L920.0 250.0 Q902.4 250.8 936.5 258.9 Q1002.6 265.3 1017.0 264.4 Z"/>
+<path fill="url(#trail51)" d="M996.7 241.4 L1073.3 221.2 Q1051.3 221.2 995.0 231.3 Q978.7 241.4 996.7 241.4 Z"/>
+<path fill="url(#trail51)" d="M1150.0 250.0 L1017.0 264.4 Q995.0 264.4 1043.5 257.2 Q1132.0 250.0 1150.0 250.0 Z"/>
+<path fill="url(#trail52)" d="M920.0 250.0 L996.7 241.4 Q968.1 240.5 906.4 243.9 Q896.6 249.0 920.0 250.0 Z"/>
+<path fill="url(#trail52)" d="M1073.3 221.2 L1150.0 250.0 Q1121.4 249.2 1059.7 233.8 Q1049.9 220.2 1073.3 221.2 Z"/>
+<path fill="url(#trail52)" d="M1017.0 264.4 L920.0 250.0 Q891.4 249.2 916.5 255.4 Q993.6 263.4 1017.0 264.4 Z"/>
+<path fill="url(#trail53)" d="M996.7 241.4 L1073.3 221.2 Q1053.6 219.8 999.1 228.1 Q980.5 239.6 996.7 241.4 Z"/>
+<path fill="url(#trail53)" d="M1150.0 250.0 L1017.0 264.4 Q997.3 263.0 1047.6 254.1 Q1133.9 248.3 1150.0 250.0 Z"/>
 </g>
 </g>
 <g opacity="0.9">
@@ -289,30 +251,14 @@
 <polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1405.0,132.8 1490.0,141.2 1660.0,170.0"/>
 <polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1490.0,141.2 1575.0,149.6 1660.0,170.0"/>
 </g>
-<g opacity="0.75">
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1240.0,290.0 1324.0,266.0 1327.0,311.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1324.0,266.0 1432.0,314.0 1327.0,311.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1324.0,266.0 1408.0,273.0 1432.0,314.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1408.0,273.0 1537.0,317.0 1432.0,314.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1408.0,273.0 1492.0,280.0 1537.0,317.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1492.0,280.0 1660.0,290.0 1537.0,317.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1492.0,280.0 1576.0,248.5 1660.0,290.0"/>
-</g>
 <g opacity="0.65">
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1180.0,410.0 1256.7,382.7 1277.0,431.1"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1256.7,382.7 1392.0,433.8 1277.0,431.1"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1256.7,382.7 1333.3,388.9 1392.0,433.8"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1333.3,388.9 1507.0,436.4 1392.0,433.8"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1333.3,388.9 1410.0,395.0 1507.0,436.4"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1410.0,395.0 1640.0,410.0 1507.0,436.4"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1410.0,395.0 1486.7,401.2 1640.0,410.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1486.7,401.2 1563.3,373.5 1640.0,410.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="870.0,150.0 956.7,119.6 982.0,163.2"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="956.7,119.6 1130.0,150.0 982.0,163.2"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="956.7,119.6 1043.3,125.2 1130.0,150.0"/>
 </g>
 <g opacity="0.55">
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1300.0,520.0 1390.0,505.2 1402.0,536.2"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1390.0,505.2 1522.0,538.4 1402.0,536.2"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1390.0,505.2 1480.0,510.3 1522.0,538.4"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1480.0,510.3 1660.0,520.0 1522.0,538.4"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1480.0,510.3 1570.0,487.6 1660.0,520.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="920.0,250.0 996.7,241.4 1017.0,264.4"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="996.7,241.4 1150.0,250.0 1017.0,264.4"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="996.7,241.4 1073.3,221.2 1150.0,250.0"/>
 </g>
 </svg>

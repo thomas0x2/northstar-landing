@@ -16,15 +16,16 @@ def bank(x0, x1, y, thick, seed):
 
 shards = [
     # (outline, trail vector, opacity), drawn at a fixed scale from the card's top left so they never cover
-    # the copy: a thin band of banks along the top edge, above the heading (y < ~72), and more banks down
-    # the right side, beyond the text column (x > ~1150). Right-side trails stay short so they don't reach it.
+    # the copy: a thin band of banks along the top edge, above the heading (y < ~72), one more on the right,
+    # beyond the text column (x > ~1150), and a few smaller ones in the open space beside the heading.
+    # Trails off the banks beside and right of the copy stay short so they don't reach it.
     (bank(-60, 520, 44, 36, 5), (-260, -6), 0.9),
     (bank(470, 1000, 40, 32, 6), (-240, -6), 0.8),
     (bank(950, 1660, 46, 40, 1), (-280, -6), 1.0),
     (bank(1150, 1660, 170, 60, 3), (-80, 0), 0.9),
-    (bank(1240, 1660, 290, 50, 7), (-70, 0), 0.75),
-    (bank(1180, 1640, 410, 44, 2), (-70, 0), 0.65),
-    (bank(1300, 1660, 520, 36, 4), (-60, 0), 0.55),
+    # Smaller, farther banks in the open space beside the heading, between it and the right-side banks.
+    (bank(870, 1130, 150, 40, 8), (-40, 0), 0.65),
+    (bank(920, 1150, 250, 32, 9), (-40, 0), 0.55),
 ]
 # Facet shades, from the plane facing the light to the one turned away.
 SHADES = ["face1", "face2", "face3", "face4"]
