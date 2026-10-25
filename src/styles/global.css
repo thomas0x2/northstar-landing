@@ -298,7 +298,10 @@ h1, h2 { text-wrap: balance; }
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
 
 /* Thesis page. Effects use sanded glass or the spectrum only, never shadows. */
-.page-hero-copy { display: flex; flex-direction: column; gap: 24px; max-width: 860px; padding-block: 56px 96px; }
+/* The Thesis hero fills the first screen; the copy sits centred in the space below the nav. */
+.page-hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+.page-hero > .wrap { flex: 1; width: 100%; display: flex; flex-direction: column; }
+.page-hero-copy { flex: 1; justify-content: center; display: flex; flex-direction: column; gap: 24px; max-width: 860px; padding-block: 56px 96px; }
 .page-hero h1 { font-size: clamp(44px, 6vw, 84px); line-height: 0.98; }
 .page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
 
