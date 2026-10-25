@@ -8,7 +8,6 @@ export const hero = {
 
 // The thesis page, with the vision and mission as its opening section. Every number cites an entry in `sources` by its id.
 export const thesisPage = {
-  label: "Thesis",
   title: "Intelligence on the right foundations.",
   lead: "Today's AI runs on the hardware and methods we happened to start with. We think better foundations exist, and that the labs best placed to find them are the least likely to look. This page walks through why.",
   statements: [
