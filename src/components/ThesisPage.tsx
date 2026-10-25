@@ -81,7 +81,7 @@ export function ThesisPage() {
                 <article className="card" key={l.title}>
                   <div className="num">{num(i)}</div>
                   <h3>{l.title}</h3>
-                  <p>{l.body}</p>
+                  <p>{l.body}{"source" in l && l.source !== undefined && <Cite id={l.source} />}</p>
                 </article>
               ))}
             </div>
