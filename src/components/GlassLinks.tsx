@@ -6,18 +6,21 @@ const W = 1600;
 const H = 600;
 const REACH = 125; // how far a sheet stretches from the star to a cloud corner
 const SIZE = 46;
-const SECONDS = 36; // one loop through the clouds
+const SECONDS = 36; // one throw across the sky
 
 type P = [number, number];
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const cross = (o: P, a: P, b: P) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
 const pts = (ps: P[]) => ps.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 
-/** Where the star is at time t (0 to 1): a closed loop through the clouds beside the heading, right to
-    left along the top like the trails, then back along the row below, so the animation loops seamlessly. */
-function path(t: number): P {
-  const a = t * Math.PI * 2;
-  return [1150 + 280 * Math.cos(a), 120 - 80 * Math.sin(a) + 8 * Math.sin(a * 3)];
+/** Where the star is at time t (0 to 1), and how near: thrown slowly from beyond the right edge, it rises
+    through the clouds beside the heading and flattens out along the top as it leaves past the left edge,
+    drifting away from us as it goes. It's offscreen when one throw ends and the next begins, so it loops. */
+function path(t: number) {
+  const x = W + 120 - t * (W + 240);
+  // Rising and slowing, like a throw near the top of its arc: steep at first, level as it leaves.
+  const y = 270 - 255 * (2 * t - t * t);
+  return { pos: [x, y] as P, scale: 1.15 - 0.35 * t };
 }
 
 // The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
@@ -30,16 +33,17 @@ const LOGO: [number, number][] = [
 ];
 const STAR = LOGO.map(([x, y]): [number, number] => [((x - 423) * SIZE) / 365, ((y - 354) * SIZE) / 365]);
 
-/** The star tumbling in 3D (so its angles change as it turns) and seen in perspective: its ten points,
-    the curved outline through them, and how squarely it faces us (1 face-on, 0 edge-on). */
-function star(t: number, [x, y]: P) {
-  // It sways only about 25 degrees out of the page, so it always reads as the logo star, while turning
-  // once around per loop. Whole-number frequencies, so every angle is back where it started each loop.
+/** The star in flight, seen in perspective: its ten points, the curved outline through them, and how
+    squarely it faces us (1 face-on, 0 edge-on). */
+function star(t: number, [x, y]: P, scale: number) {
+  // Like a thrown star it spins steadily about its own axis, held at a tilt that leans back with the
+  // throw and slowly settles (no more than about 25 degrees, so it always reads as the logo star).
   const a = t * Math.PI * 2;
-  const ax = 0.42 * Math.sin(a * 2), ay = 0.42 * Math.sin(a * 3 + 1), az = a;
+  const ax = 0.42 - 0.22 * t + 0.05 * Math.sin(a * 3), ay = -0.3 + 0.2 * t, az = -a * 1.5;
   const [sx, cx, sy, cy, sz, cz] = [Math.sin(ax), Math.cos(ax), Math.sin(ay), Math.cos(ay), Math.sin(az), Math.cos(az)];
   const focal = SIZE * 4;
   const all = STAR.map(([px, py]): P => {
+    [px, py] = [px * scale, py * scale];
     let pz = 0;
     [py, pz] = [py * cx - pz * sx, py * sx + pz * cx];
     [px, pz] = [px * cy + pz * sy, -px * sy + pz * cy];
@@ -54,7 +58,7 @@ function star(t: number, [x, y]: P) {
   return { tips, d: d + " Z", facing: Math.abs(cx * cy) };
 }
 
-/** A small glass star, like the logo, tumbling through the clouds with the wind. As it passes, sheets of
+/** A small glass star, like the logo, thrown slowly across the sky through the clouds. As it passes, sheets of
     the clouds' sanded glass reach from its edges to the nearby cloud corners and let go again behind it,
     like the trails streaming off the logo star. */
 export function GlassLinks() {
@@ -70,8 +74,8 @@ export function GlassLinks() {
 
     const frame = (now: number) => {
       const t = ((now - start) / 1000 / SECONDS) % 1;
-      const centre = path(t);
-      const { tips, d: outline, facing } = star(t, centre);
+      const { pos: centre, scale } = path(t);
+      const { tips, d: outline, facing } = star(t, centre, scale);
 
       // At most one sheet per point of the star (from whichever of its two edges is closer), to the
       // nearest cloud corner it faces, and only over a short reach, so the star itself stays visible.
