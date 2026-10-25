@@ -340,18 +340,18 @@ h1, h2 { text-wrap: balance; }
 /* "Why we're doing it": clear blue sky after a storm. The spectrum's blues fill most of the card,
    with the warm colours at the bottom edge. */
 /* The exact spectrum field, scaled up and anchored to its top right so the blues fill most of the card. */
-.agency-card > .field:not(.shards) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
-/* Clouds are faceted sanded glass, drawn like the glass logo star, drifting slowly with the wind. */
-.agency-card > .shards { object-position: right top; animation: cloud-drift 20s ease-in-out infinite alternate; }
-@keyframes cloud-drift { from { transform: translateX(0); } to { transform: translateX(-28px); } }
-@media (prefers-reduced-motion: reduce) { .agency-card > .shards { animation: none; } }
-.agency { padding: clamp(28px, 6vw, 80px); }
+.agency-card > .field:not(.shards):not(.glass-links) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
+/* Clouds are stretched banks of faceted sanded glass across the top of the card, drawn like the glass
+   logo star. A small glass triangle drifts through them (GlassLinks), drawn in the same 1600x320 space. */
+.agency-card > .shards, .agency-card > .glass-links { bottom: auto; height: auto; aspect-ratio: 5 / 1; }
+/* The copy starts under the clouds: percentage padding follows the card's width, like the cloud band. */
+.agency { padding: clamp(28px, 6vw, 80px); padding-top: 17%; }
 .agency .section-head { max-width: 760px; }
 .agency .prose p { color: var(--ink); }
-/* On phones the shards sit in a band above the copy. */
+/* On phones the cloud band keeps a readable height and shows its middle. */
 @media (max-width: 640px) {
-  .agency-card > .shards { height: 300px; }
-  .agency { padding-top: 130px; }
+  .agency-card > .shards, .agency-card > .glass-links { aspect-ratio: auto; height: 150px; }
+  .agency { padding-top: 140px; }
 }
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.

@@ -1,30 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMin slice">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="320" viewBox="0 0 1600 320" preserveAspectRatio="xMidYMin slice">
 <title>Sanded glass shards drifting in the sky</title>
 <defs>
-<linearGradient id="trail00" gradientUnits="userSpaceOnUse" x1="1329" y1="57" x2="1090" y2="79"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail01" gradientUnits="userSpaceOnUse" x1="1329" y1="57" x2="1029" y2="69"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail02" gradientUnits="userSpaceOnUse" x1="1329" y1="57" x2="939" y2="59"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail03" gradientUnits="userSpaceOnUse" x1="1329" y1="57" x2="1060" y2="44"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail10" gradientUnits="userSpaceOnUse" x1="1420" y1="136" x2="1228" y2="154"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail11" gradientUnits="userSpaceOnUse" x1="1420" y1="136" x2="1180" y2="146"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail12" gradientUnits="userSpaceOnUse" x1="1420" y1="136" x2="1107" y2="138"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail13" gradientUnits="userSpaceOnUse" x1="1420" y1="136" x2="1204" y2="126"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail20" gradientUnits="userSpaceOnUse" x1="1155" y1="189" x2="995" y2="204"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail21" gradientUnits="userSpaceOnUse" x1="1155" y1="189" x2="955" y2="197"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail22" gradientUnits="userSpaceOnUse" x1="1155" y1="189" x2="894" y2="191"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail23" gradientUnits="userSpaceOnUse" x1="1155" y1="189" x2="975" y2="181"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail30" gradientUnits="userSpaceOnUse" x1="1460" y1="235" x2="1333" y2="247"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail31" gradientUnits="userSpaceOnUse" x1="1460" y1="235" x2="1300" y2="241"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail32" gradientUnits="userSpaceOnUse" x1="1460" y1="235" x2="1252" y2="236"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail33" gradientUnits="userSpaceOnUse" x1="1460" y1="235" x2="1317" y2="228"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<filter id="grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<linearGradient id="trail00" gradientUnits="userSpaceOnUse" x1="224" y1="66" x2="17" y2="85"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail01" gradientUnits="userSpaceOnUse" x1="224" y1="66" x2="-36" y2="76"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail02" gradientUnits="userSpaceOnUse" x1="224" y1="66" x2="-114" y2="67"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail03" gradientUnits="userSpaceOnUse" x1="224" y1="66" x2="-10" y2="55"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail10" gradientUnits="userSpaceOnUse" x1="815" y1="88" x2="623" y2="106"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail11" gradientUnits="userSpaceOnUse" x1="815" y1="88" x2="575" y2="98"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail12" gradientUnits="userSpaceOnUse" x1="815" y1="88" x2="502" y2="90"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail13" gradientUnits="userSpaceOnUse" x1="815" y1="88" x2="599" y2="78"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail20" gradientUnits="userSpaceOnUse" x1="1329" y1="59" x2="1090" y2="81"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail21" gradientUnits="userSpaceOnUse" x1="1329" y1="59" x2="1029" y2="71"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail22" gradientUnits="userSpaceOnUse" x1="1329" y1="59" x2="939" y2="61"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail23" gradientUnits="userSpaceOnUse" x1="1329" y1="59" x2="1060" y2="46"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail30" gradientUnits="userSpaceOnUse" x1="425" y1="203" x2="266" y2="218"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail31" gradientUnits="userSpaceOnUse" x1="425" y1="203" x2="225" y2="211"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail32" gradientUnits="userSpaceOnUse" x1="425" y1="203" x2="165" y2="204"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail33" gradientUnits="userSpaceOnUse" x1="425" y1="203" x2="245" y2="195"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail40" gradientUnits="userSpaceOnUse" x1="1075" y1="226" x2="931" y2="239"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail41" gradientUnits="userSpaceOnUse" x1="1075" y1="226" x2="895" y2="233"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail42" gradientUnits="userSpaceOnUse" x1="1075" y1="226" x2="840" y2="227"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail43" gradientUnits="userSpaceOnUse" x1="1075" y1="226" x2="913" y2="218"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail50" gradientUnits="userSpaceOnUse" x1="1475" y1="273" x2="1347" y2="284"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail51" gradientUnits="userSpaceOnUse" x1="1475" y1="273" x2="1315" y2="279"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail52" gradientUnits="userSpaceOnUse" x1="1475" y1="273" x2="1267" y2="273"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail53" gradientUnits="userSpaceOnUse" x1="1475" y1="273" x2="1331" y2="266"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="320" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="soft"/>
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"/>
 <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="mask"/>
 <feComposite in="soft" in2="mask" operator="in" result="grained"/>
 <feComposite in="soft" in2="grained" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="face1" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face1" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="320" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
 <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
@@ -34,7 +42,7 @@
 <feComposite in="bs" in2="m" operator="in" result="g"/>
 <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="face2" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face2" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="320" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
 <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
@@ -44,7 +52,7 @@
 <feComposite in="bs" in2="m" operator="in" result="g"/>
 <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="face3" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face3" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="320" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
 <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
@@ -54,7 +62,7 @@
 <feComposite in="bs" in2="m" operator="in" result="g"/>
 <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-<filter id="face4" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
+<filter id="face4" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="320" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
 <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"/>
 <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
@@ -66,136 +74,206 @@
 </filter>
 </defs>
 <g filter="url(#grain)" opacity="0.8">
-<g opacity="1.0">
-<path fill="url(#trail00)" d="M1010.0 66.0 L1091.2 42.2 Q959.7 52.2 811.5 76.2 Q902.4 78.2 1010.0 66.0 Z"/>
-<path fill="url(#trail00)" d="M1172.5 52.0 L1253.8 7.9 Q1122.2 17.9 974.0 52.1 Q1064.9 64.2 1172.5 52.0 Z"/>
-<path fill="url(#trail00)" d="M1335.0 17.7 L1416.2 27.5 Q1284.7 37.5 1136.5 44.7 Q1227.4 29.9 1335.0 17.7 Z"/>
-<path fill="url(#trail00)" d="M1497.5 37.3 L1578.8 47.1 Q1447.2 57.1 1299.0 64.3 Q1389.9 49.5 1497.5 37.3 Z"/>
-<path fill="url(#trail00)" d="M1660.0 66.0 L1512.0 99.6 Q1380.5 109.6 1346.8 104.9 Q1552.4 78.2 1660.0 66.0 Z"/>
-<path fill="url(#trail00)" d="M1382.0 95.4 L1252.0 91.2 Q1120.5 101.2 1077.8 115.4 Q1274.4 107.6 1382.0 95.4 Z"/>
-<path fill="url(#trail00)" d="M1122.0 87.0 L1010.0 66.0 Q878.5 76.0 826.8 98.6 Q1014.4 99.2 1122.0 87.0 Z"/>
-<path fill="url(#trail01)" d="M1091.2 42.2 L1172.5 52.0 Q1007.5 57.4 831.9 59.1 Q956.2 48.8 1091.2 42.2 Z"/>
-<path fill="url(#trail01)" d="M1253.8 7.9 L1335.0 17.7 Q1170.0 23.1 994.4 24.8 Q1118.8 14.5 1253.8 7.9 Z"/>
-<path fill="url(#trail01)" d="M1416.2 27.5 L1497.5 37.3 Q1332.5 42.7 1156.9 44.4 Q1281.2 34.1 1416.2 27.5 Z"/>
-<path fill="url(#trail01)" d="M1578.8 47.1 L1660.0 66.0 Q1495.0 71.4 1319.4 68.5 Q1443.8 53.7 1578.8 47.1 Z"/>
-<path fill="url(#trail01)" d="M1512.0 99.6 L1382.0 95.4 Q1217.0 100.8 1147.0 109.5 Q1377.0 106.2 1512.0 99.6 Z"/>
-<path fill="url(#trail01)" d="M1252.0 91.2 L1122.0 87.0 Q957.0 92.4 887.0 101.1 Q1117.0 97.8 1252.0 91.2 Z"/>
-<path fill="url(#trail02)" d="M1010.0 66.0 L1091.2 42.2 Q876.6 43.1 660.3 56.1 Q834.4 67.1 1010.0 66.0 Z"/>
-<path fill="url(#trail02)" d="M1172.5 52.0 L1253.8 7.9 Q1039.1 8.8 822.8 31.9 Q996.9 53.1 1172.5 52.0 Z"/>
-<path fill="url(#trail02)" d="M1335.0 17.7 L1416.2 27.5 Q1201.6 28.4 985.3 24.6 Q1159.4 18.8 1335.0 17.7 Z"/>
-<path fill="url(#trail02)" d="M1497.5 37.3 L1578.8 47.1 Q1364.1 48.0 1147.8 44.2 Q1321.9 38.4 1497.5 37.3 Z"/>
-<path fill="url(#trail02)" d="M1660.0 66.0 L1512.0 99.6 Q1297.3 100.5 1195.7 84.8 Q1484.4 67.1 1660.0 66.0 Z"/>
-<path fill="url(#trail02)" d="M1382.0 95.4 L1252.0 91.2 Q1037.3 92.1 926.7 95.3 Q1206.4 96.5 1382.0 95.4 Z"/>
-<path fill="url(#trail02)" d="M1122.0 87.0 L1010.0 66.0 Q795.3 66.9 675.7 78.5 Q946.4 88.1 1122.0 87.0 Z"/>
-<path fill="url(#trail03)" d="M1091.2 42.2 L1172.5 52.0 Q1024.0 46.3 862.0 34.3 Q969.8 35.2 1091.2 42.2 Z"/>
-<path fill="url(#trail03)" d="M1253.8 7.9 L1335.0 17.7 Q1186.5 12.0 1024.5 0.0 Q1132.3 0.9 1253.8 7.9 Z"/>
-<path fill="url(#trail03)" d="M1416.2 27.5 L1497.5 37.3 Q1349.0 31.6 1187.0 19.6 Q1294.8 20.5 1416.2 27.5 Z"/>
-<path fill="url(#trail03)" d="M1578.8 47.1 L1660.0 66.0 Q1511.5 60.3 1349.5 43.8 Q1457.3 40.1 1578.8 47.1 Z"/>
-<path fill="url(#trail03)" d="M1512.0 99.6 L1382.0 95.4 Q1233.5 89.7 1177.1 84.7 Q1390.5 92.6 1512.0 99.6 Z"/>
-<path fill="url(#trail03)" d="M1252.0 91.2 L1122.0 87.0 Q973.5 81.3 917.1 76.3 Q1130.5 84.2 1252.0 91.2 Z"/>
+<g opacity="0.95">
+<path fill="url(#trail00)" d="M-60.0 78.0 L22.9 22.1 Q-91.2 30.6 -225.9 68.9 Q-153.3 88.4 -60.0 78.0 Z"/>
+<path fill="url(#trail00)" d="M105.7 33.4 L188.6 44.8 Q74.6 53.3 -60.2 58.0 Q12.4 43.8 105.7 33.4 Z"/>
+<path fill="url(#trail00)" d="M271.4 56.1 L354.3 5.1 Q240.3 13.6 105.6 49.5 Q178.1 66.5 271.4 56.1 Z"/>
+<path fill="url(#trail00)" d="M437.1 16.4 L520.0 78.0 Q406.0 86.5 271.3 66.1 Q343.9 26.8 437.1 16.4 Z"/>
+<path fill="url(#trail00)" d="M386.0 102.3 L270.0 124.2 Q156.0 132.7 120.7 132.1 Q292.7 112.7 386.0 102.3 Z"/>
+<path fill="url(#trail00)" d="M154.0 119.3 L38.0 114.5 Q-76.0 122.9 -111.3 135.8 Q60.7 129.7 154.0 119.3 Z"/>
+<path fill="url(#trail01)" d="M22.9 22.1 L105.7 33.4 Q-37.3 37.9 -195.7 37.8 Q-94.1 27.6 22.9 22.1 Z"/>
+<path fill="url(#trail01)" d="M188.6 44.8 L271.4 56.1 Q128.4 60.6 -30.0 60.5 Q71.6 50.3 188.6 44.8 Z"/>
+<path fill="url(#trail01)" d="M354.3 5.1 L437.1 16.4 Q294.1 20.9 135.7 20.8 Q237.3 10.6 354.3 5.1 Z"/>
+<path fill="url(#trail01)" d="M520.0 78.0 L386.0 102.3 Q243.0 106.8 193.0 100.2 Q403.0 83.5 520.0 78.0 Z"/>
+<path fill="url(#trail01)" d="M270.0 124.2 L154.0 119.3 Q11.0 123.8 -48.0 131.7 Q153.0 129.7 270.0 124.2 Z"/>
+<path fill="url(#trail01)" d="M38.0 114.5 L-60.0 78.0 Q-203.0 82.5 -271.0 106.2 Q-79.0 120.0 38.0 114.5 Z"/>
+<path fill="url(#trail02)" d="M-60.0 78.0 L22.9 22.1 Q-163.2 22.6 -356.8 51.3 Q-212.2 78.7 -60.0 78.0 Z"/>
+<path fill="url(#trail02)" d="M105.7 33.4 L188.6 44.8 Q2.5 45.3 -191.1 40.3 Q-46.5 34.1 105.7 33.4 Z"/>
+<path fill="url(#trail02)" d="M271.4 56.1 L354.3 5.1 Q168.2 5.6 -25.4 31.8 Q119.2 56.8 271.4 56.1 Z"/>
+<path fill="url(#trail02)" d="M437.1 16.4 L520.0 78.0 Q334.0 78.5 140.3 48.4 Q284.9 17.1 437.1 16.4 Z"/>
+<path fill="url(#trail02)" d="M386.0 102.3 L270.0 124.2 Q84.0 124.7 -10.2 114.4 Q233.8 103.0 386.0 102.3 Z"/>
+<path fill="url(#trail02)" d="M154.0 119.3 L38.0 114.5 Q-148.0 115.0 -242.2 118.1 Q1.8 120.0 154.0 119.3 Z"/>
+<path fill="url(#trail03)" d="M22.9 22.1 L105.7 33.4 Q-22.9 28.3 -169.6 16.4 Q-82.4 15.8 22.9 22.1 Z"/>
+<path fill="url(#trail03)" d="M188.6 44.8 L271.4 56.1 Q142.8 51.0 -3.9 39.0 Q83.3 38.5 188.6 44.8 Z"/>
+<path fill="url(#trail03)" d="M354.3 5.1 L437.1 16.4 Q308.5 11.3 161.8 -0.7 Q249.0 -1.2 354.3 5.1 Z"/>
+<path fill="url(#trail03)" d="M520.0 78.0 L386.0 102.3 Q257.4 97.2 219.1 78.7 Q414.7 71.7 520.0 78.0 Z"/>
+<path fill="url(#trail03)" d="M270.0 124.2 L154.0 119.3 Q25.4 114.2 -21.9 110.3 Q164.7 117.9 270.0 124.2 Z"/>
+<path fill="url(#trail03)" d="M38.0 114.5 L-60.0 78.0 Q-188.6 72.9 -244.9 84.8 Q-67.3 108.2 38.0 114.5 Z"/>
 </g>
 <g opacity="0.85">
-<path fill="url(#trail10)" d="M1190.0 140.0 L1268.3 107.8 Q1163.1 115.9 1037.8 141.9 Q1103.9 149.9 1190.0 140.0 Z"/>
-<path fill="url(#trail10)" d="M1346.7 115.0 L1425.0 122.3 Q1319.8 130.4 1194.5 136.7 Q1260.6 125.0 1346.7 115.0 Z"/>
-<path fill="url(#trail10)" d="M1503.3 129.6 L1581.7 96.8 Q1476.4 105.0 1351.2 131.3 Q1417.2 139.5 1503.3 129.6 Z"/>
-<path fill="url(#trail10)" d="M1660.0 140.0 L1524.5 171.2 Q1419.3 179.3 1400.9 173.6 Q1573.9 149.9 1660.0 140.0 Z"/>
-<path fill="url(#trail10)" d="M1407.0 168.1 L1289.5 165.0 Q1184.3 173.1 1156.9 184.6 Q1320.9 178.0 1407.0 168.1 Z"/>
-<path fill="url(#trail11)" d="M1268.3 107.8 L1346.7 115.0 Q1214.7 119.5 1067.5 121.4 Q1160.3 113.3 1268.3 107.8 Z"/>
-<path fill="url(#trail11)" d="M1425.0 122.3 L1503.3 129.6 Q1371.3 134.1 1224.2 136.0 Q1317.0 127.8 1425.0 122.3 Z"/>
-<path fill="url(#trail11)" d="M1581.7 96.8 L1660.0 140.0 Q1528.0 144.5 1380.8 128.4 Q1473.7 102.3 1581.7 96.8 Z"/>
-<path fill="url(#trail11)" d="M1524.5 171.2 L1407.0 168.1 Q1275.0 172.6 1225.8 179.6 Q1416.5 176.7 1524.5 171.2 Z"/>
-<path fill="url(#trail11)" d="M1289.5 165.0 L1190.0 140.0 Q1058.0 144.5 999.8 162.5 Q1181.5 170.5 1289.5 165.0 Z"/>
-<path fill="url(#trail12)" d="M1190.0 140.0 L1268.3 107.8 Q1096.6 108.7 916.9 126.0 Q1049.5 141.2 1190.0 140.0 Z"/>
-<path fill="url(#trail12)" d="M1346.7 115.0 L1425.0 122.3 Q1253.3 123.3 1073.6 120.8 Q1206.1 116.2 1346.7 115.0 Z"/>
-<path fill="url(#trail12)" d="M1503.3 129.6 L1581.7 96.8 Q1409.9 97.8 1230.2 115.3 Q1362.8 130.8 1503.3 129.6 Z"/>
-<path fill="url(#trail12)" d="M1660.0 140.0 L1524.5 171.2 Q1352.8 172.1 1280.0 157.7 Q1519.5 141.2 1660.0 140.0 Z"/>
-<path fill="url(#trail12)" d="M1407.0 168.1 L1289.5 165.0 Q1117.8 165.9 1036.0 168.6 Q1266.5 169.2 1407.0 168.1 Z"/>
-<path fill="url(#trail13)" d="M1268.3 107.8 L1346.7 115.0 Q1227.9 110.6 1091.5 101.5 Q1171.2 102.3 1268.3 107.8 Z"/>
-<path fill="url(#trail13)" d="M1425.0 122.3 L1503.3 129.6 Q1384.6 125.2 1248.2 116.1 Q1327.8 116.9 1425.0 122.3 Z"/>
-<path fill="url(#trail13)" d="M1581.7 96.8 L1660.0 140.0 Q1541.2 135.6 1404.9 108.6 Q1484.5 91.4 1581.7 96.8 Z"/>
-<path fill="url(#trail13)" d="M1524.5 171.2 L1407.0 168.1 Q1288.2 163.6 1249.8 159.8 Q1427.3 165.8 1524.5 171.2 Z"/>
-<path fill="url(#trail13)" d="M1289.5 165.0 L1190.0 140.0 Q1071.2 135.6 1023.8 142.6 Q1192.3 159.5 1289.5 165.0 Z"/>
-</g>
-<g opacity="0.7">
-<path fill="url(#trail20)" d="M900.0 196.0 L986.7 161.8 Q899.0 168.4 783.9 193.7 Q828.2 204.1 900.0 196.0 Z"/>
-<path fill="url(#trail20)" d="M1073.3 167.1 L1160.0 172.4 Q1072.3 179.1 957.2 184.5 Q1001.6 175.2 1073.3 167.1 Z"/>
-<path fill="url(#trail20)" d="M1246.7 177.8 L1333.3 183.1 Q1245.6 189.7 1130.6 195.2 Q1174.9 185.9 1246.7 177.8 Z"/>
-<path fill="url(#trail20)" d="M1420.0 196.0 L1272.0 210.8 Q1184.3 217.5 1186.6 218.2 Q1348.2 204.1 1420.0 196.0 Z"/>
-<path fill="url(#trail20)" d="M1142.0 208.5 L1012.0 218.8 Q924.3 225.4 917.6 228.4 Q1070.2 216.7 1142.0 208.5 Z"/>
-<path fill="url(#trail21)" d="M986.7 161.8 L1073.3 167.1 Q963.3 170.7 830.0 172.5 Q896.7 166.2 986.7 161.8 Z"/>
-<path fill="url(#trail21)" d="M1160.0 172.4 L1246.7 177.8 Q1136.7 181.4 1003.3 183.1 Q1070.0 176.8 1160.0 172.4 Z"/>
-<path fill="url(#trail21)" d="M1333.3 183.1 L1420.0 196.0 Q1310.0 199.6 1176.7 197.5 Q1243.3 187.5 1333.3 183.1 Z"/>
-<path fill="url(#trail21)" d="M1272.0 210.8 L1142.0 208.5 Q1032.0 212.1 1007.0 217.7 Q1182.0 215.2 1272.0 210.8 Z"/>
-<path fill="url(#trail21)" d="M1012.0 218.8 L900.0 196.0 Q790.0 199.6 756.0 215.4 Q922.0 223.2 1012.0 218.8 Z"/>
-<path fill="url(#trail22)" d="M900.0 196.0 L986.7 161.8 Q843.6 162.4 683.1 180.2 Q782.9 196.7 900.0 196.0 Z"/>
-<path fill="url(#trail22)" d="M1073.3 167.1 L1160.0 172.4 Q1016.9 173.0 856.5 171.1 Q956.2 167.8 1073.3 167.1 Z"/>
-<path fill="url(#trail22)" d="M1246.7 177.8 L1333.3 183.1 Q1190.2 183.7 1029.8 181.7 Q1129.6 178.5 1246.7 177.8 Z"/>
-<path fill="url(#trail22)" d="M1420.0 196.0 L1272.0 210.8 Q1128.9 211.4 1085.8 204.7 Q1302.9 196.7 1420.0 196.0 Z"/>
-<path fill="url(#trail22)" d="M1142.0 208.5 L1012.0 218.8 Q868.9 219.4 816.8 215.0 Q1024.9 209.3 1142.0 208.5 Z"/>
-<path fill="url(#trail23)" d="M986.7 161.8 L1073.3 167.1 Q974.4 163.3 850.1 155.9 Q905.7 157.1 986.7 161.8 Z"/>
-<path fill="url(#trail23)" d="M1160.0 172.4 L1246.7 177.8 Q1147.7 173.9 1023.4 166.6 Q1079.0 167.8 1160.0 172.4 Z"/>
-<path fill="url(#trail23)" d="M1333.3 183.1 L1420.0 196.0 Q1321.0 192.2 1196.7 181.0 Q1252.4 178.4 1333.3 183.1 Z"/>
-<path fill="url(#trail23)" d="M1272.0 210.8 L1142.0 208.5 Q1043.0 204.7 1027.1 201.2 Q1191.0 206.1 1272.0 210.8 Z"/>
-<path fill="url(#trail23)" d="M1012.0 218.8 L900.0 196.0 Q801.0 192.2 776.1 198.9 Q931.0 214.1 1012.0 218.8 Z"/>
-</g>
-<g opacity="0.55">
-<path fill="url(#trail30)" d="M1270.0 240.0 L1348.0 228.5 Q1277.8 233.7 1181.4 245.8 Q1212.6 246.3 1270.0 240.0 Z"/>
-<path fill="url(#trail30)" d="M1426.0 232.4 L1504.0 214.8 Q1433.8 220.0 1337.4 235.1 Q1368.6 238.8 1426.0 232.4 Z"/>
-<path fill="url(#trail30)" d="M1582.0 218.7 L1660.0 240.0 Q1589.8 245.2 1493.4 240.9 Q1524.6 225.0 1582.0 218.7 Z"/>
-<path fill="url(#trail30)" d="M1512.0 254.3 L1382.0 252.6 Q1311.8 257.8 1319.4 264.9 Q1454.6 260.6 1512.0 254.3 Z"/>
-<path fill="url(#trail31)" d="M1348.0 228.5 L1426.0 232.4 Q1338.0 235.1 1227.0 236.5 Q1276.0 231.8 1348.0 228.5 Z"/>
-<path fill="url(#trail31)" d="M1504.0 214.8 L1582.0 218.7 Q1494.0 221.4 1383.0 222.8 Q1432.0 218.1 1504.0 214.8 Z"/>
-<path fill="url(#trail31)" d="M1660.0 240.0 L1512.0 254.3 Q1424.0 257.0 1426.0 253.1 Q1588.0 243.3 1660.0 240.0 Z"/>
-<path fill="url(#trail31)" d="M1382.0 252.6 L1270.0 240.0 Q1182.0 242.7 1166.0 252.3 Q1310.0 255.9 1382.0 252.6 Z"/>
-<path fill="url(#trail32)" d="M1270.0 240.0 L1348.0 228.5 Q1233.5 228.8 1100.9 234.8 Q1176.3 240.3 1270.0 240.0 Z"/>
-<path fill="url(#trail32)" d="M1426.0 232.4 L1504.0 214.8 Q1389.5 215.0 1256.9 224.2 Q1332.3 232.7 1426.0 232.4 Z"/>
-<path fill="url(#trail32)" d="M1582.0 218.7 L1660.0 240.0 Q1545.5 240.2 1412.9 229.9 Q1488.3 219.0 1582.0 218.7 Z"/>
-<path fill="url(#trail32)" d="M1512.0 254.3 L1382.0 252.6 Q1267.5 252.8 1238.9 254.0 Q1418.3 254.6 1512.0 254.3 Z"/>
-<path fill="url(#trail33)" d="M1348.0 228.5 L1426.0 232.4 Q1346.8 229.2 1243.1 223.3 Q1283.2 224.6 1348.0 228.5 Z"/>
-<path fill="url(#trail33)" d="M1504.0 214.8 L1582.0 218.7 Q1502.8 215.5 1399.1 209.6 Q1439.2 210.9 1504.0 214.8 Z"/>
-<path fill="url(#trail33)" d="M1660.0 240.0 L1512.0 254.3 Q1432.8 251.1 1442.1 240.0 Q1595.2 236.1 1660.0 240.0 Z"/>
-<path fill="url(#trail33)" d="M1382.0 252.6 L1270.0 240.0 Q1190.8 236.8 1182.1 239.1 Q1317.2 248.7 1382.0 252.6 Z"/>
-</g>
+<path fill="url(#trail10)" d="M560.0 99.0 L646.7 85.0 Q541.4 93.1 412.0 110.0 Q473.9 108.9 560.0 99.0 Z"/>
+<path fill="url(#trail10)" d="M733.3 40.9 L820.0 50.7 Q714.8 58.8 585.3 63.8 Q647.2 50.8 733.3 40.9 Z"/>
+<path fill="url(#trail10)" d="M906.7 60.5 L993.3 70.3 Q888.1 78.4 758.7 83.4 Q820.6 70.4 906.7 60.5 Z"/>
+<path fill="url(#trail10)" d="M1080.0 99.0 L932.0 128.4 Q826.8 136.5 814.7 131.7 Q993.9 108.9 1080.0 99.0 Z"/>
+<path fill="url(#trail10)" d="M802.0 124.2 L672.0 120.0 Q566.8 128.1 545.7 140.1 Q715.9 134.1 802.0 124.2 Z"/>
+<path fill="url(#trail11)" d="M646.7 85.0 L733.3 40.9 Q601.3 45.4 450.0 72.9 Q538.7 90.5 646.7 85.0 Z"/>
+<path fill="url(#trail11)" d="M820.0 50.7 L906.7 60.5 Q774.7 65.0 623.3 65.6 Q712.0 56.2 820.0 50.7 Z"/>
+<path fill="url(#trail11)" d="M993.3 70.3 L1080.0 99.0 Q948.0 103.5 796.7 94.7 Q885.3 75.8 993.3 70.3 Z"/>
+<path fill="url(#trail11)" d="M932.0 128.4 L802.0 124.2 Q670.0 128.7 627.0 136.3 Q824.0 133.9 932.0 128.4 Z"/>
+<path fill="url(#trail11)" d="M672.0 120.0 L560.0 99.0 Q428.0 103.5 376.0 119.5 Q564.0 125.5 672.0 120.0 Z"/>
+<path fill="url(#trail12)" d="M560.0 99.0 L646.7 85.0 Q474.9 85.9 291.1 94.1 Q419.5 100.2 560.0 99.0 Z"/>
+<path fill="url(#trail12)" d="M733.3 40.9 L820.0 50.7 Q648.3 51.6 464.4 47.9 Q592.8 42.1 733.3 40.9 Z"/>
+<path fill="url(#trail12)" d="M906.7 60.5 L993.3 70.3 Q821.6 71.2 637.7 67.5 Q766.1 61.7 906.7 60.5 Z"/>
+<path fill="url(#trail12)" d="M1080.0 99.0 L932.0 128.4 Q760.3 129.3 693.7 115.8 Q939.5 100.2 1080.0 99.0 Z"/>
+<path fill="url(#trail12)" d="M802.0 124.2 L672.0 120.0 Q500.3 120.9 424.7 124.2 Q661.5 125.4 802.0 124.2 Z"/>
+<path fill="url(#trail13)" d="M646.7 85.0 L733.3 40.9 Q614.6 36.5 474.0 53.1 Q549.5 79.6 646.7 85.0 Z"/>
+<path fill="url(#trail13)" d="M820.0 50.7 L906.7 60.5 Q787.9 56.1 647.4 45.7 Q722.8 45.3 820.0 50.7 Z"/>
+<path fill="url(#trail13)" d="M993.3 70.3 L1080.0 99.0 Q961.2 94.6 820.7 74.8 Q896.2 64.9 993.3 70.3 Z"/>
+<path fill="url(#trail13)" d="M932.0 128.4 L802.0 124.2 Q683.2 119.8 651.0 116.4 Q834.8 123.0 932.0 128.4 Z"/>
+<path fill="url(#trail13)" d="M672.0 120.0 L560.0 99.0 Q441.2 94.6 400.0 99.6 Q574.8 114.6 672.0 120.0 Z"/>
 </g>
 <g opacity="1.0">
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1010.0,66.0 1091.2,42.2 1122.0,87.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1091.2,42.2 1252.0,91.2 1122.0,87.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1091.2,42.2 1172.5,52.0 1252.0,91.2"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1172.5,52.0 1382.0,95.4 1252.0,91.2"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1172.5,52.0 1253.8,7.9 1382.0,95.4"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1253.8,7.9 1512.0,99.6 1382.0,95.4"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1253.8,7.9 1335.0,17.7 1512.0,99.6"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1335.0,17.7 1660.0,66.0 1512.0,99.6"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1335.0,17.7 1416.2,27.5 1660.0,66.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1416.2,27.5 1578.8,47.1 1660.0,66.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1416.2,27.5 1497.5,37.3 1578.8,47.1"/>
-</g>
-<g opacity="0.85">
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1190.0,140.0 1268.3,107.8 1289.5,165.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1268.3,107.8 1407.0,168.1 1289.5,165.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1268.3,107.8 1346.7,115.0 1407.0,168.1"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1346.7,115.0 1524.5,171.2 1407.0,168.1"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1346.7,115.0 1425.0,122.3 1524.5,171.2"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1425.0,122.3 1660.0,140.0 1524.5,171.2"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1425.0,122.3 1503.3,129.6 1660.0,140.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1503.3,129.6 1581.7,96.8 1660.0,140.0"/>
+<path fill="url(#trail20)" d="M1010.0 71.0 L1091.2 40.1 Q959.7 50.0 811.5 77.7 Q902.4 83.2 1010.0 71.0 Z"/>
+<path fill="url(#trail20)" d="M1172.5 52.8 L1253.8 -4.5 Q1122.2 5.4 974.0 46.3 Q1064.9 65.0 1172.5 52.8 Z"/>
+<path fill="url(#trail20)" d="M1335.0 8.2 L1416.2 20.9 Q1284.7 30.9 1136.5 36.7 Q1227.4 20.4 1335.0 8.2 Z"/>
+<path fill="url(#trail20)" d="M1497.5 33.7 L1578.8 46.4 Q1447.2 56.4 1299.0 62.2 Q1389.9 45.9 1497.5 33.7 Z"/>
+<path fill="url(#trail20)" d="M1660.0 71.0 L1512.0 114.7 Q1380.5 124.6 1346.8 115.0 Q1552.4 83.2 1660.0 71.0 Z"/>
+<path fill="url(#trail20)" d="M1382.0 109.2 L1252.0 103.8 Q1120.5 113.7 1077.8 128.6 Q1274.4 121.4 1382.0 109.2 Z"/>
+<path fill="url(#trail20)" d="M1122.0 98.3 L1010.0 71.0 Q878.5 81.0 826.8 106.8 Q1014.4 110.5 1122.0 98.3 Z"/>
+<path fill="url(#trail21)" d="M1091.2 40.1 L1172.5 52.8 Q1007.5 58.2 831.9 58.4 Q956.2 46.7 1091.2 40.1 Z"/>
+<path fill="url(#trail21)" d="M1253.8 -4.5 L1335.0 8.2 Q1170.0 13.6 994.4 13.8 Q1118.8 2.1 1253.8 -4.5 Z"/>
+<path fill="url(#trail21)" d="M1416.2 20.9 L1497.5 33.7 Q1332.5 39.1 1156.9 39.3 Q1281.2 27.5 1416.2 20.9 Z"/>
+<path fill="url(#trail21)" d="M1578.8 46.4 L1660.0 71.0 Q1495.0 76.4 1319.4 70.7 Q1443.8 53.0 1578.8 46.4 Z"/>
+<path fill="url(#trail21)" d="M1512.0 114.7 L1382.0 109.2 Q1217.0 114.6 1147.0 124.0 Q1377.0 121.3 1512.0 114.7 Z"/>
+<path fill="url(#trail21)" d="M1252.0 103.8 L1122.0 98.3 Q957.0 103.7 887.0 113.0 Q1117.0 110.4 1252.0 103.8 Z"/>
+<path fill="url(#trail22)" d="M1010.0 71.0 L1091.2 40.1 Q876.6 41.0 660.3 57.5 Q834.4 72.1 1010.0 71.0 Z"/>
+<path fill="url(#trail22)" d="M1172.5 52.8 L1253.8 -4.5 Q1039.1 -3.6 822.8 26.1 Q996.9 53.9 1172.5 52.8 Z"/>
+<path fill="url(#trail22)" d="M1335.0 8.2 L1416.2 20.9 Q1201.6 21.8 985.3 16.6 Q1159.4 9.3 1335.0 8.2 Z"/>
+<path fill="url(#trail22)" d="M1497.5 33.7 L1578.8 46.4 Q1364.1 47.3 1147.8 42.0 Q1321.9 34.8 1497.5 33.7 Z"/>
+<path fill="url(#trail22)" d="M1660.0 71.0 L1512.0 114.7 Q1297.3 115.6 1195.7 94.8 Q1484.4 72.1 1660.0 71.0 Z"/>
+<path fill="url(#trail22)" d="M1382.0 109.2 L1252.0 103.8 Q1037.3 104.7 926.7 108.5 Q1206.4 110.3 1382.0 109.2 Z"/>
+<path fill="url(#trail22)" d="M1122.0 98.3 L1010.0 71.0 Q795.3 71.9 675.7 86.6 Q946.4 99.4 1122.0 98.3 Z"/>
+<path fill="url(#trail23)" d="M1091.2 40.1 L1172.5 52.8 Q1024.0 47.1 862.0 33.7 Q969.8 33.0 1091.2 40.1 Z"/>
+<path fill="url(#trail23)" d="M1253.8 -4.5 L1335.0 8.2 Q1186.5 2.5 1024.5 -10.9 Q1132.3 -11.6 1253.8 -4.5 Z"/>
+<path fill="url(#trail23)" d="M1416.2 20.9 L1497.5 33.7 Q1349.0 27.9 1187.0 14.5 Q1294.8 13.9 1416.2 20.9 Z"/>
+<path fill="url(#trail23)" d="M1578.8 46.4 L1660.0 71.0 Q1511.5 65.3 1349.5 45.9 Q1457.3 39.4 1578.8 46.4 Z"/>
+<path fill="url(#trail23)" d="M1512.0 114.7 L1382.0 109.2 Q1233.5 103.5 1177.1 99.2 Q1390.5 107.7 1512.0 114.7 Z"/>
+<path fill="url(#trail23)" d="M1252.0 103.8 L1122.0 98.3 Q973.5 92.6 917.1 88.3 Q1130.5 96.7 1252.0 103.8 Z"/>
 </g>
 <g opacity="0.7">
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="900.0,196.0 986.7,161.8 1012.0,218.8"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="986.7,161.8 1142.0,208.5 1012.0,218.8"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="986.7,161.8 1073.3,167.1 1142.0,208.5"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1073.3,167.1 1272.0,210.8 1142.0,208.5"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1073.3,167.1 1160.0,172.4 1272.0,210.8"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1160.0,172.4 1420.0,196.0 1272.0,210.8"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1160.0,172.4 1246.7,177.8 1420.0,196.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1246.7,177.8 1333.3,183.1 1420.0,196.0"/>
+<path fill="url(#trail30)" d="M160.0 212.0 L237.1 167.9 Q149.4 174.5 39.1 204.7 Q88.2 220.1 160.0 212.0 Z"/>
+<path fill="url(#trail30)" d="M314.3 174.8 L391.4 181.6 Q303.7 188.3 193.4 193.0 Q242.5 182.9 314.3 174.8 Z"/>
+<path fill="url(#trail30)" d="M468.6 188.5 L545.7 195.3 Q458.0 202.0 347.7 206.7 Q396.8 196.6 468.6 188.5 Z"/>
+<path fill="url(#trail30)" d="M622.9 202.2 L700.0 212.0 Q612.3 218.6 502.0 221.9 Q551.1 210.3 622.9 202.2 Z"/>
+<path fill="url(#trail30)" d="M547.0 231.1 L412.0 228.2 Q324.3 234.8 320.1 244.4 Q475.2 239.2 547.0 231.1 Z"/>
+<path fill="url(#trail30)" d="M277.0 241.4 L160.0 212.0 Q72.3 218.6 59.1 241.5 Q205.2 249.5 277.0 241.4 Z"/>
+<path fill="url(#trail31)" d="M237.1 167.9 L314.3 174.8 Q204.3 178.4 75.7 179.3 Q147.1 172.3 237.1 167.9 Z"/>
+<path fill="url(#trail31)" d="M391.4 181.6 L468.6 188.5 Q358.6 192.1 230.0 193.1 Q301.4 186.0 391.4 181.6 Z"/>
+<path fill="url(#trail31)" d="M545.7 195.3 L622.9 202.2 Q512.9 205.8 384.3 206.8 Q455.7 199.7 545.7 195.3 Z"/>
+<path fill="url(#trail31)" d="M700.0 212.0 L547.0 231.1 Q437.0 234.7 423.5 229.6 Q610.0 216.4 700.0 212.0 Z"/>
+<path fill="url(#trail31)" d="M412.0 228.2 L277.0 241.4 Q167.0 245.0 144.5 242.8 Q322.0 232.6 412.0 228.2 Z"/>
+<path fill="url(#trail32)" d="M160.0 212.0 L237.1 167.9 Q94.0 168.5 -61.6 191.3 Q42.9 212.7 160.0 212.0 Z"/>
+<path fill="url(#trail32)" d="M314.3 174.8 L391.4 181.6 Q248.3 182.2 92.7 179.5 Q197.2 175.5 314.3 174.8 Z"/>
+<path fill="url(#trail32)" d="M468.6 188.5 L545.7 195.3 Q402.6 195.9 246.9 193.2 Q351.5 189.2 468.6 188.5 Z"/>
+<path fill="url(#trail32)" d="M622.9 202.2 L700.0 212.0 Q556.9 212.6 401.2 208.4 Q505.8 202.9 622.9 202.2 Z"/>
+<path fill="url(#trail32)" d="M547.0 231.1 L412.0 228.2 Q268.9 228.8 219.3 231.0 Q429.9 231.8 547.0 231.1 Z"/>
+<path fill="url(#trail32)" d="M277.0 241.4 L160.0 212.0 Q16.9 212.6 -41.7 228.0 Q159.9 242.1 277.0 241.4 Z"/>
+<path fill="url(#trail33)" d="M237.1 167.9 L314.3 174.8 Q215.3 170.9 95.8 162.8 Q156.2 163.2 237.1 167.9 Z"/>
+<path fill="url(#trail33)" d="M391.4 181.6 L468.6 188.5 Q369.6 184.6 250.1 176.5 Q310.5 176.9 391.4 181.6 Z"/>
+<path fill="url(#trail33)" d="M545.7 195.3 L622.9 202.2 Q523.9 198.4 404.3 190.3 Q464.7 190.7 545.7 195.3 Z"/>
+<path fill="url(#trail33)" d="M700.0 212.0 L547.0 231.1 Q448.0 227.3 443.6 213.0 Q619.0 207.3 700.0 212.0 Z"/>
+<path fill="url(#trail33)" d="M412.0 228.2 L277.0 241.4 Q178.0 237.6 164.6 226.3 Q331.0 223.5 412.0 228.2 Z"/>
+</g>
+<g opacity="0.65">
+<path fill="url(#trail40)" d="M820.0 231.0 L906.7 209.9 Q827.7 215.8 719.8 233.6 Q755.4 238.2 820.0 231.0 Z"/>
+<path fill="url(#trail40)" d="M993.3 216.0 L1080.0 222.2 Q1001.1 228.1 893.2 232.2 Q928.8 223.3 993.3 216.0 Z"/>
+<path fill="url(#trail40)" d="M1166.7 194.5 L1253.3 200.6 Q1174.4 206.5 1066.5 210.7 Q1102.1 201.7 1166.7 194.5 Z"/>
+<path fill="url(#trail40)" d="M1340.0 231.0 L1192.0 254.8 Q1113.1 260.7 1122.5 256.0 Q1275.4 238.2 1340.0 231.0 Z"/>
+<path fill="url(#trail40)" d="M1062.0 252.1 L932.0 249.5 Q853.1 255.4 853.5 263.9 Q997.4 259.3 1062.0 252.1 Z"/>
+<path fill="url(#trail41)" d="M906.7 209.9 L993.3 216.0 Q894.3 219.2 770.0 220.0 Q825.7 213.7 906.7 209.9 Z"/>
+<path fill="url(#trail41)" d="M1080.0 222.2 L1166.7 194.5 Q1067.7 197.6 943.3 215.3 Q999.0 226.0 1080.0 222.2 Z"/>
+<path fill="url(#trail41)" d="M1253.3 200.6 L1340.0 231.0 Q1241.0 234.2 1116.7 222.8 Q1172.3 204.5 1253.3 200.6 Z"/>
+<path fill="url(#trail41)" d="M1192.0 254.8 L1062.0 252.1 Q963.0 255.3 947.0 260.4 Q1111.0 258.6 1192.0 254.8 Z"/>
+<path fill="url(#trail41)" d="M932.0 249.5 L820.0 231.0 Q721.0 234.2 696.0 247.2 Q851.0 253.3 932.0 249.5 Z"/>
+<path fill="url(#trail42)" d="M820.0 231.0 L906.7 209.9 Q777.9 210.3 629.2 221.4 Q714.6 231.5 820.0 231.0 Z"/>
+<path fill="url(#trail42)" d="M993.3 216.0 L1080.0 222.2 Q951.2 222.6 802.5 220.0 Q888.0 216.6 993.3 216.0 Z"/>
+<path fill="url(#trail42)" d="M1166.7 194.5 L1253.3 200.6 Q1124.5 201.1 975.8 198.5 Q1061.3 195.0 1166.7 194.5 Z"/>
+<path fill="url(#trail42)" d="M1340.0 231.0 L1192.0 254.8 Q1063.2 255.2 1031.8 243.8 Q1234.6 231.5 1340.0 231.0 Z"/>
+<path fill="url(#trail42)" d="M1062.0 252.1 L932.0 249.5 Q803.2 249.9 762.8 251.7 Q956.6 252.6 1062.0 252.1 Z"/>
+<path fill="url(#trail43)" d="M906.7 209.9 L993.3 216.0 Q904.3 212.5 788.1 205.1 Q833.8 205.6 906.7 209.9 Z"/>
+<path fill="url(#trail43)" d="M1080.0 222.2 L1166.7 194.5 Q1077.6 191.0 961.4 200.5 Q1007.1 217.9 1080.0 222.2 Z"/>
+<path fill="url(#trail43)" d="M1253.3 200.6 L1340.0 231.0 Q1250.9 227.5 1134.7 208.0 Q1180.5 196.3 1253.3 200.6 Z"/>
+<path fill="url(#trail43)" d="M1192.0 254.8 L1062.0 252.1 Q972.9 248.6 965.1 245.6 Q1119.1 250.4 1192.0 254.8 Z"/>
+<path fill="url(#trail43)" d="M932.0 249.5 L820.0 231.0 Q730.9 227.5 714.1 232.4 Q859.1 245.2 932.0 249.5 Z"/>
 </g>
 <g opacity="0.55">
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1270.0,240.0 1348.0,228.5 1382.0,252.6"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1348.0,228.5 1512.0,254.3 1382.0,252.6"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1348.0,228.5 1426.0,232.4 1512.0,254.3"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1426.0,232.4 1660.0,240.0 1512.0,254.3"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1426.0,232.4 1504.0,214.8 1660.0,240.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1504.0,214.8 1582.0,218.7 1660.0,240.0"/>
+<path fill="url(#trail50)" d="M1300.0 276.0 L1390.0 261.2 Q1319.8 266.4 1217.4 280.1 Q1242.6 282.3 1300.0 276.0 Z"/>
+<path fill="url(#trail50)" d="M1480.0 266.3 L1570.0 243.6 Q1499.8 248.8 1397.4 266.4 Q1422.6 272.6 1480.0 266.3 Z"/>
+<path fill="url(#trail50)" d="M1660.0 276.0 L1522.0 294.4 Q1451.8 299.5 1463.4 296.7 Q1602.6 282.3 1660.0 276.0 Z"/>
+<path fill="url(#trail50)" d="M1402.0 292.2 L1300.0 276.0 Q1229.8 281.2 1223.4 295.6 Q1344.6 298.5 1402.0 292.2 Z"/>
+<path fill="url(#trail51)" d="M1390.0 261.2 L1480.0 266.3 Q1392.0 269.0 1275.0 269.8 Q1318.0 264.5 1390.0 261.2 Z"/>
+<path fill="url(#trail51)" d="M1570.0 243.6 L1660.0 276.0 Q1572.0 278.7 1455.0 265.8 Q1498.0 246.9 1570.0 243.6 Z"/>
+<path fill="url(#trail51)" d="M1522.0 294.4 L1402.0 292.2 Q1314.0 294.9 1302.0 299.3 Q1450.0 297.7 1522.0 294.4 Z"/>
+<path fill="url(#trail52)" d="M1300.0 276.0 L1390.0 261.2 Q1275.5 261.5 1136.9 269.2 Q1206.3 276.3 1300.0 276.0 Z"/>
+<path fill="url(#trail52)" d="M1480.0 266.3 L1570.0 243.6 Q1455.5 243.8 1316.9 255.5 Q1386.3 266.6 1480.0 266.3 Z"/>
+<path fill="url(#trail52)" d="M1660.0 276.0 L1522.0 294.4 Q1407.5 294.6 1382.9 285.7 Q1566.3 276.3 1660.0 276.0 Z"/>
+<path fill="url(#trail52)" d="M1402.0 292.2 L1300.0 276.0 Q1185.5 276.2 1142.9 284.6 Q1308.3 292.5 1402.0 292.2 Z"/>
+<path fill="url(#trail53)" d="M1390.0 261.2 L1480.0 266.3 Q1400.8 263.1 1291.1 256.6 Q1325.2 257.3 1390.0 261.2 Z"/>
+<path fill="url(#trail53)" d="M1570.0 243.6 L1660.0 276.0 Q1580.8 272.8 1471.1 252.6 Q1505.2 239.7 1570.0 243.6 Z"/>
+<path fill="url(#trail53)" d="M1522.0 294.4 L1402.0 292.2 Q1322.8 289.0 1318.1 286.1 Q1457.2 290.4 1522.0 294.4 Z"/>
+</g>
+</g>
+<g opacity="0.95">
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="-60.0,78.0 22.9,22.1 38.0,114.5"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="22.9,22.1 154.0,119.3 38.0,114.5"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="22.9,22.1 105.7,33.4 154.0,119.3"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="105.7,33.4 270.0,124.2 154.0,119.3"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="105.7,33.4 188.6,44.8 270.0,124.2"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="188.6,44.8 386.0,102.3 270.0,124.2"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="188.6,44.8 271.4,56.1 386.0,102.3"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="271.4,56.1 520.0,78.0 386.0,102.3"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="271.4,56.1 354.3,5.1 520.0,78.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="354.3,5.1 437.1,16.4 520.0,78.0"/>
+</g>
+<g opacity="0.85">
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="560.0,99.0 646.7,85.0 672.0,120.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="646.7,85.0 802.0,124.2 672.0,120.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="646.7,85.0 733.3,40.9 802.0,124.2"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="733.3,40.9 932.0,128.4 802.0,124.2"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="733.3,40.9 820.0,50.7 932.0,128.4"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="820.0,50.7 1080.0,99.0 932.0,128.4"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="820.0,50.7 906.7,60.5 1080.0,99.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="906.7,60.5 993.3,70.3 1080.0,99.0"/>
+</g>
+<g opacity="1.0">
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1010.0,71.0 1091.2,40.1 1122.0,98.3"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1091.2,40.1 1252.0,103.8 1122.0,98.3"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1091.2,40.1 1172.5,52.8 1252.0,103.8"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1172.5,52.8 1382.0,109.2 1252.0,103.8"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1172.5,52.8 1253.8,-4.5 1382.0,109.2"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1253.8,-4.5 1512.0,114.7 1382.0,109.2"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1253.8,-4.5 1335.0,8.2 1512.0,114.7"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1335.0,8.2 1660.0,71.0 1512.0,114.7"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1335.0,8.2 1416.2,20.9 1660.0,71.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1416.2,20.9 1578.8,46.4 1660.0,71.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1416.2,20.9 1497.5,33.7 1578.8,46.4"/>
+</g>
+<g opacity="0.7">
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="160.0,212.0 237.1,167.9 277.0,241.4"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="237.1,167.9 412.0,228.2 277.0,241.4"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="237.1,167.9 314.3,174.8 412.0,228.2"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="314.3,174.8 547.0,231.1 412.0,228.2"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="314.3,174.8 391.4,181.6 547.0,231.1"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="391.4,181.6 700.0,212.0 547.0,231.1"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="391.4,181.6 468.6,188.5 700.0,212.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="468.6,188.5 622.9,202.2 700.0,212.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="468.6,188.5 545.7,195.3 622.9,202.2"/>
+</g>
+<g opacity="0.65">
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="820.0,231.0 906.7,209.9 932.0,249.5"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="906.7,209.9 1062.0,252.1 932.0,249.5"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="906.7,209.9 993.3,216.0 1062.0,252.1"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="993.3,216.0 1192.0,254.8 1062.0,252.1"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="993.3,216.0 1080.0,222.2 1192.0,254.8"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1080.0,222.2 1340.0,231.0 1192.0,254.8"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1080.0,222.2 1166.7,194.5 1340.0,231.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1166.7,194.5 1253.3,200.6 1340.0,231.0"/>
+</g>
+<g opacity="0.55">
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1300.0,276.0 1390.0,261.2 1402.0,292.2"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1390.0,261.2 1522.0,294.4 1402.0,292.2"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1390.0,261.2 1480.0,266.3 1522.0,294.4"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1480.0,266.3 1660.0,276.0 1522.0,294.4"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1480.0,266.3 1570.0,243.6 1660.0,276.0"/>
 </g>
 </svg>
