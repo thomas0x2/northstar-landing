@@ -3,7 +3,6 @@
 export const hero = {
   title: "Beyond the transformer.",
   lead: "Today's AI runs on the hardware and methods we happened to start with. Northstar searches for the architectures and learning rules that hardware was never built to run, where the labs best placed to look are the least likely to.",
-  primary: { label: "Read the thesis", href: "#main" },
 };
 
 // The thesis, below the hero, with the vision and mission as its opening section. Every number cites an entry in `sources` by its id.
