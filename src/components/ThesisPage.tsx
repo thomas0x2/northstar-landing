@@ -76,7 +76,7 @@ export function ThesisPage() {
                 <div className="stats">
                   {v.numbers.stats.map((s) => (
                     <div className="stat" key={s.value}>
-                      <span className="stat-value">{s.value}<Cite id={s.source} /></span>
+                      <span className="stat-value">{s.value}{[s.source].flat().map((id) => <Cite key={id} id={id} />)}</span>
                       <p>{s.text}</p>
                     </div>
                   ))}
