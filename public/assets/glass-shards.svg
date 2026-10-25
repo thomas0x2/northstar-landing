@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMin slice">
 <title>Sanded glass shards drifting in the sky</title>
 <defs>
-<linearGradient id="trail0" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="899" y2="564"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="trail1" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="1125" y2="741"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail00" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="1102" y2="559"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail01" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="899" y2="564"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail02" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="665" y2="514"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail03" gradientUnits="userSpaceOnUse" x1="1359" y1="204" x2="841" y2="296"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail10" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="1266" y2="737"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail11" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="1125" y2="741"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail12" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="962" y2="705"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="trail13" gradientUnits="userSpaceOnUse" x1="1445" y1="491" x2="1085" y2="554"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <filter id="grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="soft"/>
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"/>
@@ -52,26 +58,46 @@
 </filter>
 </defs>
 <g filter="url(#grain)" opacity="0.8">
-<polygon fill="url(#trail0)" points="1150.0,118.0 1262.0,64.0 802.0,424.0 690.0,478.0"/>
-<polygon fill="url(#trail0)" points="1262.0,64.0 1338.0,104.0 878.0,464.0 802.0,424.0"/>
-<polygon fill="url(#trail0)" points="1338.0,104.0 1446.0,52.0 986.0,412.0 878.0,464.0"/>
-<polygon fill="url(#trail0)" points="1446.0,52.0 1556.0,128.0 1096.0,488.0 986.0,412.0"/>
-<polygon fill="url(#trail0)" points="1556.0,128.0 1512.0,196.0 1052.0,556.0 1096.0,488.0"/>
-<polygon fill="url(#trail0)" points="1512.0,196.0 1574.0,262.0 1114.0,622.0 1052.0,556.0"/>
-<polygon fill="url(#trail0)" points="1574.0,262.0 1446.0,300.0 986.0,660.0 1114.0,622.0"/>
-<polygon fill="url(#trail0)" points="1446.0,300.0 1380.0,352.0 920.0,712.0 986.0,660.0"/>
-<polygon fill="url(#trail0)" points="1380.0,352.0 1268.0,306.0 808.0,666.0 920.0,712.0"/>
-<polygon fill="url(#trail0)" points="1268.0,306.0 1168.0,330.0 708.0,690.0 808.0,666.0"/>
-<polygon fill="url(#trail0)" points="1168.0,330.0 1206.0,238.0 746.0,598.0 708.0,690.0"/>
-<polygon fill="url(#trail0)" points="1206.0,238.0 1150.0,118.0 690.0,478.0 746.0,598.0"/>
-<polygon fill="url(#trail1)" points="1302.0,470.0 1384.0,428.0 1064.0,678.0 982.0,720.0"/>
-<polygon fill="url(#trail1)" points="1384.0,428.0 1452.0,452.0 1132.0,702.0 1064.0,678.0"/>
-<polygon fill="url(#trail1)" points="1452.0,452.0 1528.0,420.0 1208.0,670.0 1132.0,702.0"/>
-<polygon fill="url(#trail1)" points="1528.0,420.0 1578.0,492.0 1258.0,742.0 1208.0,670.0"/>
-<polygon fill="url(#trail1)" points="1578.0,492.0 1520.0,548.0 1200.0,798.0 1258.0,742.0"/>
-<polygon fill="url(#trail1)" points="1520.0,548.0 1430.0,576.0 1110.0,826.0 1200.0,798.0"/>
-<polygon fill="url(#trail1)" points="1430.0,576.0 1364.0,540.0 1044.0,790.0 1110.0,826.0"/>
-<polygon fill="url(#trail1)" points="1364.0,540.0 1302.0,470.0 982.0,720.0 1044.0,790.0"/>
+<path fill="url(#trail00)" d="M1150.0 118.0 L1262.0 64.0 Q1120.5 223.6 948.8 445.6 Q1034.3 313.0 1150.0 118.0 Z"/>
+<path fill="url(#trail00)" d="M1338.0 104.0 L1446.0 52.0 Q1304.5 211.6 1134.8 432.6 Q1222.3 299.0 1338.0 104.0 Z"/>
+<path fill="url(#trail00)" d="M1556.0 128.0 L1512.0 196.0 Q1370.5 355.6 1276.8 516.6 Q1440.3 323.0 1556.0 128.0 Z"/>
+<path fill="url(#trail00)" d="M1574.0 262.0 L1446.0 300.0 Q1304.5 459.6 1252.8 635.6 Q1458.3 457.0 1574.0 262.0 Z"/>
+<path fill="url(#trail00)" d="M1380.0 352.0 L1268.0 306.0 Q1126.5 465.6 1066.8 683.6 Q1264.3 547.0 1380.0 352.0 Z"/>
+<path fill="url(#trail00)" d="M1168.0 330.0 L1206.0 238.0 Q1064.5 397.6 929.8 638.6 Q1052.3 525.0 1168.0 330.0 Z"/>
+<path fill="url(#trail01)" d="M1262.0 64.0 L1338.0 104.0 Q1085.0 266.0 840.0 444.0 Q1055.0 262.0 1262.0 64.0 Z"/>
+<path fill="url(#trail01)" d="M1446.0 52.0 L1556.0 128.0 Q1303.0 290.0 1041.0 450.0 Q1239.0 250.0 1446.0 52.0 Z"/>
+<path fill="url(#trail01)" d="M1512.0 196.0 L1574.0 262.0 Q1321.0 424.0 1083.0 589.0 Q1305.0 394.0 1512.0 196.0 Z"/>
+<path fill="url(#trail01)" d="M1446.0 300.0 L1380.0 352.0 Q1127.0 514.0 953.0 686.0 Q1239.0 498.0 1446.0 300.0 Z"/>
+<path fill="url(#trail01)" d="M1268.0 306.0 L1168.0 330.0 Q915.0 492.0 758.0 678.0 Q1061.0 504.0 1268.0 306.0 Z"/>
+<path fill="url(#trail01)" d="M1206.0 238.0 L1150.0 118.0 Q897.0 280.0 718.0 538.0 Q999.0 436.0 1206.0 238.0 Z"/>
+<path fill="url(#trail02)" d="M1150.0 118.0 L1262.0 64.0 Q880.6 203.2 512.5 400.4 Q837.9 288.2 1150.0 118.0 Z"/>
+<path fill="url(#trail02)" d="M1338.0 104.0 L1446.0 52.0 Q1064.6 191.2 698.5 387.4 Q1025.9 274.2 1338.0 104.0 Z"/>
+<path fill="url(#trail02)" d="M1556.0 128.0 L1512.0 196.0 Q1130.6 335.2 840.5 471.4 Q1243.9 298.2 1556.0 128.0 Z"/>
+<path fill="url(#trail02)" d="M1574.0 262.0 L1446.0 300.0 Q1064.6 439.2 816.5 590.4 Q1261.9 432.2 1574.0 262.0 Z"/>
+<path fill="url(#trail02)" d="M1380.0 352.0 L1268.0 306.0 Q886.6 445.2 630.5 638.4 Q1067.9 522.2 1380.0 352.0 Z"/>
+<path fill="url(#trail02)" d="M1168.0 330.0 L1206.0 238.0 Q824.6 377.2 493.5 593.4 Q855.9 500.2 1168.0 330.0 Z"/>
+<path fill="url(#trail03)" d="M1262.0 64.0 L1338.0 104.0 Q1053.3 145.3 782.4 175.7 Q1029.1 114.4 1262.0 64.0 Z"/>
+<path fill="url(#trail03)" d="M1446.0 52.0 L1556.0 128.0 Q1271.3 169.3 983.4 181.7 Q1213.1 102.4 1446.0 52.0 Z"/>
+<path fill="url(#trail03)" d="M1512.0 196.0 L1574.0 262.0 Q1289.3 303.3 1025.4 320.7 Q1279.1 246.4 1512.0 196.0 Z"/>
+<path fill="url(#trail03)" d="M1446.0 300.0 L1380.0 352.0 Q1095.3 393.3 895.4 417.7 Q1213.1 350.4 1446.0 300.0 Z"/>
+<path fill="url(#trail03)" d="M1268.0 306.0 L1168.0 330.0 Q883.3 371.3 700.4 409.7 Q1035.1 356.4 1268.0 306.0 Z"/>
+<path fill="url(#trail03)" d="M1206.0 238.0 L1150.0 118.0 Q865.3 159.3 660.4 269.7 Q973.1 288.4 1206.0 238.0 Z"/>
+<path fill="url(#trail10)" d="M1302.0 470.0 L1384.0 428.0 Q1285.5 538.9 1164.0 695.4 Q1221.4 605.5 1302.0 470.0 Z"/>
+<path fill="url(#trail10)" d="M1452.0 452.0 L1528.0 420.0 Q1429.5 530.9 1311.0 682.4 Q1371.4 587.5 1452.0 452.0 Z"/>
+<path fill="url(#trail10)" d="M1578.0 492.0 L1520.0 548.0 Q1421.5 658.9 1370.0 766.4 Q1497.4 627.5 1578.0 492.0 Z"/>
+<path fill="url(#trail10)" d="M1430.0 576.0 L1364.0 540.0 Q1265.5 650.9 1218.0 804.4 Q1349.4 711.5 1430.0 576.0 Z"/>
+<path fill="url(#trail11)" d="M1384.0 428.0 L1452.0 452.0 Q1276.0 564.5 1098.0 690.0 Q1240.0 565.5 1384.0 428.0 Z"/>
+<path fill="url(#trail11)" d="M1528.0 420.0 L1578.0 492.0 Q1402.0 604.5 1233.0 706.0 Q1384.0 557.5 1528.0 420.0 Z"/>
+<path fill="url(#trail11)" d="M1520.0 548.0 L1430.0 576.0 Q1254.0 688.5 1155.0 812.0 Q1376.0 685.5 1520.0 548.0 Z"/>
+<path fill="url(#trail11)" d="M1364.0 540.0 L1302.0 470.0 Q1126.0 582.5 1013.0 755.0 Q1220.0 677.5 1364.0 540.0 Z"/>
+<path fill="url(#trail12)" d="M1302.0 470.0 L1384.0 428.0 Q1118.8 524.6 860.7 663.7 Q1085.0 588.1 1302.0 470.0 Z"/>
+<path fill="url(#trail12)" d="M1452.0 452.0 L1528.0 420.0 Q1262.8 516.6 1007.7 650.7 Q1235.0 570.1 1452.0 452.0 Z"/>
+<path fill="url(#trail12)" d="M1578.0 492.0 L1520.0 548.0 Q1254.8 644.6 1066.7 734.7 Q1361.0 610.1 1578.0 492.0 Z"/>
+<path fill="url(#trail12)" d="M1430.0 576.0 L1364.0 540.0 Q1098.8 636.6 914.7 772.7 Q1213.0 694.1 1430.0 576.0 Z"/>
+<path fill="url(#trail13)" d="M1384.0 428.0 L1452.0 452.0 Q1254.0 480.6 1058.1 503.5 Q1222.0 462.9 1384.0 428.0 Z"/>
+<path fill="url(#trail13)" d="M1528.0 420.0 L1578.0 492.0 Q1380.0 520.6 1193.1 519.5 Q1366.0 454.9 1528.0 420.0 Z"/>
+<path fill="url(#trail13)" d="M1520.0 548.0 L1430.0 576.0 Q1232.0 604.6 1115.1 625.5 Q1358.0 582.9 1520.0 548.0 Z"/>
+<path fill="url(#trail13)" d="M1364.0 540.0 L1302.0 470.0 Q1104.0 498.6 973.1 568.5 Q1202.0 574.9 1364.0 540.0 Z"/>
 </g>
 <polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1150.0,118.0 1262.0,64.0"/>
 <polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1262.0,64.0 1338.0,104.0"/>
@@ -85,8 +111,6 @@
 <polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1268.0,306.0 1168.0,330.0"/>
 <polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1168.0,330.0 1206.0,238.0"/>
 <polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1206.0,238.0 1150.0,118.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1251.4,136.7 1367.9,128.1 1503.1,142.9 1514.2,226.0 1394.0,281.8 1262.5,268.2"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1326.0,154.6 1386.2,150.1 1455.9,157.8 1461.7,200.7 1399.6,229.5 1331.8,222.4"/>
 <polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1302.0,470.0 1384.0,428.0"/>
 <polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1384.0,428.0 1452.0,452.0"/>
 <polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1452.0,452.0 1528.0,420.0"/>
@@ -95,6 +119,4 @@
 <polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1520.0,548.0 1430.0,576.0"/>
 <polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1430.0,576.0 1364.0,540.0"/>
 <polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1364.0,540.0 1302.0,470.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1378.2,463.9 1471.2,452.7 1549.4,477.5 1457.6,529.6"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1433.1,462.1 1481.1,456.4 1521.4,469.1 1474.0,496.0"/>
 </svg>

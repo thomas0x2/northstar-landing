@@ -1,6 +1,6 @@
 # Generates public/assets/glass-shards.svg: faceted sanded-glass shards with misty trails,
 # drawn with the same filters as the glass logo star (logo-glass-transparent.svg).
-import sys
+import math, sys
 out = sys.argv[1]
 shards = [
     # (outline, trail vector): two crystalline clouds with many points and edges.
@@ -15,18 +15,26 @@ def pts(p): return " ".join(f"{x:.1f},{y:.1f}" for x, y in p)
 defs, trails, bodies = [], [], []
 for i, (v, (dx, dy)) in enumerate(shards):
     cx = sum(x for x, _ in v) / len(v); cy = sum(y for _, y in v) / len(v)
-    defs.append(f'<linearGradient id="trail{i}" gradientUnits="userSpaceOnUse" x1="{cx:.0f}" y1="{cy:.0f}" x2="{cx+dx:.0f}" y2="{cy+dy:.0f}"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
-    for a, b in zip(v, v[1:] + v[:1]):
-        trails.append(f'<polygon fill="url(#trail{i})" points="{pts([a, b, (b[0]+dx, b[1]+dy), (a[0]+dx, a[1]+dy)])}"/>')
+    # Trails: several sheets of glass stream off every edge, fanning out across and away from the
+    # cloud like the glass star's trails. Each sheet is a curved wedge from an edge to a far point.
+    fan = ((-16, 0.75), (0, 1.0), (14, 1.3), (28, 0.9))
+    for j, (deg, length) in enumerate(fan):
+        t = math.radians(deg)
+        fx, fy = (dx * math.cos(t) - dy * math.sin(t)) * length, (dx * math.sin(t) + dy * math.cos(t)) * length
+        defs.append(f'<linearGradient id="trail{i}{j}" gradientUnits="userSpaceOnUse" x1="{cx:.0f}" y1="{cy:.0f}" x2="{cx+fx:.0f}" y2="{cy+fy:.0f}"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
+        for k, (a, b) in enumerate(zip(v, v[1:] + v[:1])):
+            if (k + j) % 2:
+                continue
+            mx, my = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
+            far = (mx + fx, my + fy)
+            ca = (a[0] + fx * 0.45, a[1] + fy * 0.55)
+            cb = (b[0] + fx * 0.55, b[1] + fy * 0.45)
+            trails.append(f'<path fill="url(#trail{i}{j})" d="M{a[0]:.1f} {a[1]:.1f} L{b[0]:.1f} {b[1]:.1f} Q{cb[0]:.1f} {cb[1]:.1f} {far[0]:.1f} {far[1]:.1f} Q{ca[0]:.1f} {ca[1]:.1f} {a[0]:.1f} {a[1]:.1f} Z"/>')
     # Facets fan out from a ridge point near the lit top right; each edge gets its own shade.
     rx, ry = cx + (v[3][0] - cx) * 0.3, cy + (v[3][1] - cy) * 0.3
     for k, (a, b) in enumerate(zip(v, v[1:] + v[:1])):
         f = SHADES[(k * 3 + i) % len(SHADES)]
         bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts([(rx, ry), a, b])}"/>')
-    # Inner layers: smaller sheets of glass stacked on top, offset toward the light, for depth.
-    for scale, dx2, dy2, f in ((0.62, 22, -14, "face2"), (0.32, 34, -22, "face1")):
-        inner = [(cx + (x - cx) * scale + dx2, cy + (y - cy) * scale + dy2) for x, y in v[::2]]
-        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts(inner)}"/>')
 def face(name, slope, seed):
     return f'''<filter id="{name}" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
