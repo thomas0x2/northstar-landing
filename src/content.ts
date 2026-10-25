@@ -1,11 +1,5 @@
 // All page copy lives here so it can be edited without touching layout.
 
-export const nav = {
-  links: [
-    { label: "Thesis", href: "/thesis/" },
-  ],
-};
-
 export const hero = {
   title: "Beyond the transformer.",
   lead: "Northstar searches for new paradigms of intelligence: architectures and learning rules that today's hardware was never built to run.",
