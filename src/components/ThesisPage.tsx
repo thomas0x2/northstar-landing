@@ -186,7 +186,12 @@ export function ThesisPage() {
         <section className="section section-tight">
           <div className="wrap">
             <SpectrumField as="div" className="test-card agency-card">
-              <img className="field sky" src="/assets/after-the-storm.svg" alt="" aria-hidden="true" />
+              <div className="sky" aria-hidden="true">
+                {[1, 2, 3, 4].map((n) => <span key={n} className={`cloud cloud-${n}`} />)}
+                <div className="flock">
+                  {[1, 2, 3, 4, 5].map((n) => <span key={n} className={`bird bird-${n}`} />)}
+                </div>
+              </div>
               <div className="agency">
                 <Head label={v.agency.label} title={v.agency.title} />
                 <div className="prose">

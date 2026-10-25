@@ -337,15 +337,49 @@ h1, h2 { text-wrap: balance; }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
-/* "Why we're doing it" on the spectrum: the sky layer sits over the field, anchored top right. */
-.agency-card > .sky { object-position: right top; }
+/* "Why we're doing it": clear blue sky after a storm. The spectrum's blues fill most of the card,
+   with the warm colours at the bottom edge; clouds are sanded glass capsules and birds are small darts. */
+.agency-card > .sky { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+/* The exact spectrum field, scaled up and anchored to its top right so the blues fill ~80% of the card. */
+.agency-card > .field { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
+/* Clouds are faceted shards of sanded glass, like the logo star's trailing sheets. */
+.cloud {
+  position: absolute;
+  background: var(--grain), linear-gradient(150deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.26) 50%, rgba(255, 255, 255, 0.1) 100%);
+  background-size: 160px 160px, 100% 100%;
+  backdrop-filter: blur(var(--blur-frost)); -webkit-backdrop-filter: blur(var(--blur-frost));
+}
+.cloud-1 { top: 7%; right: 4%; width: 34%; height: 130px; clip-path: polygon(6% 34%, 58% 0, 100% 30%, 86% 100%, 22% 80%); }
+.cloud-2 { top: calc(7% + 112px); right: 25%; width: 15%; height: 76px; clip-path: polygon(0 58%, 44% 0, 100% 34%, 72% 100%); opacity: 0.85; }
+.cloud-3 { top: 46%; right: 3%; width: 21%; height: 96px; clip-path: polygon(12% 18%, 88% 0, 100% 66%, 34% 100%); opacity: 0.9; }
+.cloud-4 { top: calc(46% + 104px); right: 4%; width: 9%; height: 50px; clip-path: polygon(0 40%, 62% 0, 100% 62%, 38% 100%); opacity: 0.75; }
+.flock { position: absolute; top: 27%; left: -12%; width: 150px; height: 70px; animation: flock-cross 46s linear infinite; }
+.bird {
+  position: absolute; width: 18px; height: 12px; background: var(--ink);
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 32% 50%);
+  animation: bird-bob 3.2s ease-in-out infinite alternate;
+}
+.bird-1 { left: 70px; top: 24px; width: 22px; height: 14px; }
+.bird-2 { left: 40px; top: 6px; animation-delay: -0.8s; }
+.bird-3 { left: 36px; top: 46px; animation-delay: -1.6s; }
+.bird-4 { left: 8px; top: 18px; width: 14px; height: 9px; opacity: 0.85; animation-delay: -2.2s; }
+.bird-5 { left: 0; top: 52px; width: 12px; height: 8px; opacity: 0.7; animation-delay: -1.1s; }
+@keyframes flock-cross { from { left: -12%; } to { left: 104%; } }
+@keyframes bird-bob { from { transform: translateY(-4px); } to { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) {
+  .flock { animation: none; left: 58%; }
+  .bird { animation: none; }
+}
 .agency { padding: clamp(28px, 6vw, 80px); }
 .agency .section-head { max-width: 760px; }
 .agency .prose p { color: var(--ink); }
-/* On phones the sky becomes a band above the copy, so the birds and clouds stay clear of the text. */
+/* On phones the clouds and birds sit in a band above the copy. */
 @media (max-width: 640px) {
-  .agency-card > .sky { height: 340px; }
   .agency { padding-top: 170px; }
+  .cloud-1 { top: 18px; width: 58%; height: 90px; }
+  .cloud-2 { top: 70px; right: 52%; width: 30%; height: 56px; }
+  .cloud-3, .cloud-4 { display: none; }
+  .flock { top: 40px; transform: scale(0.8); }
 }
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.
