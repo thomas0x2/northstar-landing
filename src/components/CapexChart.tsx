@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useLayoutEffect, useRef, type CSSProperties, type RefObject } from "react";
 import { thesisPage } from "../content";
 
 const b = thesisPage.buildout;
@@ -11,69 +11,89 @@ const n = b.years.length;
 const billions = (v: number) => `$${Math.round(v)}B`;
 const trillions = (v: number) => `$${(v / 1000).toFixed(2)}T`;
 
-/** True once the element has scrolled into view (immediately when the reader prefers reduced motion). */
-function useRevealed<T extends Element>() {
-  const ref = useRef<T>(null);
-  const [revealed, setRevealed] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
-      setRevealed(true);
-      return;
-    }
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setRevealed(true); io.disconnect(); }
-    }, { threshold: 0.35 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return [ref, revealed] as const;
-}
+const clamp = (v: number) => Math.min(1, Math.max(0, v));
+const ease = (t: number) => t * t * (3 - 2 * t);
+// Each bar grows over its own slice of the scroll, offset by `stagger`; the 2026 plan fills in over the last fifth.
+const stagger = 0.08;
+const barsEnd = 0.8;
 
-/** A number that counts up from zero once `run` turns true. */
-function CountUp({ to, run, format, duration = 1900 }: { to: number; run: boolean; format: (v: number) => string; duration?: number }) {
-  const [v, setV] = useState(0);
-  useEffect(() => {
-    if (!run) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setV(to); return; }
-    let raf = 0;
-    const t0 = performance.now();
-    const tick = (t: number) => {
-      const p = Math.min(1, (t - t0) / duration);
-      setV(to * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) raf = requestAnimationFrame(tick);
+/**
+ * Ties the chart to scroll position: bars grow as the plot scrolls up the screen and shrink again on the way back.
+ * Writes CSS variables and counter text straight to the DOM, so scrolling never re-renders React.
+ */
+function useScrollProgress(root: RefObject<HTMLDivElement | null>, plot: RefObject<HTMLDivElement | null>, spentEl: RefObject<HTMLSpanElement | null>, plannedEl: RefObject<HTMLSpanElement | null>) {
+  // Layout effect, so the first paint already shows the right scroll state rather than a flash of full bars.
+  useLayoutEffect(() => {
+    const el = root.current, plotEl = plot.current;
+    if (!el || !plotEl) return;
+    const cols = Array.from(plotEl.querySelectorAll<HTMLElement>(".capex-col"));
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const paint = (p: number) => {
+      let sum = 0;
+      cols.forEach((col, i) => {
+        const t = clamp((p / barsEnd - i * stagger) / (1 - (n - 1) * stagger));
+        col.style.setProperty("--t", String(ease(t)));
+        sum += totals[i] * ease(t);
+      });
+      const tp = ease(clamp((p - barsEnd) / (1 - barsEnd)));
+      cols[n - 1]?.style.setProperty("--tp", String(tp));
+      if (spentEl.current) spentEl.current.textContent = trillions(sum);
+      if (plannedEl.current) plannedEl.current.textContent = trillions(sum + (b.plan2026 - totals[n - 1]) * tp);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [run, to, duration]);
-  return <>{format(v)}</>;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      if (reduced.matches) { paint(1); return; }
+      const vh = window.innerHeight;
+      const r = plotEl.getBoundingClientRect();
+      // 0 when the baseline of the plot scrolls into view, 1 when its top nears the top of the viewport,
+      // so the whole growth happens while the bars are on screen.
+      const from = vh - r.height, to = Math.min(vh * 0.1, from - 200);
+      paint(clamp((from - r.top) / (from - to)));
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    reduced.addEventListener("change", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      reduced.removeEventListener("change", onScroll);
+    };
+  }, [root, plot, spentEl, plannedEl]);
 }
 
-/** Big-tech capital spending by year: bars grow in on scroll while the cumulative total counts up. */
+/** Big-tech capital spending by year: bars grow and the cumulative total counts up as you scroll, and reverse on the way back. */
 export function CapexChart() {
-  const [ref, revealed] = useRevealed<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
+  const plotRef = useRef<HTMLDivElement>(null);
+  const spentRef = useRef<HTMLSpanElement>(null);
+  const plannedRef = useRef<HTMLSpanElement>(null);
+  useScrollProgress(ref, plotRef, spentRef, plannedRef);
   return (
-    <div className={`capex${revealed ? " is-revealed" : ""}`} ref={ref}>
+    <div className="capex" ref={ref}>
       <div className="capex-totals">
         <div className="capex-total">
-          <span className="capex-total-value display"><CountUp to={spent} run={revealed} format={trillions} /></span>
+          <span className="capex-total-value display" ref={spentRef} aria-label={trillions(spent)}>{trillions(spent)}</span>
           <p>{b.total}</p>
         </div>
         <div className="capex-total capex-total-plan">
-          <span className="capex-total-value display"><CountUp to={planned} run={revealed} format={trillions} duration={2600} /></span>
+          <span className="capex-total-value display" ref={plannedRef} aria-label={trillions(planned)}>{trillions(planned)}</span>
           <p>{b.planTotal}</p>
         </div>
       </div>
 
-      <div className="capex-plot" role="img" aria-label={`Bar chart of yearly capital spending, rising from ${billions(totals[0])} in 2020 to ${billions(totals[n - 2])} in 2025, with ${billions(totals[n - 1])} in the first half of 2026 against a ${billions(b.plan2026)} plan.`}>
+      <div className="capex-plot" ref={plotRef} role="img" aria-label={`Bar chart of yearly capital spending, rising from ${billions(totals[0])} in 2020 to ${billions(totals[n - 2])} in 2025, with ${billions(totals[n - 1])} in the first half of 2026 against a ${billions(b.plan2026)} plan.`}>
         {b.years.map((y, i) => {
           const total = totals[i];
           const isPartial = "partial" in y;
           // The spectrum spans the whole plot, so each bar shows its own slice of it.
           const style = {
             "--h": total / max,
-            "--delay": `${i * 110}ms`,
             "--bg-x": `${(i / (n - 1)) * 100}%`,
             "--bg-w": `${n * 100}%`,
           } as CSSProperties;

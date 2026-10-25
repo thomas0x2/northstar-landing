@@ -383,24 +383,22 @@ h1, h2 { text-wrap: balance; }
 }
 .capex-col { position: relative; display: flex; flex-direction: column; align-items: stretch; outline: none; }
 .capex-stack { height: var(--plot-h); display: flex; flex-direction: column; justify-content: flex-end; }
-.capex-bar, .capex-plan {
-  position: relative; height: 0;
-  transition: height 1.1s cubic-bezier(0.22, 1, 0.36, 1) var(--delay);
-}
+.capex-bar, .capex-plan { position: relative; }
+/* Heights follow --t / --tp, which scroll position sets (0 to 1), so the bars grow and shrink with the page. */
 .capex-bar {
+  height: calc(var(--plot-h) * var(--h) * var(--t, 1));
   border-radius: 4px 4px 0 0;
   /* Sized to the whole plot so the bars read as one continuous spectrum. */
   background: url("/assets/spectrum-field.svg") var(--bg-x) 100% / var(--bg-w) var(--plot-h) no-repeat;
 }
 .capex-plan {
+  height: calc(var(--plot-h) * var(--plan) * var(--tp, 1));
   border-radius: 4px 4px 0 0; margin-bottom: 2px;
   background: var(--grain), var(--glass-face);
   background-size: 160px 160px, 100% 100%;
   border: 1px dashed var(--frost-line); border-bottom: 0;
-  transition-delay: calc(var(--delay) + 700ms);
+  opacity: min(1, calc(var(--tp, 1) * 4));
 }
-.is-revealed .capex-bar { height: calc(var(--plot-h) * var(--h)); }
-.is-revealed .capex-plan { height: calc(var(--plot-h) * var(--plan)); }
 /* The plan sits above the first-half bar, so the bar's own label moves inside it. */
 .capex-plan + .capex-bar .capex-label { bottom: auto; top: 8px; color: var(--ink-inverse); }
 
@@ -409,11 +407,11 @@ h1, h2 { text-wrap: balance; }
   display: flex; flex-direction: column; align-items: center;
   font-family: var(--font-display); font-weight: 700; font-size: clamp(12px, 1.5vw, 18px); line-height: 1.1;
   white-space: nowrap; font-variant-numeric: tabular-nums;
-  opacity: 0; transition: opacity 0.4s ease calc(var(--delay) + 800ms);
+  /* Fades in over the last stretch of the bar's growth. */
+  opacity: clamp(0, calc((var(--t, 1) - 0.85) * 6.67), 1);
 }
-.capex-plan .capex-label { transition-delay: calc(var(--delay) + 1500ms); }
+.capex-plan .capex-label { opacity: clamp(0, calc((var(--tp, 1) - 0.85) * 6.67), 1); }
 .capex-label small { font-family: var(--font-body); font-size: 0.72em; font-weight: 700; color: inherit; opacity: 0.8; }
-.is-revealed .capex-label { opacity: 1; }
 .capex-year { padding-top: var(--space-3); text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-subtle); }
 .capex-col:hover .capex-year, .capex-col:focus-visible .capex-year { color: var(--ink); }
 .capex-col:focus-visible .capex-bar { outline: 2px solid var(--ink); outline-offset: 3px; }
@@ -452,5 +450,5 @@ h1, h2 { text-wrap: balance; }
 .capex-table-wrap p { margin-top: var(--space-2); font-size: 13px; color: var(--ink-subtle); }
 
 @media (prefers-reduced-motion: reduce) {
-  .capex-bar, .capex-plan, .capex-label, .capex-tip { transition: none; }
+  .capex-tip { transition: none; }
 }
