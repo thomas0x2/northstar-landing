@@ -32,6 +32,7 @@ npm run preview   # serve the production build locally
 - The logo is the sanded glass star; the chrome star is the hero visual only.
 - Fonts: Oxanium Bold (display), Manrope (body).
 - Headings (`h1`–`h3`) on black fill with the spectrum on hover (`spectrum-field.svg` clipped to the text), the same effect as the card numerals. Not on the spectrum field itself.
+- White (primary) buttons on black fill with the spectrum on hover, with white text, instead of raising the glass sheet. On the spectrum field they keep the glass sheet.
 - No shadows (box, text or drop). For depth or emphasis, use the sanded glass from the logo (`--glass-face`, `--glass-sheet`, `--grain`) or the spectrum field.
 
 ## Before launch
