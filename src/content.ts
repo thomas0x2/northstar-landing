@@ -132,15 +132,6 @@ export const thesisPage = {
     title: "Less locked in, for now.",
     body: "The four largest US tech companies plan to spend about $725 billion in 2026 alone. The EU's gigafactory fund is €20 billion. Being behind on the buildout is a weakness for copying the incumbents, and a strength for building something different from scratch. The window is closing as the gigafactories go up, which is also the urgency.",
   },
-  risks: {
-    label: "Honest risks",
-    items: [
-      "The gap may not exist, or may need hardware we can't build.",
-      "In a true fast takeoff, no small lab may have a structural edge.",
-      "If we find something, the incumbents' easiest move is to buy us. Acquisition and independence are both acceptable outcomes.",
-    ],
-    hedge: "If it's already too late, the big labs win regardless and trying cost little. If there's still a window, this is the right bet at the right time. The best move is the same in both worlds: start.",
-  },
   sources: [
     { id: 1, text: "Company 2026 capex guidance (Amazon ~$200B, Alphabet $195–205B, Microsoft ~$190B, Meta $125–145B), summarized by Silicon Canals, July 2026", href: "https://siliconcanals.com/m-four-us-tech-giants-spent-roughly-410-billion-on-capital-expenditure-last-year-much-of-it-tied-to-ai-and-are-steering-toward-roughly-725-billion-in-2026/" },
     { id: 2, text: "The Register, \"OpenAI wants to blow through $500B on AI infrastructure\", January 2025", href: "https://www.theregister.com/2025/01/22/openai_stargate_ai_datacenter_company" },

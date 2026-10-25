@@ -171,16 +171,6 @@ export function ThesisPage() {
           </div>
         </section>
 
-        <section className="section">
-          <div className="wrap">
-            <Head label={v.risks.label} />
-            <ul className="risks">
-              {v.risks.items.map((r) => <li key={r}>{r}</li>)}
-            </ul>
-            <p className="statement-line display">{v.risks.hedge}</p>
-          </div>
-        </section>
-
         <Join />
 
         <section className="section section-flush" aria-labelledby="sources-title">
