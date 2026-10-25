@@ -274,24 +274,9 @@ h1, h2 { text-wrap: balance; }
 .page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
 
 .statements { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-5); }
-.statement {
-  position: relative; isolation: isolate;
-  border-radius: var(--radius-section-card); padding: clamp(28px, 4vw, 48px);
-  display: flex; flex-direction: column; gap: var(--space-5);
-}
-/* The face is sanded glass, like the logo star, with the spectrum glowing faintly through it. */
-.statement::before {
-  content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit;
-  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
-  opacity: 0.22;
-}
-.statement::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-  background: var(--grain), var(--glass-face);
-  background-size: 160px 160px, 100% 100%;
-  border: 1px solid var(--frost-line);
-}
-.statement p { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; }
+/* Vision and mission are cards: black at rest, sanded glass on hover. Only the size differs. */
+.statement { border-radius: var(--radius-section-card); padding: clamp(28px, 4vw, 48px); gap: var(--space-5); }
+.statement p { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; color: var(--ink); }
 
 .section-flush { padding-top: 0; }
 .prose { display: flex; flex-direction: column; gap: var(--space-5); max-width: 760px; }

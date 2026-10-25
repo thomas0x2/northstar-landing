@@ -41,7 +41,7 @@ export function ThesisPage() {
         <section className="section" aria-label="Vision and mission">
           <div className="wrap statements">
             {v.statements.map((s) => (
-              <article className="statement" key={s.label}>
+              <article className="card statement" key={s.label}>
                 <span className="label">{s.label}</span>
                 <p className="display">{s.text}</p>
               </article>
