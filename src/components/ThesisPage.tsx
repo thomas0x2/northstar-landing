@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { thesisPage } from "../content";
 import { NavBar } from "./NavBar";
 import { ThrownStar } from "./ThrownStar";
@@ -6,9 +7,12 @@ import { Join } from "./Join";
 import { Footer } from "./Footer";
 import { CapexChart } from "./CapexChart";
 
+/** Opens the collapsed sources list, so a jump to one of its entries lands on something visible. */
+const openSources = () => document.getElementById("sources")?.setAttribute("open", "");
+
 /** A superscript link to an entry in the sources list at the foot of the page. */
 function Cite({ id }: { id: number }) {
-  return <sup className="cite"><a href={`#source-${id}`} aria-label={`Source ${id}`}>{id}</a></sup>;
+  return <sup className="cite"><a href={`#source-${id}`} aria-label={`Source ${id}`} onClick={openSources}>{id}</a></sup>;
 }
 
 function Head({ label, title }: { label: string; title?: string }) {
@@ -25,6 +29,17 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
 /** The thesis page: a spectrum header, vision and mission, a numbers band, the buildout chart, then the case on black. */
 export function ThesisPage() {
   const v = thesisPage;
+  // Arriving with a link straight to a source (or following one later) opens the list first.
+  useEffect(() => {
+    const reveal = () => {
+      if (!location.hash.startsWith("#source-")) return;
+      openSources();
+      document.querySelector(location.hash)?.scrollIntoView();
+    };
+    reveal();
+    addEventListener("hashchange", reveal);
+    return () => removeEventListener("hashchange", reveal);
+  }, []);
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
@@ -203,12 +218,14 @@ export function ThesisPage() {
 
         <section className="section section-flush" aria-labelledby="sources-title">
           <div className="wrap">
-            <h2 className="label" id="sources-title">Sources</h2>
-            <ol className="sources">
-              {v.sources.map((s) => (
-                <li key={s.id} id={`source-${s.id}`}><a href={s.href} target="_blank" rel="noreferrer">{s.text}</a></li>
-              ))}
-            </ol>
+            <details className="sources-toggle" id="sources">
+              <summary><h2 className="label" id="sources-title">Sources</h2></summary>
+              <ol className="sources">
+                {v.sources.map((s) => (
+                  <li key={s.id} id={`source-${s.id}`}><a href={s.href} target="_blank" rel="noreferrer">{s.text}</a></li>
+                ))}
+              </ol>
+            </details>
           </div>
         </section>
       </main>

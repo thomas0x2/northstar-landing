@@ -342,6 +342,13 @@ h1, h2 { text-wrap: balance; }
 .body-muted { font-size: 18px; color: var(--ink-muted); }
 
 
+/* Sources: collapsed by default, the heading is the toggle; a chevron turns as it opens. */
+.sources-toggle summary { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; list-style: none; min-height: 44px; }
+.sources-toggle summary::-webkit-details-marker { display: none; }
+.sources-toggle summary h2 { margin: 0; }
+.sources-toggle summary::after { content: ""; width: 8px; height: 8px; border-right: 1.5px solid var(--ink-muted); border-bottom: 1.5px solid var(--ink-muted); transform: translateY(-2px) rotate(45deg); transition: transform 0.25s ease; }
+.sources-toggle[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.sources-toggle summary:hover::after, .sources-toggle summary:focus-visible::after { border-color: var(--ink); }
 .sources { margin: var(--space-5) 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: var(--space-2); font-size: 14px; color: var(--ink-subtle); }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
