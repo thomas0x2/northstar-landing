@@ -1,13 +1,13 @@
 import { hero } from "../content";
 import { Button } from "./Button";
 import { NavBar } from "./NavBar";
+import { SpectrumField } from "./SpectrumField";
 
-/** The hero is the spectrum star mark opened up to fill the screen: its field behind everything, and the
-    glass star rising on the right, its misty trail spilling down behind the copy. */
+/** The hero is the spectrum star mark opened up to fill the screen: the spectrum field behind everything,
+    and the glass star rising on the right, its misty trail spilling down behind the copy. */
 export function Hero() {
   return (
-    <main className="spectrum hero hero-full hero-mark">
-      <img className="field" src="/assets/hero-field.svg" alt="" aria-hidden="true" />
+    <SpectrumField as="main" className="hero hero-full hero-mark">
       <div className="wrap">
         <NavBar />
         <div className="hero-grid">
@@ -28,6 +28,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </main>
+    </SpectrumField>
   );
 }
