@@ -4,8 +4,8 @@ import { CLOUD_POINTS } from "./cloudPoints";
 // In the cloud SVG's own space, so this layer lines up with glass-shards.svg.
 const W = 1600;
 const H = 600;
-const REACH = 190; // how far a sheet stretches from the star to a cloud corner
-const SIZE = 40;
+const REACH = 130; // how far a sheet stretches from the star to a cloud corner
+const SIZE = 46;
 const SECONDS = 40; // one pass across the sky
 
 type P = [number, number];
@@ -35,7 +35,8 @@ const STAR = LOGO.map(([x, y]): [number, number] => [((x - 423) * SIZE) / 365, (
 /** The star tumbling in 3D (so its angles change as it turns) and seen in perspective: its ten points,
     the curved outline through them, and how squarely it faces us (1 face-on, 0 edge-on). */
 function star(t: number, [x, y]: P) {
-  const ax = t * Math.PI * 2 * 3.1, ay = t * Math.PI * 2 * 2.3, az = t * Math.PI * 2 * 1.3;
+  // It tilts up to about 55 degrees either way while it spins, so it never turns fully edge-on.
+  const ax = 0.95 * Math.sin(t * Math.PI * 2 * 3.1), ay = 0.95 * Math.sin(t * Math.PI * 2 * 2.3), az = t * Math.PI * 2 * 1.3;
   const [sx, cx, sy, cy, sz, cz] = [Math.sin(ax), Math.cos(ax), Math.sin(ay), Math.cos(ay), Math.sin(az), Math.cos(az)];
   const focal = SIZE * 4;
   const all = STAR.map(([px, py]): P => {
@@ -72,7 +73,9 @@ export function GlassLinks() {
       const centre = path(t);
       const { tips, d: outline, facing } = star(t, centre);
 
-      let out = "";
+      // At most one sheet per edge, to the nearest cloud corner it faces, and only over a short reach,
+      // so there are only a few at a time and the star itself stays visible.
+      const best = new Map<number, { k: number; p: P; w: number }>();
       for (const p of CLOUD_POINTS) {
         for (let k = 0; k < 10; k++) {
           const a = tips[(k + 9) % 10], b = tips[k];
@@ -81,14 +84,19 @@ export function GlassLinks() {
           if (cross(a, b, p) * cross(a, b, centre) >= 0) continue;
           const d = Math.hypot((a[0] + b[0]) / 2 - p[0], (a[1] + b[1]) / 2 - p[1]);
           if (d >= REACH) continue;
-          // Each sheet is a facet of the same sanded glass as the clouds, shaded by which edge it leaves from.
-          out += `<polygon filter="url(#link-face${(k % 3) + 1})" opacity="${smooth(1 - d / REACH).toFixed(3)}" points="${pts([a, b, p])}"/>`;
+          const w = smooth(1 - d / REACH);
+          if (w > (best.get(k)?.w ?? 0)) best.set(k, { k, p, w });
         }
+      }
+      let out = "";
+      for (const { k, p, w } of best.values()) {
+        // Each sheet is a facet of the same sanded glass as the clouds, shaded by which edge it leaves from.
+        out += `<polygon filter="url(#link-face${(k % 3) + 1})" opacity="${w.toFixed(3)}" points="${pts([tips[(k + 9) % 10], tips[k], p])}"/>`;
       }
       if (layer.current) layer.current.innerHTML = out;
       if (body.current) {
         body.current.setAttribute("d", outline);
-        body.current.setAttribute("opacity", (0.6 + 0.4 * facing).toFixed(3));
+        body.current.setAttribute("opacity", (0.7 + 0.3 * facing).toFixed(3));
       }
       raf = visible ? requestAnimationFrame(frame) : 0;
     };
@@ -106,10 +114,10 @@ export function GlassLinks() {
     <svg ref={svg} className="field glass-links" viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
       <defs>
         {/* The clouds' own sanded glass (glass-shards.svg, after the logo star): the shape thresholded to a
-            solid body, faded by slope, softened, then grained with fractal noise. Three shades, one per edge. */}
-        {[0.38, 0.3, 0.22].map((slope, i) => (
+            solid body, faded by slope, softened, then grained with fractal noise. Three shades for the sheets, and a brighter, crisper one for the star itself so its points stay sharp. */}
+        {[[0.38, 3], [0.3, 3], [0.22, 3], [0.55, 1.4]].map(([slope, blur], i) => (
           <filter key={i} id={`link-face${i + 1}`} x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation={blur} result="b" />
             <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape" />
             <feComponentTransfer in="shape" result="body"><feFuncA type="linear" slope={slope} /></feComponentTransfer>
             <feGaussianBlur in="body" stdDeviation="2.5" result="bs" />
@@ -122,7 +130,7 @@ export function GlassLinks() {
       </defs>
       <g fill="#fff" stroke="#fff" strokeWidth="2" strokeLinejoin="round">
         <g ref={layer} />
-        <path ref={body} filter="url(#link-face1)" />
+        <path ref={body} filter="url(#link-face4)" />
       </g>
     </svg>
   );
