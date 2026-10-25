@@ -3,11 +3,12 @@
 import math, sys
 out = sys.argv[1]
 shards = [
-    # (outline, trail vector): two crystalline clouds with many points and edges.
-    ([(1150, 118), (1262, 64), (1338, 104), (1446, 52), (1556, 128), (1512, 196),
-      (1574, 262), (1446, 300), (1380, 352), (1268, 306), (1168, 330), (1206, 238)], (-460, 360)),
-    ([(1302, 470), (1384, 428), (1452, 452), (1528, 420), (1578, 492), (1520, 548),
-      (1430, 576), (1364, 540)], (-320, 250)),
+    # (outline, trail vector): two crystalline clouds with many points and edges,
+    # kept in the top third of the card (y < ~260 here).
+    ([(1150, 64), (1240, 34), (1302, 52), (1390, 26), (1490, 60), (1452, 96),
+      (1508, 130), (1400, 148), (1344, 176), (1250, 152), (1166, 164), (1198, 118)], (-420, 220)),
+    ([(1366, 196), (1426, 172), (1476, 186), (1532, 168), (1570, 208), (1528, 238),
+      (1462, 254), (1414, 234)], (-300, 150)),
 ]
 # Facet shades, from the plane facing the light to the one turned away.
 SHADES = ["face1", "face2", "face3", "face4"]

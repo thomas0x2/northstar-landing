@@ -349,7 +349,7 @@ h1, h2 { text-wrap: balance; }
 /* On phones the shards sit in a band above the copy. */
 @media (max-width: 640px) {
   .agency-card > .shards { height: 300px; }
-  .agency { padding-top: 220px; }
+  .agency { padding-top: 130px; }
 }
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.
