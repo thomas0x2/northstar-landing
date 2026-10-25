@@ -93,23 +93,21 @@ export const thesisPage = {
   },
   approach: {
     label: "How we work",
-    title: "Algorithm first, then the full stack.",
+    title: "The full stack of intelligence, from hardware to algorithm.",
     points: [
-      { title: "Start in simulation", body: "Co-designing chips costs tens of millions. We start on the algorithm side, borrow hardware through partners, and grow into the full stack, the way Apple built its own chips only after decades of software." },
-      { title: "Co-design, not adaptation", body: "Paradigm and hardware should be designed together. Hardware startups may become the next Nvidia. We want to be the lab that defines what runs on it." },
+      { title: "Start with the algorithm", body: "We begin on the algorithmic side, in simulation and on hardware borrowed through partners. It is the cheapest place to find out whether a paradigm works." },
+      { title: "Co-develop the hardware", body: "In the long run, hardware and algorithm are developed together, so each paradigm runs on hardware built for it rather than on hardware built for transformers." },
       { title: "Measured against a baseline", body: "Each lock-in is attacked one at a time, every experiment is compared to a baseline, and failures and dead ends get documented too." },
     ],
   },
   test: {
     label: "The fit test",
-    title: "Every idea has to pass four questions.",
+    title: "Every idea has to pass three questions.",
     questions: [
       { key: "A", text: "Can it scale to superintelligence?" },
       { key: "B", text: "Would the frontier labs avoid it because of their lock-ins?" },
       { key: "C", text: "If it works, can we understand and steer it?" },
-      { key: "D", text: "Can we test it cheaply now, without the hardware it's built for?" },
     ],
-    note: "If an idea fails the last question, it is parked on the roadmap, not thrown away.",
   },
   loop: {
     label: "Why it hasn't been done",

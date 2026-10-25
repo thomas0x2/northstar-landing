@@ -142,7 +142,6 @@ export function ThesisPage() {
                 </article>
               ))}
             </div>
-            <p className="aside">{v.test.note}</p>
           </div>
         </section>
 
