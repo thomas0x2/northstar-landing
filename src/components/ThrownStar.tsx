@@ -19,38 +19,26 @@ function path(t: number) {
 }
 
 // The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
-// curved edge leading to it, recentred on the star and scaled so its tips reach SIZE.
+// curved edge leading to it, recentred on the star's centre of mass so it spins true, and scaled to SIZE.
 const LOGO: [number, number][] = [
   [462.3, 218.9], [494.5, 242.1], [589.0, 233.4], [720.4, 198.0], [603.4, 269.3], [526.6, 321.9],
   [594.2, 438.1], [700.0, 573.1], [525.9, 496.4], [374.7, 451.3], [272.6, 500.2], [137.1, 581.6],
   [234.1, 471.9], [289.2, 388.5], [255.5, 362.4], [184.7, 338.3], [288.4, 312.2], [362.3, 276.9],
   [402.8, 234.6], [438.8, 165.8],
 ];
-const STAR = LOGO.map(([x, y]): [number, number] => [((x - 423) * SIZE) / 365, ((y - 354) * SIZE) / 365]);
+const STAR = LOGO.map(([x, y]): [number, number] => [((x - 437.7) * SIZE) / 365, ((y - 376.7) * SIZE) / 365]);
+const TURNS = 27; // spins per throw, a steady three quarters of a turn a second
 
-/** The star in flight, seen in perspective: the curved outline through its points, and how squarely it
-    faces us (1 face-on, 0 edge-on). */
+/** The star in flight: the curved outline through its points. It spins flat and steady about its own
+    centre, the axis square to its face, like a thrown star holding its spin. */
 function star(t: number, [x, y]: P, scale: number) {
-  // Thrown like a ninja star: a fast, flat spin with a lot of inertia, about five turns a second at the
-  // start and only very gradually slowing, while the plane it spins in holds a steady tilt.
-  const spin = -Math.PI * 2 * (30 * t - 5 * t * t);
-  const ax = 0.38 + 0.03 * Math.sin(t * Math.PI * 2), ay = -0.22;
-  const [ss, cs, sx, cx, sy, cy] = [Math.sin(spin), Math.cos(spin), Math.sin(ax), Math.cos(ax), Math.sin(ay), Math.cos(ay)];
-  const focal = SIZE * 4;
-  const all = STAR.map(([px, py]): P => {
-    [px, py] = [px * scale, py * scale];
-    // Spin in the star's own plane first, then tilt that plane.
-    [px, py] = [px * cs - py * ss, px * ss + py * cs];
-    let pz = 0;
-    [py, pz] = [py * cx - pz * sx, py * sx + pz * cx];
-    [px, pz] = [px * cy + pz * sy, -px * sy + pz * cy];
-    const s = focal / (focal + pz);
-    return [x + px * s, y + py * s];
-  });
+  const spin = -Math.PI * 2 * TURNS * t;
+  const [s, c] = [Math.sin(spin) * scale, Math.cos(spin) * scale];
+  const all = STAR.map(([px, py]): P => [x + px * c - py * s, y + px * s + py * c]);
   const f = (q: P) => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`;
   let d = `M${f(all[19])}`;
   for (let i = 0; i < 10; i++) d += ` Q${f(all[2 * i])} ${f(all[2 * i + 1])}`;
-  return { d: d + " Z", facing: Math.abs(cx * cy) };
+  return d + " Z";
 }
 
 /** A small glass star, like the logo, thrown slowly across the sky through the clouds. */
@@ -67,11 +55,7 @@ export function ThrownStar() {
     const frame = (now: number) => {
       const t = ((now - start) / 1000 / SECONDS) % 1;
       const { pos, scale } = path(t);
-      const { d, facing } = star(t, pos, scale);
-      if (body.current) {
-        body.current.setAttribute("d", d);
-        body.current.setAttribute("opacity", (0.7 + 0.3 * facing).toFixed(3));
-      }
+      body.current?.setAttribute("d", star(t, pos, scale));
       raf = visible ? requestAnimationFrame(frame) : 0;
     };
 
@@ -100,7 +84,7 @@ export function ThrownStar() {
           <feComposite in="bs" in2="g" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0" />
         </filter>
       </defs>
-      <path ref={body} filter="url(#star-glass)" fill="#fff" stroke="#fff" strokeWidth="2" strokeLinejoin="round" />
+      <path ref={body} opacity="0.9" filter="url(#star-glass)" fill="#fff" stroke="#fff" strokeWidth="2" strokeLinejoin="round" />
     </svg>
   );
 }
