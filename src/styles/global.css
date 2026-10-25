@@ -63,6 +63,10 @@ h1, h2 { text-wrap: balance; }
   border: 1px solid var(--frost-line);
   backdrop-filter: blur(var(--blur-frost)); -webkit-backdrop-filter: blur(var(--blur-frost));
 }
+/* Text: free-floating white text, no face of its own; the arrow nudges forward and the glass sheet rises on hover. */
+.btn-text { color: var(--ink); padding-inline: 0; font-size: 18px; }
+.btn-text::after { content: "\2192"; margin-left: 10px; transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.btn-text:hover::after, .btn-text:focus-visible::after { transform: translateX(4px); }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
 /* Nav */
@@ -138,7 +142,9 @@ h1, h2 { text-wrap: balance; }
 .footer { border-top: 1px solid var(--line-faint); }
 .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-3); padding-block: 28px; font-size: 14px; }
 .footer .wordmark { font-size: 18px; }
-.footer span:last-child { color: var(--ink-muted); }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand img { width: 32px; height: auto; }
+.footer .wrap > span:last-child { color: var(--ink-muted); }
 
 /* Hover: a sanded glass sheet, like the logo star, rises from beneath the element and settles centred behind it.
    Applies to every interactive or highlightable element on the page. */
@@ -336,6 +342,13 @@ h1, h2 { text-wrap: balance; }
 .body-muted { font-size: 18px; color: var(--ink-muted); }
 
 
+/* Sources: collapsed by default, the heading is the toggle; a chevron turns as it opens. */
+.sources-toggle summary { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; list-style: none; min-height: 44px; }
+.sources-toggle summary::-webkit-details-marker { display: none; }
+.sources-toggle summary h2 { margin: 0; }
+.sources-toggle summary::after { content: ""; width: 8px; height: 8px; border-right: 1.5px solid var(--ink-muted); border-bottom: 1.5px solid var(--ink-muted); transform: translateY(-2px) rotate(45deg); transition: transform 0.25s ease; }
+.sources-toggle[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.sources-toggle summary:hover::after, .sources-toggle summary:focus-visible::after { border-color: var(--ink); }
 .sources { margin: var(--space-5) 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: var(--space-2); font-size: 14px; color: var(--ink-subtle); }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }

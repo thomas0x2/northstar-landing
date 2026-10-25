@@ -13,7 +13,7 @@ export function Hero() {
             <h1 className="display on-spectrum">{hero.title}</h1>
             <p className="lead on-spectrum">{hero.lead}</p>
             <div className="btn-row">
-              <Button href={hero.primary.href}>{hero.primary.label}</Button>
+              <Button href={hero.primary.href} variant="text">{hero.primary.label}</Button>
             </div>
           </div>
           <div className="hero-visual">
