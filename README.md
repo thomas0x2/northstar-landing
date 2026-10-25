@@ -30,7 +30,7 @@ npm run preview   # serve the production build locally
 - Backgrounds are black (`--ground`) by default. The only other surface is the spectrum field (`SpectrumField`, using `spectrum-field.svg`), for the hero and one band.
 - White is only for text and the primary button. Spectrum colors never appear as UI accents.
 - The logo is the sanded glass star; the chrome star is the hero visual only.
-- Fonts: Oxanium Bold (display), Manrope (body).
+- Fonts: Tektur Medium 500 (display), Manrope (body).
 - Headings (`h1`–`h3`) on black fill with the spectrum on hover (`spectrum-field.svg` clipped to the text), the same effect as the card numerals. Not on the spectrum field itself.
 - White (primary) buttons on black fill with the spectrum on hover, with white text, instead of raising the glass sheet. On the spectrum field they keep the glass sheet.
 - Cards on black turn to sanded glass on hover (the card surface itself, no sheet behind it), and their numeral fills with the spectrum. Card titles stay white, for contrast on the glass.
