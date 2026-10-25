@@ -174,8 +174,7 @@ export const thesisPage = {
 export const join = {
   title: "Help us find the next paradigm.",
   body: "We're assembling the first researchers. If you think intelligence deserves a different foundation, we'd like to hear from you.",
-  // TODO: replace with the real contact address before launch.
-  contact: { label: "[CONTACT EMAIL]", href: "/#join" },
+  contact: { label: "Contact", href: "mailto:tbollenbach@ethz.ch" },
 };
 
 export const footer = { place: "Zürich", year: 2026 };
