@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <SpectrumField as="main" className="hero hero-full hero-mark">
       <div className="wrap">
-        <NavBar />
+        <NavBar links={false} />
         <div className="hero-grid">
           <div className="hero-copy">
             <h1 className="display">{hero.title}</h1>
