@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Five-pointed star logo rising from below: a soft milky glass star trailing grainy, misty light toward the bottom left, over a blue, green, yellow and red field">
+<defs>
+<linearGradient id="glassS" gradientUnits="userSpaceOnUse" x1="560" y1="220" x2="0" y2="860">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.48"></stop>
+<stop offset="0.45" stop-color="#ffffff" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.04"></stop>
+</linearGradient>
+<filter id="grainS" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1200" height="1200" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="6" result="soft"></feGaussianBlur>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"></feTurbulence>
+<feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="mask"></feColorMatrix>
+<feComposite in="soft" in2="mask" operator="in" result="grained"></feComposite>
+<feComposite in="soft" in2="grained" operator="arithmetic" k1="0" k2="0.7" k3="0.3" k4="0"></feComposite>
+</filter>
+<filter id="roundS" filterUnits="userSpaceOnUse" x="0" y="0" width="800" height="800" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"></feGaussianBlur>
+<feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -6" result="shape"></feColorMatrix>
+<feComponentTransfer in="shape" result="bodyA"><feFuncA type="linear" slope="0.48"></feFuncA></feComponentTransfer>
+<feGaussianBlur in="bodyA" stdDeviation="3.5" result="bs"></feGaussianBlur>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" stitchTiles="stitch" result="n2"></feTurbulence>
+<feColorMatrix in="n2" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -0.8" result="m2"></feColorMatrix>
+<feComposite in="bs" in2="m2" operator="in" result="bg"></feComposite>
+<feComposite in="bs" in2="bg" operator="arithmetic" k1="0" k2="0.7" k3="0.3" k4="0"></feComposite>
+</filter>
+<filter id="meshS" filterUnits="userSpaceOnUse" x="-400" y="-400" width="1600" height="1600" color-interpolation-filters="linearRGB">
+<feGaussianBlur stdDeviation="85"></feGaussianBlur>
+</filter>
+<filter id="mistS" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="70"></feGaussianBlur>
+</filter>
+<filter id="filmS" filterUnits="userSpaceOnUse" x="0" y="0" width="800" height="800" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="1" seed="3" stitchTiles="stitch" result="fn"></feTurbulence>
+<feColorMatrix in="fn" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.6 0 0 0 -0.6"></feColorMatrix>
+</filter>
+</defs>
+<rect x="0" y="0" width="800" height="800" fill="#1b2c9e"></rect>
+<g filter="url(#meshS)" aria-hidden="true">
+<rect x="-300" y="-300" width="1400" height="1400" fill="#1b2c9e"></rect>
+<ellipse cx="780" cy="20" rx="380" ry="320" fill="#1f4dff"></ellipse>
+<ellipse cx="360" cy="90" rx="300" ry="200" fill="#0096d6"></ellipse>
+<ellipse cx="60" cy="330" rx="260" ry="280" fill="#00b36b"></ellipse>
+<ellipse cx="600" cy="470" rx="230" ry="190" fill="#00a99a"></ellipse>
+<ellipse cx="640" cy="860" rx="360" ry="240" fill="#ffd02a"></ellipse>
+<ellipse cx="340" cy="700" rx="220" ry="180" fill="#ff8a1f"></ellipse>
+<ellipse cx="40" cy="860" rx="340" ry="300" fill="#f0284a"></ellipse>
+<ellipse cx="230" cy="520" rx="160" ry="130" fill="#7ad13a"></ellipse>
+</g>
+<ellipse cx="420" cy="400" rx="300" ry="230" fill="#ffffff" opacity="0.1" filter="url(#mistS)"></ellipse>
+<g filter="url(#grainS)">
+<g fill="url(#glassS)" stroke="none" opacity="0.8">
+<path d="M438.8 165.8 Q462.3 218.9 494.5 242.1 Q73.0 565.8 -260 980 Q60.1 547.7 438.8 165.8 Z"></path>
+<path d="M494.5 242.1 Q589.0 233.4 720.4 198.0 Q269.3 638.0 -260 980 Q139.4 633.7 494.5 242.1 Z"></path>
+<path d="M720.4 198.0 Q603.4 269.3 526.6 321.9 Q139.5 669.2 -120 1120 Q255.9 618.6 720.4 198.0 Z"></path>
+<path d="M526.6 321.9 Q594.2 438.1 700.0 573.1 Q311.9 879.4 -120 1120 Q222.5 736.5 526.6 321.9 Z"></path>
+<path d="M700.0 573.1 Q525.9 496.4 374.7 451.3 Q93.9 760.9 -120 1120 Q273.6 822.0 700.0 573.1 Z"></path>
+<path d="M374.7 451.3 Q272.6 500.2 137.1 581.6 Q46.2 868.8 -120 1120 Q155.4 806.4 374.7 451.3 Z"></path>
+<path d="M137.1 581.6 Q234.1 471.9 289.2 388.5 Q-64.3 597.5 -380 860 Q-128.1 708.4 137.1 581.6 Z"></path>
+<path d="M289.2 388.5 Q255.5 362.4 184.7 338.3 Q-66.4 633.0 -380 860 Q-28.4 648.3 289.2 388.5 Z"></path>
+<path d="M184.7 338.3 Q288.4 312.2 362.3 276.9 Q-49.7 516.5 -380 860 Q-119.6 575.5 184.7 338.3 Z"></path>
+<path d="M362.3 276.9 Q402.8 234.6 438.8 165.8 Q130.1 607.8 -260 980 Q72.3 647.1 362.3 276.9 Z"></path>
+</g>
+</g>
+<path filter="url(#roundS)" d="M438.8 165.8 Q462.3 218.9 494.5 242.1 Q589.0 233.4 720.4 198.0 Q603.4 269.3 526.6 321.9 Q594.2 438.1 700.0 573.1 Q525.9 496.4 374.7 451.3 Q272.6 500.2 137.1 581.6 Q234.1 471.9 289.2 388.5 Q255.5 362.4 184.7 338.3 Q288.4 312.2 362.3 276.9 Q402.8 234.6 438.8 165.8 Z" fill="#ffffff" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"></path>
+<rect x="0" y="0" width="800" height="800" fill="#ffffff" opacity="0.06" filter="url(#filmS)"></rect>
+</svg>

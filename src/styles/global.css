@@ -41,7 +41,7 @@ h1, h2 { text-wrap: balance; }
 .display { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
 .label { font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
 
-/* Spectrum field: the exact gradient from the logo */
+/* Spectrum field: the gradient from the spectrum star mark */
 .spectrum { position: relative; overflow: hidden; background: var(--spectrum-base); }
 .spectrum > .field {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -88,7 +88,27 @@ h1, h2 { text-wrap: balance; }
 .hero h1 { font-size: clamp(48px, 7vw, 96px); line-height: 0.95; }
 .hero .lead { max-width: 560px; font-size: 20px; line-height: 1.55; }
 .hero-visual { flex: 1 1 420px; min-width: 0; max-width: 620px; }
-.hero-visual img { width: 100%; height: auto; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.18)); }
+
+/* Spectrum star hero: the spectrum field fills the hero, and the star sits in the right column. Its image
+   runs half a column further left and past the bottom, so the trail spills behind the copy and off the
+   hero's lower edge. No shadows: the star is sanded glass. */
+.hero-mark .hero-copy { z-index: 1; }
+.hero-star { position: relative; aspect-ratio: 1; align-self: center; }
+.hero-star img {
+  position: absolute; left: -50%; top: 0; width: 150%; max-width: none; height: auto;
+  pointer-events: none;
+  animation: star-rise 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+/* It rises into place along its own trail, up and to the right. */
+@keyframes star-rise {
+  from { opacity: 0; transform: translate(-6%, 8%); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-star img { animation: none; } }
+@media (max-width: 960px) {
+  /* Stacked: the star tucks under the copy, smaller, still trailing off to the left. */
+  .hero-star { flex-basis: 100%; max-width: 440px; margin: -24px auto 0; }
+}
 
 /* Sections on black */
 .section { padding-block: var(--space-section); }
@@ -104,8 +124,8 @@ h1, h2 { text-wrap: balance; }
 .card .num {
   display: inline-block; align-self: flex-start;
   font-family: var(--font-display); font-weight: 500; font-size: 40px; line-height: 1;
-  /* On hover the numeral fills with the exact logo spectrum. */
-  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
+  /* On hover the numeral fills with the spectrum, from its bright lower edge (its deep blue would vanish on black). */
+  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text;
   color: var(--ink);
   transition: color 0.35s ease;
@@ -353,7 +373,7 @@ h1, h2 { text-wrap: balance; }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
 /* "Why we're doing it": clear blue sky after a storm. The spectrum's blues fill most of the card,
    with the warm colours at the bottom edge. */
-/* The exact spectrum field, scaled up and anchored to its top right so the blues fill most of the card. */
+/* The spectrum field, scaled up and anchored to its top right so the blues fill most of the card. */
 .agency-card > .field:not(.shards):not(.thrown-star) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
 /* Clouds are soft, wispy banks of sanded glass, drawn like the glass logo star, placed around the copy
    rather than over it: a band along the top edge and more down the right side. They're drawn at a fixed scale
@@ -369,12 +389,12 @@ h1, h2 { text-wrap: balance; }
 @media (max-width: 900px) { .agency-card > .shards, .agency-card > .thrown-star { width: 1100px; height: 412px; } }
 @media (max-width: 640px) { .agency-card > .shards, .agency-card > .thrown-star { width: 560px; height: 210px; } }
 
-/* Headings fill with the exact logo spectrum on hover, like the card numerals.
+/* Headings fill with the spectrum on hover, like the card numerals.
    Not on the spectrum field itself, where spectrum text would disappear into the background. */
 :where(h1, h2, h3):not(.spectrum *) {
   width: fit-content;
   max-width: 100%;
-  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
+  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text;
   color: var(--ink);
   transition: color 0.35s ease;
@@ -397,7 +417,7 @@ h1, h2 { text-wrap: balance; }
 .capex-total { flex: 1 1 280px; max-width: 520px; display: flex; flex-direction: column; gap: var(--space-3); }
 .capex-total-value {
   font-size: clamp(40px, 6vw, 84px); line-height: 0.95; font-variant-numeric: tabular-nums;
-  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
+  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .capex-total-plan .capex-total-value { background: none; color: var(--ink-muted); }
