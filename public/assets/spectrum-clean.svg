@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The Northstar spectrum field without grain: a clean gradient for hover fills, spectrum text and chart
+     bars. spectrum-field.svg is the same field with a fine grain, for large backgrounds. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="g0"><stop offset="0" stop-color="#16248a"/><stop offset="0.45" stop-color="#16248a" stop-opacity="0.75"/><stop offset="1" stop-color="#16248a" stop-opacity="0"/></radialGradient>
+<radialGradient id="g1"><stop offset="0" stop-color="#1f4dff"/><stop offset="0.45" stop-color="#1f4dff" stop-opacity="0.75"/><stop offset="1" stop-color="#1f4dff" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2"><stop offset="0" stop-color="#0096d6"/><stop offset="0.45" stop-color="#0096d6" stop-opacity="0.75"/><stop offset="1" stop-color="#0096d6" stop-opacity="0"/></radialGradient>
+<radialGradient id="g3"><stop offset="0" stop-color="#00a99a"/><stop offset="0.45" stop-color="#00a99a" stop-opacity="0.75"/><stop offset="1" stop-color="#00a99a" stop-opacity="0"/></radialGradient>
+<radialGradient id="g4"><stop offset="0" stop-color="#00b36b"/><stop offset="0.45" stop-color="#00b36b" stop-opacity="0.75"/><stop offset="1" stop-color="#00b36b" stop-opacity="0"/></radialGradient>
+<radialGradient id="g5"><stop offset="0" stop-color="#7ad13a"/><stop offset="0.45" stop-color="#7ad13a" stop-opacity="0.75"/><stop offset="1" stop-color="#7ad13a" stop-opacity="0"/></radialGradient>
+<radialGradient id="g6"><stop offset="0" stop-color="#ffd02a"/><stop offset="0.45" stop-color="#ffd02a" stop-opacity="0.75"/><stop offset="1" stop-color="#ffd02a" stop-opacity="0"/></radialGradient>
+<radialGradient id="g7"><stop offset="0" stop-color="#ff8a1f"/><stop offset="0.45" stop-color="#ff8a1f" stop-opacity="0.75"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></radialGradient>
+<radialGradient id="g8"><stop offset="0" stop-color="#f0284a"/><stop offset="0.45" stop-color="#f0284a" stop-opacity="0.75"/><stop offset="1" stop-color="#f0284a" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="#1b2c9e"/>
+<ellipse cx="300" cy="300" rx="884" ry="646" fill="url(#g0)"/>
+<ellipse cx="1500" cy="0" rx="952" ry="646" fill="url(#g1)"/>
+<ellipse cx="980" cy="80" rx="714" ry="391" fill="url(#g2)"/>
+<ellipse cx="1320" cy="520" rx="561" ry="425" fill="url(#g3)"/>
+<ellipse cx="820" cy="700" rx="561" ry="340" fill="url(#g4)"/>
+<ellipse cx="1080" cy="820" rx="408" ry="272" fill="url(#g5)"/>
+<ellipse cx="1500" cy="1000" rx="816" ry="476" fill="url(#g6)"/>
+<ellipse cx="560" cy="1000" rx="646" ry="374" fill="url(#g7)"/>
+<ellipse cx="60" cy="1040" rx="884" ry="544" fill="url(#g8)"/>
+</svg>

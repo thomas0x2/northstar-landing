@@ -125,7 +125,7 @@ h1, h2 { text-wrap: balance; }
   display: inline-block; align-self: flex-start;
   font-family: var(--font-display); font-weight: 500; font-size: 40px; line-height: 1;
   /* On hover the numeral fills with the spectrum, from its bright lower edge (its deep blue would vanish on black). */
-  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
+  background: url("/assets/spectrum-clean.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text;
   color: var(--ink);
   transition: color 0.35s ease;
@@ -260,15 +260,14 @@ h1, h2 { text-wrap: balance; }
   }
 }
 
-/* White buttons on black: instead of the glass sheet, the face itself fills with the logo spectrum on hover.
+/* White buttons on black: instead of the glass sheet, the face itself fills with the clean spectrum on hover (no grain).
    (On the spectrum field the sheet stays, since a spectrum face would vanish into the background.) */
 .btn-primary:not(.spectrum *)::before {
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: var(--grain), url("/assets/spectrum-field.svg") center / cover no-repeat;
-  background-size: 160px 160px, cover;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  background: url("/assets/spectrum-clean.svg") center / cover no-repeat;
+  box-shadow: none;
   backdrop-filter: none; -webkit-backdrop-filter: none;
   transform: none;
   transition: opacity 0.35s ease;
@@ -395,7 +394,7 @@ h1, h2 { text-wrap: balance; }
 :where(h1, h2, h3):not(.spectrum *) {
   width: fit-content;
   max-width: 100%;
-  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
+  background: url("/assets/spectrum-clean.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text;
   color: var(--ink);
   transition: color 0.35s ease;
@@ -418,7 +417,7 @@ h1, h2 { text-wrap: balance; }
 .capex-total { flex: 1 1 280px; max-width: 520px; display: flex; flex-direction: column; gap: var(--space-3); }
 .capex-total-value {
   font-size: clamp(40px, 6vw, 84px); line-height: 0.95; font-variant-numeric: tabular-nums;
-  background: url("/assets/spectrum-field.svg") center bottom / cover no-repeat;
+  background: url("/assets/spectrum-clean.svg") center bottom / cover no-repeat;
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .capex-total-plan .capex-total-value { background: none; color: var(--ink-muted); }
@@ -438,7 +437,7 @@ h1, h2 { text-wrap: balance; }
   height: calc(var(--plot-h) * var(--h) * var(--t, 1));
   border-radius: 4px 4px 0 0;
   /* Sized to the whole plot so the bars read as one continuous spectrum. */
-  background: url("/assets/spectrum-field.svg") var(--bg-x) 100% / var(--bg-w) var(--plot-h) no-repeat;
+  background: url("/assets/spectrum-clean.svg") var(--bg-x) 100% / var(--bg-w) var(--plot-h) no-repeat;
 }
 .capex-plan {
   height: calc(var(--plot-h) * var(--plan) * var(--tp, 1));
