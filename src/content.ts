@@ -56,6 +56,27 @@ export const thesisPage = {
       { value: "€20B", text: "The EU's fund for AI gigafactories. Europe's buildout is a fraction of the US one, for now.", source: 6 },
     ],
   },
+  // Cash purchases of property and equipment, in $B, from each company's SEC filings (calendar years; Microsoft's
+  // fiscal quarters regrouped). 2026 is January to June. The 2026 plan is company guidance (source 1).
+  buildout: {
+    label: "The buildout",
+    title: "Over $1.4 trillion poured into one paradigm since 2020.",
+    total: "spent by Microsoft, Alphabet, Amazon and Meta on data centers, chips and other property and equipment, January 2020 to June 2026.",
+    planTotal: "if their 2026 plans hold.",
+    note: "Bars are cash capital spending reported in SEC filings. The 2026 plan is company guidance, which for some companies also counts finance leases, so it runs a little higher than the cash basis (2025 was about $410B on that basis).",
+    companies: ["Microsoft", "Alphabet", "Amazon", "Meta"],
+    years: [
+      { year: "2020", values: [17.6, 22.3, 40.1, 15.2] },
+      { year: "2021", values: [23.2, 24.6, 61.1, 18.7] },
+      { year: "2022", values: [24.8, 31.5, 63.6, 31.2] },
+      { year: "2023", values: [35.2, 32.3, 52.7, 27.0] },
+      { year: "2024", values: [55.6, 52.5, 83.0, 37.3] },
+      { year: "2025", values: [83.1, 91.4, 131.8, 69.7] },
+      { year: "2026", values: [66.7, 80.6, 98.4, 49.1], partial: "Jan–Jun" },
+    ],
+    plan2026: 725,
+    sources: [8, 9, 10, 11, 1],
+  },
   thesis: {
     label: "The thesis",
     title: "Three layers, from philosophy to business.",
@@ -149,6 +170,10 @@ export const thesisPage = {
     { id: 5, text: "Levy & Calvert, \"Communication consumes 35 times more energy than computation in the human cortex\", PNAS, 2021", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8106317" },
     { id: 6, text: "European Commission, InvestAI: €200 billion for AI including €20 billion for AI gigafactories, February 2025", href: "https://digital-skills-jobs.europa.eu/en/latest/news/commission-launches-new-investai-initiative-mobilise-eu200-billion-investment-ai" },
     { id: 7, text: "Sara Hooker, \"The Hardware Lottery\", 2020", href: "https://arxiv.org/abs/2009.06489" },
+    { id: 8, text: "Microsoft, Forms 10-K and 10-Q, fiscal 2020–2026: additions to property and equipment, regrouped into calendar quarters", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-&dateb=&owner=include&count=40" },
+    { id: 9, text: "Alphabet, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-&dateb=&owner=include&count=40" },
+    { id: 10, text: "Amazon, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724&type=10-&dateb=&owner=include&count=40" },
+    { id: 11, text: "Meta Platforms, Forms 10-K 2022–2025 and 10-Q Q2 2026: purchases of property and equipment (latest restated values)", href: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-&dateb=&owner=include&count=40" },
   ],
 };
 
