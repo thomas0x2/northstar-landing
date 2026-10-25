@@ -70,15 +70,7 @@ export function ThesisPage() {
           </div>
         </section>
 
-        <section className="section" aria-labelledby="buildout-title">
-          <div className="wrap">
-            <div className="section-head">
-              <span className="label">{v.buildout.label}</span>
-              <h2 className="display" id="buildout-title">{v.buildout.title}</h2>
-            </div>
-            <CapexChart />
-          </div>
-        </section>
+        <CapexChart />
 
         <section className="section section-flush">
           <div className="wrap">
