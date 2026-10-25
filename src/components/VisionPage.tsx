@@ -4,8 +4,25 @@ import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
 import { Footer } from "./Footer";
 
-/** The vision and mission page: a short spectrum header, then the case on black. */
+/** A superscript link to an entry in the sources list at the foot of the page. */
+function Cite({ id }: { id: number }) {
+  return <sup className="cite"><a href={`#source-${id}`} aria-label={`Source ${id}`}>{id}</a></sup>;
+}
+
+function Head({ label, title }: { label: string; title?: string }) {
+  return (
+    <div className="section-head">
+      <span className="label">{label}</span>
+      {title && <h2 className="display">{title}</h2>}
+    </div>
+  );
+}
+
+const num = (i: number) => String(i + 1).padStart(2, "0");
+
+/** Vision, mission and the full thesis on one page: a spectrum header, a numbers band, then the case on black. */
 export function VisionPage() {
+  const v = vision;
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
@@ -13,16 +30,16 @@ export function VisionPage() {
         <div className="wrap">
           <NavBar current="/vision/" />
           <div className="page-hero-copy">
-            <span className="label">{vision.label}</span>
-            <h1 className="display">{vision.title}</h1>
-            <p className="lead">{vision.lead}</p>
+            <span className="label">{v.label}</span>
+            <h1 className="display">{v.title}</h1>
+            <p className="lead">{v.lead}</p>
           </div>
         </div>
       </SpectrumField>
       <main id="main">
         <section className="section" aria-label="Vision and mission">
           <div className="wrap statements">
-            {vision.statements.map((s) => (
+            {v.statements.map((s) => (
               <article className="statement" key={s.label}>
                 <span className="label">{s.label}</span>
                 <p className="display">{s.text}</p>
@@ -31,28 +48,58 @@ export function VisionPage() {
           </div>
         </section>
 
+        <section className="section section-tight" aria-labelledby="numbers-title">
+          <div className="wrap">
+            <SpectrumField as="div" className="test-card">
+              <div className="numbers">
+                <div className="section-head">
+                  <span className="label">{v.numbers.label}</span>
+                  <h2 className="display" id="numbers-title">{v.numbers.title}</h2>
+                </div>
+                <div className="stats">
+                  {v.numbers.stats.map((s) => (
+                    <div className="stat" key={s.value}>
+                      <span className="stat-value">{s.value}<Cite id={s.source} /></span>
+                      <p>{s.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SpectrumField>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="wrap">
+            <Head label={v.thesis.label} title={v.thesis.title} />
+            <div className="cards">
+              {v.thesis.layers.map((l, i) => (
+                <article className="card" key={l.title}>
+                  <div className="num">{num(i)}</div>
+                  <h3>{l.title}</h3>
+                  <p>{l.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section section-flush">
           <div className="wrap">
-            <div className="section-head">
-              <span className="label">{vision.why.label}</span>
-              <h2 className="display">{vision.why.title}</h2>
-            </div>
+            <Head label={v.bet.label} title={v.bet.title} />
             <div className="prose">
-              {vision.why.body.map((p) => <p key={p}>{p}</p>)}
+              {v.bet.body.map((p, i) => <p key={p}>{p}{i === 0 && <Cite id={1} />}</p>)}
             </div>
           </div>
         </section>
 
         <section className="section">
           <div className="wrap">
-            <div className="section-head">
-              <span className="label">{vision.lockins.label}</span>
-              <h2 className="display">{vision.lockins.title}</h2>
-            </div>
+            <Head label={v.lockins.label} title={v.lockins.title} />
             <div className="cards cards-five">
-              {vision.lockins.items.map((l, i) => (
+              {v.lockins.items.map((l, i) => (
                 <article className="card" key={l.title}>
-                  <div className="num">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="num">{num(i)}</div>
                   <h3>{l.title}</h3>
                   <p><strong>Why they're stuck.</strong> {l.stuck}</p>
                   <p><strong>What we explore.</strong> {l.explore}</p>
@@ -64,21 +111,89 @@ export function VisionPage() {
 
         <section className="section section-flush">
           <div className="wrap">
-            <div className="section-head">
-              <span className="label">{vision.method.label}</span>
-            </div>
+            <Head label={v.edge.label} />
             <div className="method">
-              {vision.method.points.map((p) => (
-                <div key={p.title}>
-                  <h3>{p.title}</h3>
-                  <p>{p.body}</p>
-                </div>
+              {v.edge.points.map((p) => (
+                <div key={p.title}><h3>{p.title}</h3><p>{p.body}</p></div>
               ))}
             </div>
           </div>
         </section>
 
+        <section className="section">
+          <div className="wrap">
+            <Head label={v.approach.label} title={v.approach.title} />
+            <div className="method">
+              {v.approach.points.map((p) => (
+                <div key={p.title}><h3>{p.title}</h3><p>{p.body}</p></div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-flush">
+          <div className="wrap">
+            <Head label={v.test.label} title={v.test.title} />
+            <div className="cards cards-four">
+              {v.test.questions.map((q) => (
+                <article className="card" key={q.key}>
+                  <div className="num">{q.key}</div>
+                  <h3>{q.text}</h3>
+                </article>
+              ))}
+            </div>
+            <p className="aside">{v.test.note}</p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="wrap">
+            <Head label={v.loop.label} title={v.loop.title} />
+            <p className="prose-lead">{v.loop.intro}<Cite id={v.loop.source} /></p>
+            <ol className="loop">
+              {v.loop.steps.map((s, i) => (
+                <li key={s}><span className="num">{num(i)}</span><span>{s}</span></li>
+              ))}
+            </ol>
+            <p className="prose-lead">{v.loop.outro}</p>
+          </div>
+        </section>
+
+        <section className="section section-flush">
+          <div className="wrap split">
+            <div>
+              <Head label={v.alignment.label} title={v.alignment.title} />
+              <p className="body-muted">{v.alignment.body}</p>
+            </div>
+            <div>
+              <Head label={v.europe.label} title={v.europe.title} />
+              <p className="body-muted">{v.europe.body}<Cite id={1} /><Cite id={6} /></p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="wrap">
+            <Head label={v.risks.label} />
+            <ul className="risks">
+              {v.risks.items.map((r) => <li key={r}>{r}</li>)}
+            </ul>
+            <p className="statement-line display">{v.risks.hedge}</p>
+          </div>
+        </section>
+
         <Join />
+
+        <section className="section section-flush" aria-labelledby="sources-title">
+          <div className="wrap">
+            <h2 className="label" id="sources-title">Sources</h2>
+            <ol className="sources">
+              {v.sources.map((s) => (
+                <li key={s.id} id={`source-${s.id}`}><a href={s.href} target="_blank" rel="noreferrer">{s.text}</a></li>
+              ))}
+            </ol>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

@@ -236,7 +236,7 @@ h1, h2 { text-wrap: balance; }
 /* .btn-frost and .frost-panel */
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
 
-/* Vision page. Effects use sanded glass or the spectrum only, never shadows. */
+/* Vision and thesis page. Effects use sanded glass or the spectrum only, never shadows. */
 .page-hero-copy { display: flex; flex-direction: column; gap: 24px; max-width: 860px; padding-block: 56px 96px; }
 .page-hero h1 { font-size: clamp(44px, 6vw, 84px); line-height: 0.98; }
 .page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
@@ -274,3 +274,48 @@ h1, h2 { text-wrap: balance; }
 
 .nav-links a[aria-current="page"]::before { opacity: 1; transform: none; }
 .cards-five { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.cards-four { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cards-four h3 { font-size: 21px; }
+.aside { margin-top: var(--space-6); color: var(--ink-subtle); font-size: 15px; }
+
+/* Numbers band: stats on sanded glass over the spectrum. */
+.numbers { padding: clamp(28px, 6vw, 80px); }
+.numbers .section-head { margin-bottom: var(--space-10); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); }
+.stat {
+  position: relative; isolation: isolate;
+  border-radius: var(--radius-panel); padding: 26px 28px;
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.stat::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: var(--grain), var(--glass-face);
+  background-size: 160px 160px, 100% 100%;
+  border: 1px solid var(--frost-line);
+  backdrop-filter: blur(var(--blur-frost)); -webkit-backdrop-filter: blur(var(--blur-frost));
+}
+.stat-value { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.01em; }
+.stat p { font-size: 16px; line-height: 1.5; font-weight: 600; }
+
+.cite { font-family: var(--font-body); font-size: 0.55em; font-weight: 700; margin-left: 2px; line-height: 0; vertical-align: super; }
+.cite a { text-decoration: none; opacity: 0.8; }
+.cite a:hover { opacity: 1; text-decoration: underline; }
+.stat-value .cite { font-size: 14px; }
+
+.prose-lead { max-width: 760px; font-size: 19px; color: var(--ink-muted); }
+.loop { list-style: none; margin: var(--space-8) 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); counter-reset: none; }
+.loop li { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-5); border-top: 1px solid var(--line); font-size: 19px; font-weight: 700; line-height: 1.4; }
+.loop .num { font-family: var(--font-display); font-size: 28px; line-height: 1; }
+.loop li:last-child::after { content: "↺ and back to 01"; color: var(--ink-subtle); font-size: 14px; font-weight: 600; }
+
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-12) var(--space-10); }
+.split .section-head { margin-bottom: var(--space-6); }
+.split .section-head h2 { font-size: clamp(28px, 3vw, 40px); }
+.body-muted { font-size: 18px; color: var(--ink-muted); }
+
+.risks { margin: 0 0 var(--space-10); padding-left: 1.2em; max-width: 760px; display: flex; flex-direction: column; gap: var(--space-3); font-size: 19px; color: var(--ink-muted); }
+.statement-line { max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
+
+.sources { margin: var(--space-5) 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: var(--space-2); font-size: 14px; color: var(--ink-subtle); }
+.sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.sources li:target a { color: var(--ink); }

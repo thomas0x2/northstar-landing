@@ -18,7 +18,7 @@ npm run preview   # serve the production build locally
 - `index.html`: document head (title, meta, favicons, Google Fonts) and the React mount point.
 - `src/content.ts`: all page copy in one place.
 - `src/App.tsx`: home page composition.
-- `vision/index.html` + `src/vision.tsx`: the Vision & mission page (`VisionPage`), served at `/vision/`. Each page is its own Vite entry in `vite.config.ts`.
+- `vision/index.html` + `src/vision.tsx`: the Vision, mission & thesis page (`VisionPage`); its figures cite `vision.sources` in `content.ts`, served at `/vision/`. Each page is its own Vite entry in `vite.config.ts`.
 - `src/components/`: `Hero`, `NavBar`, `Thesis`, `TestBand`, `Join`, `Footer`, `VisionPage`, plus the building blocks `SpectrumField` and `Button`.
 - `src/styles/tokens.css`: design tokens, mirroring `tokens.json` in the Northstar design system.
 - `src/styles/global.css`: layout and component styles.
