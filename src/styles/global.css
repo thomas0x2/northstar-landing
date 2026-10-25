@@ -232,6 +232,24 @@ h1, h2 { text-wrap: balance; }
   }
 }
 
+/* White buttons on black: instead of the glass sheet, the face itself fills with the logo spectrum on hover.
+   (On the spectrum field the sheet stays, since a spectrum face would vanish into the background.) */
+.btn-primary:not(.spectrum *)::before {
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--grain), url("/assets/spectrum-field.svg") center / cover no-repeat;
+  background-size: 160px 160px, cover;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  transform: none;
+  transition: opacity 0.35s ease;
+}
+.btn-primary:not(.spectrum *)::after { z-index: -2; }
+.btn-primary:not(.spectrum *) { transition: color 0.35s ease; }
+.btn-primary:not(.spectrum *):hover,
+.btn-primary:not(.spectrum *):focus-visible { color: var(--ink); }
+
 /* Keep white labels legible on glass over the bright parts of the spectrum. */
 /* .btn-frost and .frost-panel */
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
