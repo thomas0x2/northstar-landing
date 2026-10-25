@@ -1,33 +1,27 @@
-# Generates public/assets/glass-star.svg: the logo star in sanded glass, as a sprite for the star that flies
-# across the sky card (ThrownStar.tsx moves and turns it with CSS transforms, so the filter is rasterised once
-# instead of on every frame).
-#
-# The logo shows the star at a slant: its five tips lie on an ellipse, the circle they share seen at an angle.
-# The sprite is the star seen square-on, so its tips sit on one circle around the sprite's centre, and spinning
-# it about that centre sends every tip round the same circle. ThrownStar.tsx tilts it back to the logo's slant
-# with TILT, so at rest it is exactly the logo star.
+# Generates public/assets/glass-star.svg: the star in sanded glass, seen square-on, as a sprite for the star
+# that flies across the sky card. ThrownStar.tsx turns it in 3D with CSS transforms, so the filter is rasterised
+# once instead of on every frame.
 # Usage: python3 scripts/glass-star.py public/assets/glass-star.svg
-import sys
-SIZE, HALF = 56, 80  # the tips all sit SIZE from the centre; the sprite spans ±HALF to leave room for the blur
-# The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
-# curved edge leading to it.
-LOGO = [
-    (462.3, 218.9), (494.5, 242.1), (589.0, 233.4), (720.4, 198.0), (603.4, 269.3), (526.6, 321.9),
-    (594.2, 438.1), (700.0, 573.1), (525.9, 496.4), (374.7, 451.3), (272.6, 500.2), (137.1, 581.6),
-    (234.1, 471.9), (289.2, 388.5), (255.5, 362.4), (184.7, 338.3), (288.4, 312.2), (362.3, 276.9),
-    (402.8, 234.6), (438.8, 165.8),
-]
-# The ellipse through the five tips (centre, semi-axes, and the unit vectors along them), solved as the conic
-# through those points.
-CX, CY = 462.281, 432.280
-A1, A2 = 358.376, 257.516
-U1, U2 = (0.883335, -0.468742), (0.468742, 0.883335)
-# Square the star up: measure each point along the ellipse's axes and scale each axis to the circle's radius.
-pts = [(((x - CX) * U1[0] + (y - CY) * U1[1]) * SIZE / A1, ((x - CX) * U2[0] + (y - CY) * U2[1]) * SIZE / A2) for x, y in LOGO]
-for i in (3, 7, 11, 15, 19):
-    assert abs((pts[i][0] ** 2 + pts[i][1] ** 2) ** 0.5 - SIZE) < 0.2, "every tip should be SIZE from the centre"
+import math, sys
+SIZE, HALF = 56, 80  # the tips sit SIZE from the centre; the sprite spans ±HALF to leave room for the blur
+# The star seen square-on: a regular five-pointed star with gently curved sides, like the logo's. The logo's
+# uneven arms are this star seen at a slant and close up, in perspective; ThrownStar.tsx recreates that view in
+# 3D, so whichever arm swings toward us looks longest. One tip points straight down (toward us, once tilted).
+INNER, BOW = 0.42, 0.06  # inner corners at INNER of the tip radius; sides bowed in by BOW of it
+pts = []
+for k in range(5):
+    t0 = math.radians(90 + 72 * k)
+    inner = t0 + math.radians(36)
+    t1 = t0 + math.radians(72)
+    # side from tip t0 to the inner corner, then from the corner to the next tip t1
+    for a0, r0, a1, r1 in ((t0, 1, inner, INNER), (inner, INNER, t1, 1)):
+        mx, my = (r0 * math.cos(a0) + r1 * math.cos(a1)) / 2, (r0 * math.sin(a0) + r1 * math.sin(a1)) / 2
+        mr = math.hypot(mx, my)
+        c = (mx * (1 - BOW / mr), my * (1 - BOW / mr))
+        pts += [(c[0] * SIZE, c[1] * SIZE), (r1 * math.cos(a1) * SIZE, r1 * math.sin(a1) * SIZE)]
 f = lambda p: f"{p[0]:.1f} {p[1]:.1f}"
-d = f"M{f(pts[19])}" + "".join(f" Q{f(pts[2 * i])} {f(pts[2 * i + 1])}" for i in range(10)) + " Z"
+# Each side is a control point then the corner it reaches; the path starts at the last corner, the first tip.
+d = f"M{f(pts[-1])}" + "".join(f" Q{f(pts[2 * i])} {f(pts[2 * i + 1])}" for i in range(10)) + " Z"
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="{-HALF} {-HALF} {2 * HALF} {2 * HALF}" width="{2 * HALF}" height="{2 * HALF}">
   <!-- Sanded glass, as on the logo star: the shape thresholded to a solid body, faded, softened, then grained
        with fractal noise. -->

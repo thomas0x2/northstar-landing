@@ -44,21 +44,24 @@ function path(t: number) {
 const TURNS = 8; // a slow, steady turn about its own centre over the whole flight
 const SPRITE = 160; // glass-star.svg's span, in the sky's units, at scale 1
 const MAX_SCALE = 0.85 / NEAR; // the sprite is laid out this big, so it's only ever scaled down and stays sharp
-// glass-star.svg is the star seen square-on, its tips all on one circle. In the logo that circle is seen at a
-// slant, as the ellipse through the tips (see scripts/glass-star.py): its plane is turned TURN_DEG in the
-// picture and tipped back TIP_DEG, and the star is SPAN of its square-on size.
-const TURN_DEG = -27.95, TIP_DEG = 44.06, SPAN = 0.982;
+// glass-star.svg is a regular star seen square-on, one tip pointing down. Its plane is tipped back TIP_DEG
+// (bottom edge toward us), seen from close up (a camera DISTANCE tip radii away), then turned TURN_DEG so the
+// near edge faces up and right, as the long arm does in the logo. The close camera is what makes the arm
+// swinging toward us look longest and the far ones short, as in the logo.
+const TIP_DEG = 30, DISTANCE = 2, TURN_DEG = -122;
+const TIP_R = 56 / SPRITE; // the tips' radius, as a share of the sprite's width
 
-/** The star's CSS transform at time t, with k CSS pixels to one sky unit, as a real 3D turn: the star spins
-    about its centre in its own plane (so all five tips run round the same circle), and that plane is tipped
-    back to the logo's slant and seen in perspective, so the angles between its edges keep changing as it
-    turns. The browser projects the one pre-rendered image on the GPU, so nothing repaints. */
+/** The star's CSS transform at time t, with k CSS pixels to one sky unit and the sprite px wide. Read right
+    to left: the star spins in its own plane (so all five tips run round one circle), that plane is tipped
+    back, the star is sized, turned, and seen in perspective, then put in place. The browser projects the one
+    pre-rendered image on the GPU every frame, so nothing repaints. */
 function transform(t: number, k: number, px: number) {
   const { pos: [x, y], scale } = path(t);
   const spin = -360 * TURNS * t;
-  const m = (SPAN * scale) / MAX_SCALE;
-  return `translate(${(x * k).toFixed(1)}px,${(y * k).toFixed(1)}px) perspective(${(px * 2.2).toFixed(0)}px) ` +
-    `rotate(${TURN_DEG}deg) scale(${m.toFixed(4)}) rotateX(${TIP_DEG}deg) rotate(${spin.toFixed(2)}deg)`;
+  const m = scale / MAX_SCALE;
+  const camera = DISTANCE * TIP_R * px * m;
+  return `translate(${(x * k).toFixed(1)}px,${(y * k).toFixed(1)}px) perspective(${camera.toFixed(1)}px) ` +
+    `rotate(${TURN_DEG}deg) scale3d(${m.toFixed(4)},${m.toFixed(4)},${m.toFixed(4)}) rotateX(${TIP_DEG}deg) rotate(${spin.toFixed(2)}deg)`;
 }
 
 /** A small glass star, like the logo, swooping across the sky through the clouds. The star is one

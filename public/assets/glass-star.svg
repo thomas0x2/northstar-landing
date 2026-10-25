@@ -11,5 +11,5 @@
     <feComposite in="bs" in2="m" operator="in" result="gr"/>
     <feComposite in="bs" in2="gr" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
   </filter>
-  <path d="M16.3 -53.6 Q15.6 -41.0 18.4 -33.2 Q32.1 -25.3 52.8 -18.7 Q31.4 -16.9 17.0 -14.6 Q17.8 14.6 22.5 51.3 Q4.1 18.8 -13.5 -5.3 Q-31.2 -6.3 -55.8 -4.5 Q-34.4 -15.6 -20.7 -26.1 Q-23.4 -34.5 -31.4 -46.3 Q-15.2 -40.8 -2.4 -40.0 Q6.3 -44.0 16.3 -53.6 Z" filter="url(#g)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" opacity="0.9"/>
+  <path d="M0.0 56.0 Q-6.3 34.2 -13.8 19.0 Q-30.6 16.6 -53.3 17.3 Q-34.5 4.6 -22.4 -7.3 Q-25.2 -24.0 -32.9 -45.3 Q-15.0 -31.4 -0.0 -23.5 Q15.0 -31.4 32.9 -45.3 Q25.2 -24.0 22.4 -7.3 Q34.5 4.6 53.3 17.3 Q30.6 16.6 13.8 19.0 Q6.3 34.2 0.0 56.0 Z" filter="url(#g)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" opacity="0.9"/>
 </svg>
