@@ -15,17 +15,17 @@ def bank(x0, x1, y, thick, seed):
     return top + bottom
 
 shards = [
-    # (outline, trail vector, opacity), drawn at a fixed scale from the card's top left so they never cover
-    # the copy: a thin band of banks along the top edge, above the heading (y < ~72), one more on the right,
-    # beyond the text column (x > ~1150), and a few smaller ones in the open space beside the heading.
-    # Trails off the banks beside and right of the copy stay short so they don't reach it.
-    (bank(-60, 520, 44, 36, 5), (-260, -6), 0.9),
-    (bank(470, 1000, 40, 32, 6), (-240, -6), 0.8),
-    (bank(950, 1660, 46, 40, 1), (-280, -6), 1.0),
-    (bank(1150, 1660, 170, 60, 3), (-80, 0), 0.9),
-    # Smaller, farther banks in the open space beside the heading, between it and the right-side banks.
-    (bank(870, 1130, 150, 40, 8), (-40, 0), 0.65),
-    (bank(920, 1150, 250, 32, 9), (-40, 0), 0.55),
+    # (outline, trail vector, opacity): one cloud deck, drawn at a fixed scale from the card's top left so it
+    # never covers the copy. A row of banks runs along the top edge, above the heading (y < ~72), and the deck
+    # steps down in overlapping rows into the open space beside the heading and on the right (x > ~840).
+    # Every bank is the same kind of faceted sheet with the same trails, fading a little with each row back.
+    (bank(-60, 560, 42, 40, 5), (-150, -4), 0.85),
+    (bank(480, 1060, 40, 38, 6), (-150, -4), 0.85),
+    (bank(980, 1660, 44, 42, 1), (-150, -4), 0.9),
+    (bank(840, 1260, 128, 44, 8), (-110, -3), 0.8),
+    (bank(1200, 1660, 132, 48, 3), (-110, -3), 0.8),
+    (bank(900, 1220, 216, 34, 9), (-90, -2), 0.65),
+    (bank(1260, 1660, 222, 38, 7), (-90, -2), 0.65),
 ]
 # Facet shades, from the plane facing the light to the one turned away.
 SHADES = ["face1", "face2", "face3", "face4"]

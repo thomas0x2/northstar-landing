@@ -5,7 +5,7 @@ import { CLOUD_POINTS } from "./cloudPoints";
 const W = 1600;
 const H = 600;
 const REACH = 190; // how far a sheet stretches from the triangle to a cloud corner
-const SIZE = 30;
+const SIZE = 40;
 const SECONDS = 40; // one pass across the sky
 
 type P = [number, number];
@@ -13,7 +13,7 @@ const smooth = (t: number) => t * t * (3 - 2 * t);
 const cross = (o: P, a: P, b: P) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
 const pts = (ps: P[]) => ps.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 
-/** Where the triangle is at time t (0 to 1): rising through the clouds beside the heading, then right
+/** Where the star is at time t (0 to 1): rising through the clouds beside the heading, then right
     to left along the band of clouds above the copy, like the trails. */
 function path(t: number): P {
   const x = W + 140 - t * (W + 280);
@@ -22,32 +22,44 @@ function path(t: number): P {
   return [x, y];
 }
 
-/** The triangle's corners, tumbling in 3D (so its angles change as it turns) and seen in perspective. */
-function corners(t: number, [x, y]: P) {
+// The logo star's outline (logo-glass-transparent.svg): each point, preceded by the control point of the
+// curved edge leading to it, recentred on the star and scaled so its tips reach SIZE.
+const LOGO: [number, number][] = [
+  [462.3, 218.9], [494.5, 242.1], [589.0, 233.4], [720.4, 198.0], [603.4, 269.3], [526.6, 321.9],
+  [594.2, 438.1], [700.0, 573.1], [525.9, 496.4], [374.7, 451.3], [272.6, 500.2], [137.1, 581.6],
+  [234.1, 471.9], [289.2, 388.5], [255.5, 362.4], [184.7, 338.3], [288.4, 312.2], [362.3, 276.9],
+  [402.8, 234.6], [438.8, 165.8],
+];
+const STAR = LOGO.map(([x, y]): [number, number] => [((x - 423) * SIZE) / 365, ((y - 354) * SIZE) / 365]);
+
+/** The star tumbling in 3D (so its angles change as it turns) and seen in perspective: its ten points,
+    the curved outline through them, and how squarely it faces us (1 face-on, 0 edge-on). */
+function star(t: number, [x, y]: P) {
   const ax = t * Math.PI * 2 * 3.1, ay = t * Math.PI * 2 * 2.3, az = t * Math.PI * 2 * 1.3;
   const [sx, cx, sy, cy, sz, cz] = [Math.sin(ax), Math.cos(ax), Math.sin(ay), Math.cos(ay), Math.sin(az), Math.cos(az)];
   const focal = SIZE * 4;
-  const tri = [0, 1, 2].map((k): P => {
-    const a = (k * 2 * Math.PI) / 3;
-    let [px, py, pz] = [SIZE * Math.cos(a), SIZE * Math.sin(a), 0];
+  const all = STAR.map(([px, py]): P => {
+    let pz = 0;
     [py, pz] = [py * cx - pz * sx, py * sx + pz * cx];
     [px, pz] = [px * cy + pz * sy, -px * sy + pz * cy];
     [px, py] = [px * cz - py * sz, px * sz + py * cz];
     const s = focal / (focal + pz);
     return [x + px * s, y + py * s];
   });
-  // How squarely the triangle faces us, for its shading: 1 face-on, 0 edge-on.
-  const facing = Math.abs(cx * cy);
-  return { tri, facing };
+  const tips = all.filter((_, i) => i % 2 === 1);
+  const f = (q: P) => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`;
+  let d = `M${f(tips[9])}`;
+  for (let i = 0; i < 10; i++) d += ` Q${f(all[2 * i])} ${f(all[2 * i + 1])}`;
+  return { tips, d: d + " Z", facing: Math.abs(cx * cy) };
 }
 
-/** One small glass triangle tumbling through the clouds with the wind. As it passes, sheets of the
-    clouds' sanded glass reach from its edges to the nearby cloud corners and let go again behind it. */
+/** A small glass star, like the logo, tumbling through the clouds with the wind. As it passes, sheets of
+    the clouds' sanded glass reach from its edges to the nearby cloud corners and let go again behind it,
+    like the trails streaming off the logo star. */
 export function GlassLinks() {
   const svg = useRef<SVGSVGElement>(null);
   const layer = useRef<SVGGElement>(null);
-  const body = useRef<SVGPolygonElement>(null);
-  const edge = useRef<SVGPolygonElement>(null);
+  const body = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -58,27 +70,26 @@ export function GlassLinks() {
     const frame = (now: number) => {
       const t = ((now - start) / 1000 / SECONDS) % 1;
       const centre = path(t);
-      const { tri, facing } = corners(t, centre);
+      const { tips, d: outline, facing } = star(t, centre);
 
       let out = "";
       for (const p of CLOUD_POINTS) {
-        for (let k = 0; k < 3; k++) {
-          const a = tri[k], b = tri[(k + 1) % 3];
-          // Only the edges that face the corner, so a sheet never folds back over the triangle.
+        for (let k = 0; k < 10; k++) {
+          const a = tips[(k + 9) % 10], b = tips[k];
+          // Only the edges that face the corner, so a sheet never folds back over the star.
           // An edge turns away exactly when the sheet has no area left, so nothing pops.
           if (cross(a, b, p) * cross(a, b, centre) >= 0) continue;
           const d = Math.hypot((a[0] + b[0]) / 2 - p[0], (a[1] + b[1]) / 2 - p[1]);
           if (d >= REACH) continue;
           // Each sheet is a facet of the same sanded glass as the clouds, shaded by which edge it leaves from.
-          out += `<polygon filter="url(#link-face${k + 1})" opacity="${smooth(1 - d / REACH).toFixed(3)}" points="${pts([a, b, p])}"/>`;
+          out += `<polygon filter="url(#link-face${(k % 3) + 1})" opacity="${smooth(1 - d / REACH).toFixed(3)}" points="${pts([a, b, p])}"/>`;
         }
       }
       if (layer.current) layer.current.innerHTML = out;
       if (body.current) {
-        body.current.setAttribute("points", pts(tri));
-        body.current.setAttribute("opacity", (0.5 + 0.5 * facing).toFixed(3));
+        body.current.setAttribute("d", outline);
+        body.current.setAttribute("opacity", (0.6 + 0.4 * facing).toFixed(3));
       }
-      edge.current?.setAttribute("points", pts(tri));
       raf = visible ? requestAnimationFrame(frame) : 0;
     };
 
@@ -111,9 +122,7 @@ export function GlassLinks() {
       </defs>
       <g fill="#fff" stroke="#fff" strokeWidth="2" strokeLinejoin="round">
         <g ref={layer} />
-        <polygon ref={body} filter="url(#link-face1)" />
-        {/* A fine frosted edge, so the small triangle reads crisply inside its haze. */}
-        <polygon ref={edge} fill="none" strokeWidth="1.5" strokeOpacity="0.75" />
+        <path ref={body} filter="url(#link-face1)" />
       </g>
     </svg>
   );

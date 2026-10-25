@@ -343,7 +343,7 @@ h1, h2 { text-wrap: balance; }
 .agency-card > .field:not(.shards):not(.glass-links) { inset: auto; top: -8%; right: 0; width: 135%; height: 210%; object-position: right top; }
 /* Clouds are stretched banks of faceted sanded glass, drawn like the glass logo star, placed around the copy
    rather than over it: a band along the top edge and more down the right side. They're drawn at a fixed scale
-   from the top left, like the text, so they keep clear of it at every width. A small glass triangle tumbles
+   from the top left, like the text, so they keep clear of it at every width. A small glass logo star tumbles
    through them (GlassLinks), drawn in the same 1600x600 space. */
 .agency-card > .shards, .agency-card > .glass-links { inset: 0 auto auto 0; width: 1216px; height: 456px; }
 .agency { padding: clamp(28px, 6vw, 80px); }
