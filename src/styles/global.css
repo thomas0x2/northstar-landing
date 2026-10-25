@@ -250,6 +250,22 @@ h1, h2 { text-wrap: balance; }
 .btn-primary:not(.spectrum *):hover,
 .btn-primary:not(.spectrum *):focus-visible { color: var(--ink); }
 
+/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass,
+   and its title fills with the spectrum together with the numeral. */
+.card::before {
+  inset: -1.5px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1.5px solid var(--frost-line);
+  background: var(--grain), var(--glass-face);
+  background-size: 160px 160px, 100% 100%;
+  box-shadow: var(--glass-face-glow);
+  transform: none;
+  transition: opacity 0.35s ease;
+}
+.card::after { z-index: -2; }
+.card:hover h3 { color: transparent; }
+
 /* Keep white labels legible on glass over the bright parts of the spectrum. */
 /* .btn-frost and .frost-panel */
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
