@@ -3,12 +3,14 @@
 import sys
 out = sys.argv[1]
 shards = [
-    # (vertices, trail vector)
-    ([(1180, 92), (1418, 58), (1542, 150), (1452, 252), (1232, 222)], (-420, 330)),
-    ([(1058, 262), (1180, 222), (1236, 304), (1110, 338)], (-300, 240)),
-    ([(1328, 386), (1500, 352), (1562, 442), (1402, 484)], (-340, 270)),
-    ([(1468, 528), (1538, 510), (1562, 566), (1490, 582)], (-200, 160)),
+    # (outline, trail vector): two crystalline clouds with many points and edges.
+    ([(1150, 118), (1262, 64), (1338, 104), (1446, 52), (1556, 128), (1512, 196),
+      (1574, 262), (1446, 300), (1380, 352), (1268, 306), (1168, 330), (1206, 238)], (-460, 360)),
+    ([(1302, 470), (1384, 428), (1452, 452), (1528, 420), (1578, 492), (1520, 548),
+      (1430, 576), (1364, 540)], (-320, 250)),
 ]
+# Facet shades, from the plane facing the light to the one turned away.
+SHADES = ["face1", "face2", "face3", "face4"]
 def pts(p): return " ".join(f"{x:.1f},{y:.1f}" for x, y in p)
 defs, trails, bodies = [], [], []
 for i, (v, (dx, dy)) in enumerate(shards):
@@ -16,9 +18,15 @@ for i, (v, (dx, dy)) in enumerate(shards):
     defs.append(f'<linearGradient id="trail{i}" gradientUnits="userSpaceOnUse" x1="{cx:.0f}" y1="{cy:.0f}" x2="{cx+dx:.0f}" y2="{cy+dy:.0f}"><stop offset="0" stop-color="#fff" stop-opacity="0.34"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
     for a, b in zip(v, v[1:] + v[:1]):
         trails.append(f'<polygon fill="url(#trail{i})" points="{pts([a, b, (b[0]+dx, b[1]+dy), (a[0]+dx, a[1]+dy)])}"/>')
-    # Two facets split along one diagonal: a bright plane facing the light and a quieter one.
-    for f, part in (("faceHi", v[:3]), ("faceLo", [v[0]] + v[2:])):
-        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" points="{pts(part)}"/>')
+    # Facets fan out from a ridge point near the lit top right; each edge gets its own shade.
+    rx, ry = cx + (v[3][0] - cx) * 0.3, cy + (v[3][1] - cy) * 0.3
+    for k, (a, b) in enumerate(zip(v, v[1:] + v[:1])):
+        f = SHADES[(k * 3 + i) % len(SHADES)]
+        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts([(rx, ry), a, b])}"/>')
+    # Inner layers: smaller sheets of glass stacked on top, offset toward the light, for depth.
+    for scale, dx2, dy2, f in ((0.62, 22, -14, "face2"), (0.32, 34, -22, "face1")):
+        inner = [(cx + (x - cx) * scale + dx2, cy + (y - cy) * scale + dy2) for x, y in v[::2]]
+        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts(inner)}"/>')
 def face(name, slope, seed):
     return f'''<filter id="{name}" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
@@ -41,8 +49,10 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" view
 <feComposite in="soft" in2="mask" operator="in" result="grained"/>
 <feComposite in="soft" in2="grained" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0"/>
 </filter>
-{face("faceHi", 0.34, 11)}
-{face("faceLo", 0.22, 13)}
+{face("face1", 0.30, 11)}
+{face("face2", 0.22, 13)}
+{face("face3", 0.15, 17)}
+{face("face4", 0.09, 19)}
 </defs>
 <g filter="url(#grain)" opacity="0.8">
 {chr(10).join(trails)}
