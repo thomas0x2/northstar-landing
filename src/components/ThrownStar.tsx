@@ -32,39 +32,33 @@ const CLOCK = (() => {
   return c.map((x) => x / c[STEPS]);
 })();
 
-/** Where the star is at time t (0 to 1): its place on screen, its size, which way it's heading, and how far
-    it is banked into the curve. It's offscreen when one flight ends and the next begins, so it loops. */
+/** Where the star is at time t (0 to 1): its place on screen and its size. It's offscreen when one flight
+    ends and the next begins, so it loops. */
 function path(t: number) {
   let i = 1;
   while (i < STEPS && CLOCK[i] < t) i++;
   const u = (i - 1 + (t - CLOCK[i - 1]) / (CLOCK[i] - CLOCK[i - 1] || 1)) / STEPS;
-  const [p, q] = [onArc(Math.max(0, u - 0.002)), onArc(Math.min(1, u + 0.002))];
-  return {
-    pos: onArc(u),
-    scale: 0.85 / depth(u),
-    heading: Math.atan2(q[1] - p[1], q[0] - p[0]),
-    // Banked hard while it swings past us, settling nearly face-on as it recedes.
-    bank: 0.95 - 0.7 * u,
-  };
+  return { pos: onArc(u), scale: 0.85 / depth(u) };
 }
 
 const TURNS = 8; // a slow, steady turn about its own centre over the whole flight
 const SPRITE = 160; // glass-star.svg's span, in the sky's units, at scale 1
 const MAX_SCALE = 0.85 / NEAR; // the sprite is laid out this big, so it's only ever scaled down and stays sharp
+// glass-star.svg is the star seen square-on, its tips all on one circle. This tilts it back to the slant it
+// has in the logo, where that circle is seen as the ellipse through the tips (see scripts/glass-star.py).
+const TILT = [0.8673, -0.4602, 0.3307, 0.6232]; // columns: where the sprite's x and y axes land
 
-/** The star's CSS transform at time t, with k CSS pixels to one sky unit. It turns slowly about the axis
-    square to its face, and that face is banked about the line it's travelling along (its foreshortening
-    across the heading), then the whole thing is turned to face along its heading and put in place. */
+/** The star's CSS transform at time t, with k CSS pixels to one sky unit: it spins about its centre in its
+    own plane, so all five tips run round the same circle, then that plane is tilted to the logo's slant and
+    the star is sized and put in place. The plane never changes, only the spin and the flight. */
 function transform(t: number, k: number) {
-  const { pos: [x, y], scale, heading, bank } = path(t);
+  const { pos: [x, y], scale } = path(t);
   const spin = -Math.PI * 2 * TURNS * t;
-  const [ss, cs, cb, sh, ch] = [Math.sin(spin), Math.cos(spin), Math.cos(bank), Math.sin(heading), Math.cos(heading)];
+  const [ss, cs] = [Math.sin(spin), Math.cos(spin)];
   const m = scale / MAX_SCALE;
-  // heading rotation · bank squash · spin rotation, scaled
-  const [a, b, c, d] = [
-    m * (ch * cs - sh * cb * ss), m * (sh * cs + ch * cb * ss),
-    m * (-ch * ss - sh * cb * cs), m * (-sh * ss + ch * cb * cs),
-  ];
+  const [t11, t21, t12, t22] = TILT;
+  // tilt · spin, scaled
+  const [a, b, c, d] = [m * (t11 * cs + t12 * ss), m * (t21 * cs + t22 * ss), m * (t12 * cs - t11 * ss), m * (t22 * cs - t21 * ss)];
   return `matrix(${a.toFixed(4)},${b.toFixed(4)},${c.toFixed(4)},${d.toFixed(4)},${(x * k).toFixed(1)},${(y * k).toFixed(1)})`;
 }
 
