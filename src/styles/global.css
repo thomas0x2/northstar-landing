@@ -63,6 +63,10 @@ h1, h2 { text-wrap: balance; }
   border: 1px solid var(--frost-line);
   backdrop-filter: blur(var(--blur-frost)); -webkit-backdrop-filter: blur(var(--blur-frost));
 }
+/* Text: free-floating white text, no face of its own; the arrow nudges forward and the glass sheet rises on hover. */
+.btn-text { color: var(--ink); padding-inline: 0; font-size: 18px; }
+.btn-text::after { content: "\2192"; margin-left: 10px; transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.btn-text:hover::after, .btn-text:focus-visible::after { transform: translateX(4px); }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
 /* Nav */
@@ -138,7 +142,9 @@ h1, h2 { text-wrap: balance; }
 .footer { border-top: 1px solid var(--line-faint); }
 .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-3); padding-block: 28px; font-size: 14px; }
 .footer .wordmark { font-size: 18px; }
-.footer span:last-child { color: var(--ink-muted); }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand img { width: 32px; height: auto; }
+.footer .wrap > span:last-child { color: var(--ink-muted); }
 
 /* Hover: a sanded glass sheet, like the logo star, rises from beneath the element and settles centred behind it.
    Applies to every interactive or highlightable element on the page. */
