@@ -4,7 +4,7 @@ import { CLOUD_POINTS } from "./cloudPoints";
 // In the cloud SVG's own space, so this layer lines up with glass-shards.svg.
 const W = 1600;
 const H = 600;
-const REACH = 190; // how far a sheet stretches from the triangle to a cloud corner
+const REACH = 190; // how far a sheet stretches from the star to a cloud corner
 const SIZE = 40;
 const SECONDS = 40; // one pass across the sky
 

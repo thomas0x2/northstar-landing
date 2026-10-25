@@ -1,6 +1,6 @@
 # Generates public/assets/glass-shards.svg: stretched cloud banks of faceted sanded glass with misty trails,
 # drawn with the same filters as the glass logo star (logo-glass-transparent.svg), around the card's copy.
-# Also writes the banks' corner points for the roaming glass triangle (src/components/cloudPoints.ts).
+# Also writes the banks' corner points for the tumbling glass star (src/components/cloudPoints.ts).
 # Usage: python3 scripts/glass-shards.py public/assets/glass-shards.svg src/components/cloudPoints.ts
 import math, sys
 out, points_out = sys.argv[1], sys.argv[2]
