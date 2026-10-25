@@ -1,4 +1,4 @@
-import { vision } from "../content";
+import { thesisPage } from "../content";
 import { NavBar } from "./NavBar";
 import { SpectrumField } from "./SpectrumField";
 import { Join } from "./Join";
@@ -20,15 +20,15 @@ function Head({ label, title }: { label: string; title?: string }) {
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
-/** Vision, mission and the full thesis on one page: a spectrum header, a numbers band, then the case on black. */
-export function VisionPage() {
-  const v = vision;
+/** The thesis page: a spectrum header, vision and mission, a numbers band, then the case on black. */
+export function ThesisPage() {
+  const v = thesisPage;
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
       <SpectrumField as="header" className="hero page-hero">
         <div className="wrap">
-          <NavBar current="/vision/" />
+          <NavBar current="/thesis/" />
           <div className="page-hero-copy">
             <span className="label">{v.label}</span>
             <h1 className="display">{v.title}</h1>

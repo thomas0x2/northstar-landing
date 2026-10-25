@@ -236,7 +236,7 @@ h1, h2 { text-wrap: balance; }
 /* .btn-frost and .frost-panel */
 .btn-frost, .frost-panel { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28); }
 
-/* Vision and thesis page. Effects use sanded glass or the spectrum only, never shadows. */
+/* Thesis page. Effects use sanded glass or the spectrum only, never shadows. */
 .page-hero-copy { display: flex; flex-direction: column; gap: 24px; max-width: 860px; padding-block: 56px 96px; }
 .page-hero h1 { font-size: clamp(44px, 6vw, 84px); line-height: 0.98; }
 .page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
