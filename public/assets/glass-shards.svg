@@ -99,24 +99,20 @@
 <path fill="url(#trail13)" d="M1520.0 548.0 L1430.0 576.0 Q1232.0 604.6 1115.1 625.5 Q1358.0 582.9 1520.0 548.0 Z"/>
 <path fill="url(#trail13)" d="M1364.0 540.0 L1302.0 470.0 Q1104.0 498.6 973.1 568.5 Q1202.0 574.9 1364.0 540.0 Z"/>
 </g>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1150.0,118.0 1262.0,64.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1262.0,64.0 1338.0,104.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1338.0,104.0 1446.0,52.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1446.0,52.0 1556.0,128.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1556.0,128.0 1512.0,196.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1512.0,196.0 1574.0,262.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1574.0,262.0 1446.0,300.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1446.0,300.0 1380.0,352.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1380.0,352.0 1268.0,306.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1268.0,306.0 1168.0,330.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1168.0,330.0 1206.0,238.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1385.0,158.5 1206.0,238.0 1150.0,118.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1302.0,470.0 1384.0,428.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1384.0,428.0 1452.0,452.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1452.0,452.0 1528.0,420.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1528.0,420.0 1578.0,492.0"/>
-<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1578.0,492.0 1520.0,548.0"/>
-<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1520.0,548.0 1430.0,576.0"/>
-<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1430.0,576.0 1364.0,540.0"/>
-<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1469.7,469.5 1364.0,540.0 1302.0,470.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1150.0,118.0 1262.0,64.0 1206.0,238.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1262.0,64.0 1168.0,330.0 1206.0,238.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1262.0,64.0 1338.0,104.0 1168.0,330.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1338.0,104.0 1268.0,306.0 1168.0,330.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1338.0,104.0 1446.0,52.0 1268.0,306.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1446.0,52.0 1380.0,352.0 1268.0,306.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1446.0,52.0 1556.0,128.0 1380.0,352.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1556.0,128.0 1446.0,300.0 1380.0,352.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1556.0,128.0 1512.0,196.0 1446.0,300.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1512.0,196.0 1574.0,262.0 1446.0,300.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1302.0,470.0 1384.0,428.0 1364.0,540.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1384.0,428.0 1430.0,576.0 1364.0,540.0"/>
+<polygon filter="url(#face4)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1384.0,428.0 1452.0,452.0 1430.0,576.0"/>
+<polygon filter="url(#face3)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1452.0,452.0 1520.0,548.0 1430.0,576.0"/>
+<polygon filter="url(#face2)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1452.0,452.0 1528.0,420.0 1520.0,548.0"/>
+<polygon filter="url(#face1)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="1528.0,420.0 1578.0,492.0 1520.0,548.0"/>
 </svg>

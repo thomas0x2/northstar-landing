@@ -30,11 +30,17 @@ for i, (v, (dx, dy)) in enumerate(shards):
             ca = (a[0] + fx * 0.45, a[1] + fy * 0.55)
             cb = (b[0] + fx * 0.55, b[1] + fy * 0.45)
             trails.append(f'<path fill="url(#trail{i}{j})" d="M{a[0]:.1f} {a[1]:.1f} L{b[0]:.1f} {b[1]:.1f} Q{cb[0]:.1f} {cb[1]:.1f} {far[0]:.1f} {far[1]:.1f} Q{ca[0]:.1f} {ca[1]:.1f} {a[0]:.1f} {a[1]:.1f} Z"/>')
-    # Facets fan out from a ridge point near the lit top right; each edge gets its own shade.
-    rx, ry = cx + (v[3][0] - cx) * 0.3, cy + (v[3][1] - cy) * 0.3
-    for k, (a, b) in enumerate(zip(v, v[1:] + v[:1])):
+    # Facets: a zigzag strip across the outline, so every facet line runs between two edge points.
+    tris, l, r, step = [], 0, len(v) - 1, 0
+    while r - l > 1:
+        if step % 2 == 0:
+            tris.append((v[l], v[l + 1], v[r])); l += 1
+        else:
+            tris.append((v[l], v[r - 1], v[r])); r -= 1
+        step += 1
+    for k, tri in enumerate(tris):
         f = SHADES[(k * 3 + i) % len(SHADES)]
-        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts([(rx, ry), a, b])}"/>')
+        bodies.append(f'<polygon filter="url(#{f})" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round" points="{pts(tri)}"/>')
 def face(name, slope, seed):
     return f'''<filter id="{name}" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="800" color-interpolation-filters="sRGB">
 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
