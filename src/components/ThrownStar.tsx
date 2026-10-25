@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 // In the cloud SVG's own space, so this layer lines up with glass-shards.svg.
 const W = 1600;
 const H = 600;
-const SIZE = 46;
+const SIZE = 56;
 const SECONDS = 36; // one throw across the sky
 
 type P = [number, number];
@@ -29,12 +29,26 @@ const LOGO: [number, number][] = [
 const STAR = LOGO.map(([x, y]): [number, number] => [((x - 437.7) * SIZE) / 365, ((y - 376.7) * SIZE) / 365]);
 const TURNS = 27; // spins per throw, a steady three quarters of a turn a second
 
-/** The star in flight: the curved outline through its points. It spins flat and steady about its own
-    centre, the axis square to its face, like a thrown star holding its spin. */
+// The plane the star flies in: tipped back, as a thrown star flies nearly flat, so we see its face at a
+// slant from just below, and turned a little toward the direction of the throw. It holds this plane.
+const TIP = 1.05, TURN = -0.25;
+
+/** The star in flight, seen in perspective: the curved outline through its points. It spins steadily
+    about its own centre on the axis square to its face, like a ninja star, while that face stays tipped. */
 function star(t: number, [x, y]: P, scale: number) {
   const spin = -Math.PI * 2 * TURNS * t;
-  const [s, c] = [Math.sin(spin) * scale, Math.cos(spin) * scale];
-  const all = STAR.map(([px, py]): P => [x + px * c - py * s, y + px * s + py * c]);
+  const [ss, cs, sx, cx, sy, cy] = [Math.sin(spin), Math.cos(spin), Math.sin(TIP), Math.cos(TIP), Math.sin(TURN), Math.cos(TURN)];
+  const focal = SIZE * 6;
+  const all = STAR.map(([px, py]): P => {
+    [px, py] = [px * scale, py * scale];
+    // Spin in the star's own plane, then tip that plane back and turn it.
+    [px, py] = [px * cs - py * ss, px * ss + py * cs];
+    let pz = 0;
+    [py, pz] = [py * cx - pz * sx, py * sx + pz * cx];
+    [px, pz] = [px * cy + pz * sy, -px * sy + pz * cy];
+    const s = focal / (focal + pz);
+    return [x + px * s, y + py * s];
+  });
   const f = (q: P) => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`;
   let d = `M${f(all[19])}`;
   for (let i = 0; i < 10; i++) d += ` Q${f(all[2 * i])} ${f(all[2 * i + 1])}`;
