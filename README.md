@@ -17,9 +17,9 @@ npm run preview   # serve the production build locally
 
 - `index.html`: document head (title, meta, favicons, Google Fonts) and the React mount point.
 - `src/content.ts`: all page copy in one place.
-- `src/App.tsx`: home page composition.
+- `src/App.tsx`: home page composition (for now just the hero, linking to the thesis).
 - `thesis/index.html` + `src/thesis.tsx`: the Thesis page (`ThesisPage`), with vision and mission as its opening section, served at `/thesis/`. Its figures cite `thesisPage.sources` in `content.ts`. Each page is its own Vite entry in `vite.config.ts`.
-- `src/components/`: `Hero`, `NavBar`, `Thesis`, `TestBand`, `Join`, `Footer`, `ThesisPage`, plus the building blocks `SpectrumField` and `Button`.
+- `src/components/`: `Hero`, `NavBar`, `Join`, `Footer`, `ThesisPage`, `CapexChart`, plus the building blocks `SpectrumField` and `Button`.
 - `src/styles/tokens.css`: design tokens, mirroring `tokens.json` in the Northstar design system.
 - `src/styles/global.css`: layout and component styles.
 - `public/assets/`: images used by the page, favicons and the social image.
@@ -33,10 +33,9 @@ npm run preview   # serve the production build locally
 - Fonts: Oxanium Bold (display), Manrope (body).
 - Headings (`h1`–`h3`) on black fill with the spectrum on hover (`spectrum-field.svg` clipped to the text), the same effect as the card numerals. Not on the spectrum field itself.
 - White (primary) buttons on black fill with the spectrum on hover, with white text, instead of raising the glass sheet. On the spectrum field they keep the glass sheet.
-- Cards on black turn to sanded glass on hover (the card surface itself, no sheet behind it), and their numeral and title fill with the spectrum.
+- Cards on black turn to sanded glass on hover (the card surface itself, no sheet behind it), and their numeral fills with the spectrum. Card titles stay white, for contrast on the glass.
 - No shadows (box, text or drop). For depth or emphasis, use the sanded glass from the logo (`--glass-face`, `--glass-sheet`, `--grain`) or the spectrum field.
 
 ## Before launch
 
-- Replace `[CONTACT EMAIL]` in `src/content.ts` with the real address and link.
 - Set an absolute URL for `og:image` in `index.html` once the domain is known.

@@ -77,6 +77,10 @@ h1, h2 { text-wrap: balance; }
 .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-10); padding-block: 56px var(--space-section); }
 .hero-copy { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
 
+/* The home page is only the hero, so it fills the screen above the footer. */
+.hero-full { min-height: calc(100svh - 88px); display: flex; flex-direction: column; }
+.hero-full > .wrap { flex: 1; display: flex; flex-direction: column; }
+.hero-full .hero-grid { flex: 1; }
 .hero h1 { font-size: clamp(48px, 7vw, 96px); line-height: 0.95; }
 .hero .lead { max-width: 560px; font-size: 20px; line-height: 1.55; }
 .hero-visual { flex: 1 1 420px; min-width: 0; max-width: 620px; }
@@ -248,8 +252,8 @@ h1, h2 { text-wrap: balance; }
 .btn-primary:not(.spectrum *):hover,
 .btn-primary:not(.spectrum *):focus-visible { color: var(--ink); }
 
-/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass,
-   and its title fills with the spectrum together with the numeral. */
+/* Cards: no sheet behind them on hover. The card's own surface turns to sanded glass and the numeral
+   fills with the spectrum; the title stays white, since spectrum text on grey glass is hard to read. */
 .card::before {
   inset: -1.5px;
   z-index: -1;
@@ -262,7 +266,7 @@ h1, h2 { text-wrap: balance; }
   transition: opacity 0.35s ease;
 }
 .card::after { z-index: -2; }
-.card:hover h3 { color: transparent; }
+.card h3, .card h3:hover { background: none; color: var(--ink); }
 
 /* Keep white labels legible on glass over the bright parts of the spectrum. */
 /* .btn-frost and .frost-panel */
@@ -274,24 +278,9 @@ h1, h2 { text-wrap: balance; }
 .page-hero .lead { max-width: 620px; font-size: 20px; line-height: 1.55; }
 
 .statements { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-5); }
-.statement {
-  position: relative; isolation: isolate;
-  border-radius: var(--radius-section-card); padding: clamp(28px, 4vw, 48px);
-  display: flex; flex-direction: column; gap: var(--space-5);
-}
-/* The face is sanded glass, like the logo star, with the spectrum glowing faintly through it. */
-.statement::before {
-  content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit;
-  background: url("/assets/spectrum-field.svg") center / cover no-repeat;
-  opacity: 0.22;
-}
-.statement::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-  background: var(--grain), var(--glass-face);
-  background-size: 160px 160px, 100% 100%;
-  border: 1px solid var(--frost-line);
-}
-.statement p { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; }
+/* Vision and mission are cards: black at rest, sanded glass on hover. Only the size differs. */
+.statement { border-radius: var(--radius-section-card); padding: clamp(28px, 4vw, 48px); gap: var(--space-5); }
+.statement p { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; color: var(--ink); }
 
 .section-flush { padding-top: 0; }
 .prose { display: flex; flex-direction: column; gap: var(--space-5); max-width: 760px; }
@@ -348,6 +337,16 @@ h1, h2 { text-wrap: balance; }
 .sources a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--line-faint); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .sources li:target a { color: var(--ink); }
 .agency-close { margin-top: var(--space-10); max-width: 900px; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; }
+/* "Why we're doing it" on the spectrum: the sky layer sits over the field, anchored top right. */
+.agency-card > .sky { object-position: right top; }
+.agency { padding: clamp(28px, 6vw, 80px); }
+.agency .section-head { max-width: 760px; }
+.agency .prose p { color: var(--ink); }
+/* On phones the sky becomes a band above the copy, so the birds and clouds stay clear of the text. */
+@media (max-width: 640px) {
+  .agency-card > .sky { height: 340px; }
+  .agency { padding-top: 170px; }
+}
 
 /* Headings fill with the exact logo spectrum on hover, like the card numerals.
    Not on the spectrum field itself, where spectrum text would disappear into the background. */

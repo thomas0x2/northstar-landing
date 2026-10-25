@@ -41,7 +41,7 @@ export function ThesisPage() {
         <section className="section" aria-label="Vision and mission">
           <div className="wrap statements">
             {v.statements.map((s) => (
-              <article className="statement" key={s.label}>
+              <article className="card statement" key={s.label}>
                 <span className="label">{s.label}</span>
                 <p className="display">{s.text}</p>
               </article>
@@ -182,13 +182,19 @@ export function ThesisPage() {
           </div>
         </section>
 
-        <section className="section">
+        {/* Back on the spectrum, with the blue read as clear sky after a storm. */}
+        <section className="section section-tight">
           <div className="wrap">
-            <Head label={v.agency.label} title={v.agency.title} />
-            <div className="prose">
-              {v.agency.body.map((p) => <p key={p}>{p}</p>)}
-            </div>
-            <p className="agency-close display">{v.agency.close}</p>
+            <SpectrumField as="div" className="test-card agency-card">
+              <img className="field sky" src="/assets/after-the-storm.svg" alt="" aria-hidden="true" />
+              <div className="agency">
+                <Head label={v.agency.label} title={v.agency.title} />
+                <div className="prose">
+                  {v.agency.body.map((p) => <p key={p}>{p}</p>)}
+                </div>
+                <p className="agency-close display">{v.agency.close}</p>
+              </div>
+            </SpectrumField>
           </div>
         </section>
 
