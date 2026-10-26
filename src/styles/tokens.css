@@ -35,11 +35,13 @@
   --content-max: 1280px;
 
   /* Hover sheet: sanded glass like the logo star (milky body, soft blurred edge, fine grain). No dark shadow. */
-  --glass-sheet: linear-gradient(160deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(255, 255, 255, 0.06) 100%);
+  --glass-sheet: linear-gradient(160deg, rgba(255, 255, 255, 0.44) 0%, rgba(255, 255, 255, 0.26) 50%, rgba(255, 255, 255, 0.15) 100%);
   --glass-sheet-haze: 0 0 22px 2px rgba(255, 255, 255, 0.16), inset 0 0 14px rgba(255, 255, 255, 0.22);
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.38 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Grain: the star mark's sanded speckle (hero-star-spectrum.svg, grainS). Its noise picks out sparse flecks
+     that lift the glass by at most 30%, at the frequency the star shows on screen. Fine and soft, not a full noise wash. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.26 0 0 0 -0.08'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
   /* Glass faces for buttons, badges and panels (same material as the hover sheet) */
-  --glass-face: linear-gradient(160deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.14) 55%, rgba(255, 255, 255, 0.08) 100%);
+  --glass-face: linear-gradient(160deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.24) 55%, rgba(255, 255, 255, 0.17) 100%);
   --glass-face-bright: linear-gradient(160deg, #ffffff 0%, #f4f6f8 60%, #e9edf1 100%);
   --glass-face-glow: inset 0 0 0 1px rgba(255, 255, 255, 0.28), inset 0 0 12px rgba(255, 255, 255, 0.2);
   --grain-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
