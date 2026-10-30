@@ -96,7 +96,7 @@ export function CapexChart() {
               </div>
             </div>
 
-            <div className="capex-plot" ref={plotRef} role="img" aria-label={`Bar chart of yearly capital spending, rising from ${billions(totals[0])} in 2020 to ${billions(totals[n - 2])} in 2025, with ${billions(totals[n - 1])} in the first half of 2026 against a ${billions(b.plan2026)} plan.`}>
+            <div className="capex-plot" ref={plotRef} role="img" aria-label={`Bar chart of yearly capital spending, rising from ${billions(totals[0])} in 2020 to ${billions(totals[n - 2])} in 2025, with ${billions(totals[n - 1])} in ${"partial" in b.years[n - 1] ? b.years[n - 1].partial : ""} 2026 against a ${billions(b.plan2026)} plan.`}>
               {b.years.map((y, i) => {
                 const total = totals[i];
                 const isPartial = "partial" in y;
